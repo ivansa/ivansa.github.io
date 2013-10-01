@@ -1,0 +1,20 @@
+{% capture post_category %}{{ post.categories | size }}{% endcapture %}
+{% capture page_category %}{{ page.categories | size }}{% endcapture %}
+
+{% if index %}
+  {% if post_category != '0' %}
+  <div class="pull-left">
+    {% for category in post.categories %}
+      <li><i class="icon-tags"></i>&nbsp;<a href="{{ root_url }}/{{ site.category_dir }}/{{ category }}/">{{ category }}</a></li>
+    {% endfor %}
+  </div>
+  {% endif %}
+{% else %}
+  {% if page_category != '0' %}
+  <div class="pull-left">
+    {% for category in page.categories %}
+      <li><i class="icon-tags"></i>&nbsp;<a href="{{ root_url }}/{{ site.category_dir }}/{{ category }}/">{{ category }}</a></li>
+    {% endfor %}
+  </div>
+  {% endif %}
+{% endif %}

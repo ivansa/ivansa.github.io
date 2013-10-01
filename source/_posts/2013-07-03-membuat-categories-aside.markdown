@@ -12,7 +12,7 @@ Ada satu fitur yang cukup esensial di blog engine tapi tidak ada di Octopress ya
 
 Berikut ini langkah-langkahnya :<br />
 **1. Download <code>category_list.rb</code> berikut ini**<br />
-[Download]({{ root_url }}/downloads/code/categories/category_list.rb "download category_list.rb")
+{% include_code categories/category_list.rb %}
 
 **2. Buat file <code>source/_includes/custom/asides/categories.html</code> dengan isi sebagai berikut :**
 
