@@ -10,6 +10,8 @@ categories: Ilmu_Sosial_Dasar
 Secara bahasa manusia berasal dari kata “manu” (Sansekerta), “mens” (Latin), yang berarti berpikir, berakal budi atau makhluk ang berakal budi (mampu menguasai makhluk lain).
 Secara istilah manusia dapat diartikan sebuah konsep atau sebuah fakta, sebuah gagasan atau realitas, sebuah kelompok (genus) atau seorang individu.
 
+<!-- more -->
+
 * **Menurut Ahli Logika** :
 Manusia adalah hewan rasional, yang membedakan dengan hewan adalah cara pemikirannya.
 
