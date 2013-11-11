@@ -3,7 +3,7 @@ layout: post
 title: "Pengertian Manusia"
 date: 2013-10-10 08:25
 comments: true
-categories: Ilmu_Sosial_Dasar
+categories: ilmu_sosial_dasar
 ---
 
 Secara bahasa manusia berasal dari kata “manu” (Sansekerta), “mens” (Latin), yang berarti berpikir, berakal budi atau makhluk ang berakal budi (mampu menguasai makhluk lain).
