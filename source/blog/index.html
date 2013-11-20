@@ -4,10 +4,23 @@ layout: default
 
 {% assign index = true %}
 
-{% for post in site.posts reverse %}
+{% for post in paginator.posts %}
   {% assign content = post.content %}
   <article class="listing">
     {% include blog/post/article.html %}
   </article>
   <hr>
 {% endfor %}
+
+<nav id="pagenavi">
+	{% if paginator.previous_page %}
+		<div style="float:left">
+			<a href="{{paginator.previous_page}}" class="prev"><img src="{{ root_url }}/images/left.png" style="max-height:50px;width:auto"></a>
+		</div>
+	{% endif %}
+	{% if paginator.next_page %}
+		<div style="float:right">
+				<a href="{{paginator.next_page}}" class="next"><img src="{{ root_url }}/images/right.png" style="max-height:50px;width:auto"></a>
+		</div>
+	{% endif %}
+</nav>
