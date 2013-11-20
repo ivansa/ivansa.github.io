@@ -27,7 +27,7 @@ END
 ```
 
 #### Keterangan Lainnya :
-<table>
+<table border=1>
 	<tr>
 		<td>CLS</td>
 		<td>:</td>
@@ -46,5 +46,5 @@ END
 </table> 
 
 #### Output :
-<img src="{{root_url}}/images/blog/qbasic/qbasic-input-print.png" style="border:1px solid grey">
+<img src="{{root_url}}/images/blog/qbasic/qbasic-output1.png" style="border:1px solid grey">
 
