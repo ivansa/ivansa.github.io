@@ -8,6 +8,8 @@ categories: qbasic
 
 Kali ini saya akan memberikan contoh program qbasic dengan menggunakan beberapa perintah aritmatika.
 
+<!-- more -->
+
 <b>Seperti :</b>
 
 <table border=1>
