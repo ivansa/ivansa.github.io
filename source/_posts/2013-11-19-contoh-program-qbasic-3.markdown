@@ -68,6 +68,9 @@ END IF
 END
 ```
 
+<b>Output Program 1 :</b>
+<img src="{{root_url}}/images/blog/qbasic/qbasic-output3-1.png" style="border:1px solid grey">
+
 <b>Contoh Program 2 :</b>
 ```
 DIM KeyPressed AS STRING
@@ -102,3 +105,6 @@ END
 		<td>Membuat huruf besar (Uppercase).</td>
 	</tr>
 </table> 
+
+<b>Output Program 2 :</b>
+<img src="{{root_url}}/images/blog/qbasic/qbasic-output3-2.png" style="border:1px solid grey">

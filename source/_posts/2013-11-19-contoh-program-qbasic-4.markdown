@@ -47,3 +47,55 @@ Loop (While/Until) [condition]
 ```
 
 ----------
+
+<b>1. Contoh Program FOR-NEXT :</b>
+```
+CLS
+
+FOR counter = 1 TO 2 STEP 1
+    PRINT "Ivans Ardiansyah"; counter
+NEXT counter
+
+END
+```
+
+<b>2. Contoh Program WHILE-WEND :</b>
+```
+CLS
+
+counter = 1
+
+WHILE  counter < 11
+    PRINT "Ivans Ardiansyah"; counter
+    counter = counter + 1
+WEND
+
+END
+```
+
+<b>3. Contoh Program DO-(WHILE/UNTIL) :</b>
+```
+CLS
+
+DO UNTIL counter < 10
+    PRINT "Ivans Ardiansyah"; counter
+    counter = counter + 1
+Loop
+
+END
+```
+
+```
+CLS
+
+Do
+    PRINT "Ivans Ardiansyah"; counter
+    counter = counter + 1
+Loop WHILE counter < 11
+
+END
+```
+
+----------
+<b>Output :</b>
+<img src="{{root_url}}/images/blog/qbasic/qbasic-output4.png" style="border:1px solid grey">
