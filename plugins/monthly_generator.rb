@@ -22,7 +22,7 @@ module Jekyll
       monthly_title_prefix = site.config['monthly_title_prefix'] || 'Archive: '
 
       month_format = '%B'
-      upcase = true
+      upcase = false
       if site.config['monthly_format']
         if site.config['monthly_format'] == 'Jan'
           month_format = '%b'
