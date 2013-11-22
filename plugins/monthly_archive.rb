@@ -66,8 +66,7 @@ module Jekyll
         html << " first_open" if @opts['first_open']
         html << "\" style=\"text-decoration: none\" onclick=\"show_months(#{key_year["year"]})\">#{key_year["year"]}"
         html << " (#{posts_year.count})" if @opts['counter']
-        html << "</li>"
-        html << "<ul class=\"month_list\" style=\"display: none\" id=\"month_ul_#{key_year["year"]}\">"
+        html << "<ul class=\"month_list\" style=\"display: none;list-style-type: square;\" id=\"month_ul_#{key_year["year"]}\">"
         posts_months = posts_year.group_by{|c| {\
           "month_format" => c.date.strftime(@opts['month_format']),\
           "month" => c.date.strftime('%m')}}
@@ -81,6 +80,7 @@ module Jekyll
           html << "</a></li>"
         end
         html << "</ul>"
+        html << "</li>"
       end
       html << "</ul>"
       html << "</div>"
