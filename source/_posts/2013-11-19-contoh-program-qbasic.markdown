@@ -11,7 +11,7 @@ INPUT merupakan perintah untuk memberikan nilai pada variabel, sedangkan PRINT m
 
 <!-- more -->
 
-```
+```vbnet
 CLS
 
 DIM nama AS STRING

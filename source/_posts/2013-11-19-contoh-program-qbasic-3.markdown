@@ -48,7 +48,7 @@ END SELECT
 ```
 
 <b>Contoh Program 1 :</b>
-```
+{% codeblock lang:vbnet %}
 DIM Num1 AS INTEGER
 DIM Num2 AS INTEGER
 
@@ -66,13 +66,13 @@ ELSE
 END IF
 
 END
-```
+{% endcodeblock %}
 
 <b>Output Program 1 :</b>
 <img src="{{root_url}}/images/blog/qbasic/qbasic-output3-1.png" style="border:1px solid grey">
 
 <b>Contoh Program 2 :</b>
-```
+{% codeblock lang:vbnet %}
 DIM KeyPressed AS STRING
 
 CLS
@@ -96,7 +96,7 @@ SELECT CASE KeyPressed
 END SELECT
 
 END
-```
+{% endcodeblock %}
 
 <table border=1>
 	<tr>

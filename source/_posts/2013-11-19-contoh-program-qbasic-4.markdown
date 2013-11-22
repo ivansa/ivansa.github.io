@@ -49,7 +49,7 @@ Loop (While/Until) [condition]
 ----------
 
 <b>1. Contoh Program FOR-NEXT :</b>
-```
+```vbnet
 CLS
 
 FOR counter = 1 TO 2 STEP 1
@@ -60,7 +60,7 @@ END
 ```
 
 <b>2. Contoh Program WHILE-WEND :</b>
-```
+```vbnet
 CLS
 
 counter = 1
@@ -74,7 +74,7 @@ END
 ```
 
 <b>3. Contoh Program DO-(WHILE/UNTIL) :</b>
-```
+```vbnet
 CLS
 
 DO UNTIL counter < 10
@@ -85,7 +85,7 @@ Loop
 END
 ```
 
-```
+```vbnet
 CLS
 
 Do

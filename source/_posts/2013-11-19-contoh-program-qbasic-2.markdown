@@ -47,7 +47,7 @@ Kali ini saya akan memberikan contoh program qbasic dengan menggunakan beberapa 
 
 <!-- more -->
 
-```
+```vbnet
 CLS
 
 DIM nilai1 AS INTEGER
