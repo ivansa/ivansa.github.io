@@ -84,5 +84,5 @@ END
 </table> 
 
 #### Output :
-<img src="{{root_url}}/images/blog/qbasic/qbasic-output2.png" style="border:1px solid grey">
+<img src="{{root_url}}/images/blog/qbasic/qbasic-output2.png" style="border:1px solid grey;margin-top:0.8em">
 

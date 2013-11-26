@@ -107,4 +107,4 @@ END
 </table> 
 
 <b>Output Program 2 :</b>
-<img src="{{root_url}}/images/blog/qbasic/qbasic-output3-2.png" style="border:1px solid grey">
+<img src="{{root_url}}/images/blog/qbasic/qbasic-output3-2.png" style="border:1px solid grey;margin-top:0.8em">

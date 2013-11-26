@@ -98,4 +98,4 @@ END
 
 ----------
 <b>Output :</b>
-<img src="{{root_url}}/images/blog/qbasic/qbasic-output4.png" style="border:1px solid grey">
+<img src="{{root_url}}/images/blog/qbasic/qbasic-output4.png" style="border:1px solid grey;margin-top:0.8em">
