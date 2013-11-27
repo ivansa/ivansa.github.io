@@ -26,7 +26,7 @@ PRINT "Umur = "; umur
 END
 ```
 
-#### Keterangan Lainnya :
+<b>Keterangan Lainnya :</b>
 <table border=1>
 	<tr>
 		<td>CLS</td>
@@ -45,6 +45,6 @@ END
 	</tr>
 </table> 
 
-#### Output :
+<b>Output :</b>
 <img src="{{root_url}}/images/blog/qbasic/qbasic-output1.png" style="border:1px solid grey;margin-top:0.8em">
 
