@@ -3,7 +3,7 @@ layout: post
 title: "Adb No Permissions On Ubuntu"
 date: 2013-11-26 12:51
 comments: true
-categories: Android
+categories: android
 ---
 
 This blog post explains how to fix the no permissions error the Android Debugger displays when running the adb devices command Linux. The solutions presented here have been tested and found working on Ubuntu Lucid, but they should also work on other Ubuntu and Linux versions as well. 

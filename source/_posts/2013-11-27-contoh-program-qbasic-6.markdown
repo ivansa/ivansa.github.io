@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Program Qbasic Manipulasi Data"
-date: 2013-11-26 12:51
+date: 2013-11-27 12:51
 comments: true
 categories: qbasic
 ---
