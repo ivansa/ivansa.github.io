@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Adb No Permissions On Ubuntu"
-date: 2013-11-26 12:51
+date: 2013-11-28 14:51
 comments: true
 categories: android
 ---
