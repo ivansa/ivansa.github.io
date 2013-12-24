@@ -55,7 +55,7 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="19d2", MODE="0666"
 ```
 $ sudo cp /tmp/android.rules /etc/udev/rules.d/51-android.rules
 $ sudo chmod 644   /etc/udev/rules.d/51-android.rules
-$ sudo chown root. /etc/udev/rules.d/51-android.rules
+$ sudo chown root /etc/udev/rules.d/51-android.rules
 $ sudo service udev restart
 $ sudo killall adb
 ```
