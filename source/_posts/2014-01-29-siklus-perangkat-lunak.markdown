@@ -16,6 +16,12 @@ SDLC (Systems Development Life Cycle, Siklus Hidup Pengembangan Sistem) atau Sys
 * pengelolaan (maintenance). 
 
 Dalam rekayasa perangkat lunak, konsep SDLC mendasari berbagai jenis metodologi pengembangan perangkat lunak. Metodologi-metodologi ini membentuk suatu kerangka kerja untuk perencanaan dan pengendalian pembuatan sistem informasi, yaitu proses pengembangan perangkat lunak. Terdapat 3 jenis metode siklus hidup sistem yang paling banyak digunakan, yakni: 
+
 * siklus hidup sistem tradisional (traditional system life cycle), 
 * siklus hidup menggunakan prototyping (life cycle using prototyping), dan 
 * siklus hidup sistem orientasi objek (object-oriented system life cycle).
+
+<p align=center>
+Sumber : Wikipedia
+</p>
+
