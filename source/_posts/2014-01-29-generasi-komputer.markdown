@@ -8,6 +8,7 @@ categories: komputer
 
 ### Generasi 1 ###
 Dengan terjadinya Perang Dunia Kedua, negara-negara yang terlibat dalam perang tersebut berusaha mengembangkan komputer untuk mengeksploit potensi strategis yang dimiliki komputer. Hal ini meningkatkan pendanaan pengembangan komputer serta mempercepat kemajuan teknik komputer. Pada tahun 1941, Konrad Zuse, seorang insinyur Jerman membangun sebuah komputer, Z3, untuk mendesain pesawat terbang dan peluru kendali.
+<!-- more -->
 
 Pihak sekutu juga membuat kemajuan lain dalam pengembangan kekuatan komputer. Tahun 1943, pihak Inggris menyelesaikan komputer pemecah kode rahasia yang dinamakan Colossus untuk memecahkan kode rahasia yang digunakan Jerman. Dampak pembuatan Colossus tidak terlalu memengaruhi perkembangan industri komputer dikarenakan dua alasan. Pertama, Colossus bukan merupakan komputer serbaguna(general-purpose computer), ia hanya didesain untuk memecahkan kode rahasia. Kedua, keberadaan mesin ini dijaga kerahasiaannya hingga satu dekade setelah perang berakhir.
 
