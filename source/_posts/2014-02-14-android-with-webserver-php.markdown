@@ -17,6 +17,9 @@ Membuat aplikasi android dengan webserver menggunakan php.
 #### 4 Buat android project.
 #### 5 MainActivity.java.
 {% include_code android/webserver_php/MainActivity.java %}
+
+> IP didalam file sesuaikan sama ip server anda, dan juga nama file php yang dibuat tadi
+
 #### 6 Buat java class baru "StreamConverter.java" mengubah data ke Stream agar dapat di tangkap di php.
 {% include_code android/webserver_php/StreamConverter.java %}
 #### 7 activity_main.xml
