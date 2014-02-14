@@ -17,4 +17,7 @@
     <link href="{{ root_url }}/favicon.ico" rel="icon">
     <link href="{{ root_url }}/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
     <link href="{{ root_url }}/{{ site.subscribe_rss }}" rel="alternate" title="{{site.title}}" type="application/atom+xml">
+    {% if site.facebook_appid %}
+	<meta property="fb:app_id" content="{{ site.facebook_appid }}" />
+	{% endif %}
   </head>

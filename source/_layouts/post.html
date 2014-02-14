@@ -13,3 +13,12 @@ is_post: true
   <div id="disqus_thread" aria-live="polite">{% include blog/post/disqus_thread.html %}</div>
 </section>
 {% endif %}
+
+{% if site.facebook_appid and page.comments == true %}
+  <section>
+    <h1 class="indent title">Comments</h1>
+    <div id="facebook_comments" aria-live="polite">
+      {% include facebook_app/facebook_comments.html %}
+    </div>
+  </section>
+{% endif %}
