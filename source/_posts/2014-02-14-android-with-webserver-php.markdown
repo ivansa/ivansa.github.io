@@ -3,7 +3,9 @@ layout: post
 title: "Android With Webserver PHP"
 date: 2014-02-14 08:41
 comments: true
-categories: android
+categories: 
+- android
+- php
 ---
 
 Membuat aplikasi android dengan webserver menggunakan php.
