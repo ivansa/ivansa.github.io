@@ -11,7 +11,7 @@ I have been trying to resolve an issue while installing SQL Server 2008 Express 
 
 Here's the error itself : 
 ```
- 2012-06-20 09:27:58 Slp: Configuration action failed for feature SQL_Engine_Core_Inst during timing ConfigNonRC and scenario ConfigNonRC.
+2012-06-20 09:27:58 Slp: Configuration action failed for feature SQL_Engine_Core_Inst during timing ConfigNonRC and scenario ConfigNonRC.
 2012-06-20 09:27:58 Slp: Access is denied
 2012-06-20 09:27:58 Slp: Configuration action failed for feature SQL_Engine_Core_Inst during timing ConfigNonRC and scenario ConfigNonRC.
 2012-06-20 09:27:58 Slp: System.ComponentModel.Win32Exception (0x80004005): Access is denied
