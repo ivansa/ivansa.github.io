@@ -86,4 +86,8 @@ Ciri-ciri berkembangnya globalisasi kebudayaan adalah sebagai berikut.<br /><br 
 Setiap ada perubahan dan perkembangan biasanya akan muncul permasalahan sosial dan budaya. Masalah sosial budaya sudah ada sejak peradaban manusia dimulai. Masalah sosial selalu berkaitan dengan hubungan antarmanusia dan norma-norma yang berlaku disaat hubungan manusia-manusia itu terwujud.
 </p>
 
-Sumber: 2010. Yudhistira, http://google.com/, http://humanunited.blogspot.com/
+> <b>Kesilpulan : </b>
+> Manusia merupakan makhluk sosial dan budaya, maka dari itu kita membutuhkan orang lain dan juga kita mempunyai budaya, adat yang sopan dalam berinteraksi sesama manusia.
+> Jadi kita harus saling menghargai dan menghormati sesama manusia dengan mengikuti norma yang ada di masyarakat.
+
+Sumber : <a>2010. Yudhistira</a> , http://google.com/ , http://humanunited.blogspot.com/
