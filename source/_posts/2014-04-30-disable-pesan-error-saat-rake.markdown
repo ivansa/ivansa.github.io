@@ -16,6 +16,9 @@ gunakan perintah berikut : <br />
 Kemudian arahkan ("cd") ke folder tempat ruby anda di install, lalu cari tempat library bundler.<br />
 Setelah masuk ke folder tempat library bundler, buka file <code>runtime.rb</code> dengan text editor. <br />
 
+Kalau saya file runtime.rb ada di folder : 
+> /var/lib/gems/1.9.1/gems/bundler-1.6.2/lib/bundler
+
 Masukan <code>$VERBOSE = nil</code>, seperti pada contoh di line kedua berikut :
 ```
 require "digest/sha1" 
