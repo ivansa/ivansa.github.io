@@ -3,7 +3,7 @@ layout: post
 title: "Membuat Categories Aside"
 date: 2013-07-03 12:38
 comments: true
-categories: pembelajaran
+categories: octopress
 ---
 
 Ada satu fitur yang cukup esensial di blog engine tapi tidak ada di Octopress yaitu tampilan daftar kategori. Alhamdulillah, ternyata sudah ada yang membuat plugin tersebut. Namun, di sini ada beberapa perbaikan dari plugin tersebut.

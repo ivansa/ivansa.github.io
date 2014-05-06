@@ -3,7 +3,7 @@ layout: post
 title: "Membuat Read More"
 date: 2013-07-03 08:25
 comments: true
-categories: pembelajaran
+categories: octopress
 ---
 
 Saya akan memberikan tips sederhana
