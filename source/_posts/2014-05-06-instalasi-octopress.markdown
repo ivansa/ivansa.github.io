@@ -69,6 +69,7 @@ Octopress ini juga dapat kita deploy di github. <br />Berikut adalah cara mengin
 
 <p><b>10. Membuat folder deploy</b>
 <ul>
+	<li><code>$ mkdir _deploy</code></li>
 	<li><code>$ rake deploy</code></li>
 </ul>
 </p>
