@@ -1,0 +1,14 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. LAIVANS.
+       AUTHOR. IVANS.
+
+       ENVIRONMENT DIVISION.
+
+       DATA DIVISION.
+		
+       PROCEDURE DIVISION.
+       MULAI.
+           DISPLAY "Hello World".
+           DISPLAY "Nama Saya Ivans".
+           STOP RUN.
+
