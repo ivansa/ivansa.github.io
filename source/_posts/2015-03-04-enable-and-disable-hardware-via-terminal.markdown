@@ -36,3 +36,9 @@ maka untuk mendisablenya kita jalankan perintah berikut :
 ```
 xinput set-prop 12 "Device Enabled" 0
 ```
+
+atau 
+
+```
+xinput disable 12
+```
