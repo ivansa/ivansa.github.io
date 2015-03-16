@@ -12,6 +12,8 @@ categories: tulisan
 xinput list
 ```
 
+<!--more--> 
+
 <b>Setelah itu anda akan mendapat output seperti berikut</b>
 
 ```
