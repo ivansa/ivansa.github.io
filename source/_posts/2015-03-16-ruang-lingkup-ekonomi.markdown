@@ -8,6 +8,8 @@ categories: tulisan
 
 <b>Ilmu Ekonomi</b> adalah ilmu yang mempelajari perilaku individu dan masyarakat membuat pilihan (dengan atau tanpa uang) menggunakan sumbersumber yang terbatas, dengan cara atau alternatif terbaik untuk menghasilkan barang dan jasa sebagai pemuas kebutuhan manusia yang (relatif) tidak terbatas. Barang dan jasa yang dihasilkan kemudian didistribusikan untuk kebutuhan konsumsi sekarang dan di masa yang akan datang kepada berbagai individu dan kelompok masyarakat. 
 
+<!-- more -->
+
 <h4>Secara fundamental dan historis, <br />ilmu ekonomi dapat dibedakan menjadi 2 yaitu : </h4>
 
 <ol>
