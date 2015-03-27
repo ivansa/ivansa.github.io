@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "PENETAPAN DAN FAKTOR YANG MEMPENGARUHI HARGA"
-date: 2015-03-27 12:10
+title: "Penetapan Dan Faktor Yang Mempengaruhi Harga"
+date: 2015-03-27 13:10
 comments: true
 categories: tulisan 
 ---
