@@ -20,8 +20,6 @@ sehingga terciptalah keseimbangan ekonomi antara harga dan kuantitas.
 Model ini mengakomodasi kemungkian adanya faktor-faktor yang dapat mengubah keseimbangan, 
 yang kemudian akan ditampilkan dalam bentuk terjadinya pergeseran dari permintaan atau penawaran.
 
-<!-- more -->
-
 <h4>Pengertian Permintaan</h4>
 Permintaan adalah jumlah barang atau jasa yang ingin dan mampu dibeli oleh konsumen, pada berbagai tingkat harga, dan pada waktu tertentu. <br />
 Beberapa faktor yang mempengaruhi permintaan :
