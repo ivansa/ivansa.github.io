@@ -6,6 +6,8 @@ comments: true
 categories: tulisan
 ---
 
+<!-- more -->
+
 <ol>
 	<li>
 		Pasa saat harga Rp. 5.000,00 per unit, jumlah barang yang ditawarkan 20 unit. 
