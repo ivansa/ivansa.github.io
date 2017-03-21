@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: komputer | Ivans Ardiansyah]]></title>
+  <link href="http://ivansa.github.io/blog/categories/komputer/atom.xml" rel="self"/>
+  <link href="http://ivansa.github.io/"/>
+  <updated>2017-03-21T16:29:35+07:00</updated>
+  <id>http://ivansa.github.io/</id>
+  <author>
+    <name><![CDATA[Ivans Ardiansyah]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Modul Input / Output]]></title>
+    <link href="http://ivansa.github.io/tulisan/komputer/modul-input-output/"/>
+    <updated>2014-11-18T12:41:00+07:00</updated>
+    <id>http://ivansa.github.io/tulisan/komputer/modul-input-output</id>
+    <content type="html"><![CDATA[<p>Modul I/O adalah interface atau central switch untuk mengendalikan satu atau lebih peripheral atau perangkat input output.</p>
+
+<!--more-->
+
+
+
+
+<H4>Mengapa harus menggunakan modul I/O ?</H4>
+
+
+<ol>
+    <li>Kelajuan transfer data periferal lebih lambat dibandingkan dengan memori atau processor.</li>
+    <li>Pada sisi lain transfer data periferal lebih cepat dibandingkan dengan memori atau processor. </li>
+    <li>Periferal sering menggunakan format data dan panjang word yang berbeda dengan komputer.</li>
+</ol>
+
+
+
+
+<H4>Fungsi utama modul I/O :</H4>
+
+
+<ol>
+    <li>Antar-muka ke processor atau memori melalui sistem bus</li>
+    <li>Antar-muka ke satu atau lebih perangkat periferal dengan link data yang sesuai</li>
+</ol>
+
+
+
+
+<H4>Model Umum Modul I/O :</H4>
+
+
+<p><img src="/images/blog/tulisan/modul-i-o/model_umum_modul_i_o.png" style="border:1px solid grey;margin-top:0.8em"></p>
+
+<h4>Perangkat Eksternal</h4>
+
+
+<ul>
+    <li>Perangkat eksternal adalah perangkat tambahan untuk membantu pengguna melakukan instruksi pada CPU dan menampilkan hasil I/O yang sudah di proses CPU.</li>
+    <li>Contoh perangkat eksternal yaitu: keyboard yang berfungsi memberi instruksi kepada CPU untuk melakukan suatu operasi.</li>
+</ul>
+
+
+
+
+<h4>Klasifikasi perangkat eksternal : </h4>
+
+
+<ol>
+    <li>Human Readable<br />
+        Perangkat yang berhubungan dengan manusia sebagai pengguna komputer.
+    </li>
+    <li>Machine Readable<br />
+        Perangkat yang berhubungan dengan peralatan.
+    </li>
+    <li>Communication<br />
+        Perangkat yang berhubungan dengan komunikasi jarak jauh.
+    </li>
+</ol>
+
+
+
+
+<h4>Diagram Blog Perangkat Eksternal</h4>
+
+
+<p><img src="/images/blog/tulisan/modul-i-o/skema_perangkat_keras.jpg" style="border:1px solid grey;margin-top:0.8em"></p>
+
+<h4>Jalur koneksi / port perangkat eksternal :</h4>
+
+
+<ol>
+    <li>Port Komputer</li>
+    <li>Port serial</li>
+    <li>Port Paralel</li>
+    <li>Universal Serial BUS</li>
+    <li>USB hub</li>
+    <li>PCMCIA</li>
+    <li>Hub\Switch</li>
+    <li>Nir Kabel</li>
+</ol>
+
+
+
+
+<h4>Fungsi Modul I/O : </h4>
+
+
+<ol>
+    <li>Control & Timing</li>
+    <li>Komunikasi CPU</li>
+    <li>Komunikasi Perangkat</li>
+    <li>Data Buffering</li>
+    <li>Deteksi Eror</li>
+</ol>
+
+
+
+
+<h4>Teknik operasi pada modul I/O : </h4>
+
+
+<ul>
+    <li>I/O terprogram</li>
+    <li>I/O interrupt-driven</li>
+    <li>Direct memory access (DMA)</li>
+</ul>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hirarki Memori]]></title>
+    <link href="http://ivansa.github.io/tulisan/komputer/hirarki-memori/"/>
+    <updated>2014-11-04T09:41:00+07:00</updated>
+    <id>http://ivansa.github.io/tulisan/komputer/hirarki-memori</id>
+    <content type="html"><![CDATA[<p>Jika kita masuk kedalam dunia komputer pasti sering mendengar istilah-istilah register, cache, RAM, virtual memory.
+Istilah-istilah yang di sebutkan di atas adalah bagian dari hirarki memory yang ada dalam komputer.</p>
+
+<!--more-->
+
+
+<p><img src="/images/blog/tulisan/hirarki-memori/hirarki.png" style="border:1px solid grey;margin-top:0.8em"></p>
+
+<p><b>Penggunaan memory tersebut di bagi menjadi 2 yaitu :</b><br /></p>
+
+<ol>
+<li>tempat penyimpanan sementara (Temporary Storage)</li>
+<li>tempat penyimpanan tetap (Permanent Storage). </li>
+</ol>
+
+
+<p>Temporary storage digunakan saat komputer melakukan pemrosesan data,
+sedangkan Permanent Storage digunakan saat menyimpan data secara permanent.</p>
+
+<p><b>Ciri dari hirarki memori : </b><br /></p>
+
+<ol>
+<li>peningkatan waktu akses (access time) memori (semakin ke bawah semakin lambat, semakin ke atas semakin cepat) </li>
+<li>peningkatan kapasitas (semakin ke bawah semakin besar, semakin ke atas semakin kecil)</li>
+<li>peningkatan jarak dengan prosesor (semakin ke bawah semakin jauh, semakin ke atas semakin dekat) </li>
+<li>penurunan harga memori tiap bitnya (semakin ke bawah semakin semakin murah, semakin ke atas semakin mahal) </li>
+</ol>
+
+
+<p>Memori yang lebih kecil, lebih mahal dan lebih cepat diletakkan pada urutan teratas.
+Sehingga, jika diurutkan dari yang tercepat, maka urutannya adalah sebagai berikut:</p>
+
+<ol>
+<li><b>register mikroprosesor</b> <br />
+    Ukurannya yang paling kecil tapi memiliki waktu akses yang paling cepat, umumnya hanya 1 siklus CPU saja.
+    Register adalah memory internal yang didesain untuk dapat menyimpan data lebih cepat dibandingkan memory utama. 
+    Register berada dalam hirarki memory tertinggi dalam struktur dia atas, hal ini menunjukkan register paling cepat dalam pengaksesan data,paling dekat dengan memory utama dan paling kecil kapstitas memorynya.
+    <br /><br />
+    Register memiiki 2 fungsi, yaitu:<br />
+    <ul>
+        <li><b>User Visibel Register</b><br />Register CPU yang dapat digunakan oleh pemrogram, dengan menggunakan set intsruksi memungkinkan satu buah register atau lebih untuk dispesifikasian sebagai operand atau alamat operand.</li>
+        <li><b>Control dan Status Register</b><br />Register yang digunakan oleh unit kontrol untuk mengintrol operasi CPU dan oleh program sistem operasi untuk mengontrol eksekusi program. </li>
+    </ul>
+    <br /><br />
+</li>
+<li><b>Cache mikroprosesor</b> <br />
+    Cache mikroprosesor, disusun berdasarkan kedekatannya dengan prosesor (level-1, level-2, level-3, dan seterusnya).<br /><br />
+    Memori cache mikroprosesor dikelaskan ke dalam tingkatan-tingkatannya sendiri:
+    <ul>
+        <li><b>Level 1</b><br />Memiliki ukuran paling kecil di antara semua cache, sekitar puluhan kilobyte saja. Kecepatannya paling cepat di antara semua cache.</li>
+        <li><b>Level 2</b><br />Memiliki ukuran yang lebih besar dibandingkan dengan cache level-1, yakni sekitar 64 kilobyte, 256 kilobyte, 512 kilobyte, 1024 kilobyte, atau lebih besar. Meski demikian, kecepatannya lebih lambat dibandingkan dengan level-1, dengan nilai latency kira-kira 2 kali hingga 10 kali. Cache level-2 ini bersifat opsional. Beberapa prosesor murah dan prosesor sebelum Intel Pentium tidak memiliki cache level-2.</li>
+        <li><b>Level 3</b><br />memiliki ukuran yang lebih besar dibandingkan dengan cache level-2, yakni sekitar beberapa megabyte tapi agak lambat. Cache ini bersifat opsional. Umumnya digunakan pada prosesor-prosesor server dan workstation seperti Intel Xeon atau Intel Itanium. Beberapa prosesor desktop juga menawarkan cache level-3 (seperti halnya Intel Pentium Extreme Edition), meski ditebus dengan harga yang sangat tinggi. </li>
+    </ul>
+    <br /><br />
+</li>
+<li><b>Main memory</b> <br />
+    memiliki akses yang jauh lebih lambat dibandingkan dengan memori cache, dengan waktu akses hingga beberapa ratus siklus CPU, tapi ukurannya mencapai satuan gigabyte. Waktu akses pun kadang-kadang tidak seragam, khususnya dalam kasus mesin-mesin Non-uniform memory access (NUMA). 
+    <br /><br />
+    <ul>
+        <li><b>ROM</b><br />ROM ( Read Only memory) yaitu memory yang hanya bisa dibaca saja datanya atau programnya. Pada PC, ROM terdapat pada BIOS ( Basic Input Output System ) yang terdapat pada Mother Board yang berfungsi untuk men-setting peripheral yang ada pada system. Contoh: AMIBIOS, AWARD BIOS, dll. ROM untuk BIOS terdapat beragam jenis diantaranya jenis Flash EEPROM BIOS yang memiliki kemampuan untuk dapat diganti programnya dengan software yang disediakan oleh perusahhan pembuat Mother Board, yang umumnya penggantian tersebut untuk peningkatan unjuk kerja dari peripheral yang ada di Mother Board.</li>
+        <li><b>RAM</b><br />RAM (Random Acces Memory) yang memiliki kemampuan untuk dirubah data atau program yang tersimpan didalamnya.</li>
+    </ul>
+    <br /><br />
+</li>
+<li><b>Penyimpan cadangan lokal</b>
+    <br /><br />
+    <ul>
+        <li><b>Magnetic Disk</b><br />Magnetik penyimpanan data, digunakan untuk penyimpanan tersier dan off-line Pada komputer awal, penyimpanan magnetik juga digunakan untuk penyimpanan primer dalam bentuk memory magnetik drum, atau inti, memory inti tali, memory film tipis, memory twistor atau memory gelembung. Juga tidak seperti hari ini, pita magnetik sering digunakan untuk penyimpanan sekunder.</li>
+        <li><b>Optical Tape</b><br />Optical tape adalah media untuk penyimpanan optik pada umumnya terdiri dari strip panjang dan sempit dari plastik ke mana pola dapat ditulis dan dari mana pola bisa dibaca kembali. Ini beberapa saham teknologi dengan stok film bioskop dan cakram optik, tetapi kompatibel dengan tidak. Motivasi di balik pengembangan teknologi ini adalah kemungkinan kapasitas penyimpanan yang jauh lebih besar daripada baik pita magnetik atau cakram optic.</li>
+    </ul>
+    <br /><br />
+</li>
+<li><b>Penyimpan cadangan jarak jauh</b> <br />
+    <br /><br />
+    <ul>
+        <li><b>File Sistem Terdistribusi</b><br />File Sistem Terdistribusi ( Distributed File System ) adalah file sistem yang mendukung sharing files dan resources dalam bentuk penyimpanan persistent di sebuah network. </li>
+        <li><b>Cloud server</b><br />Teknologi cloud memungkinkan beberapa server dijadikan "satu" berfungsi sebagai storage (disk virtual), beberapa server lain (Host) di"satu"kan berfungsi sebagai computing node (CPU virtual). Diatas platform cloud tersebut bisa berjalan beberapa server virtual (Guest). Teknologi cloud juga memungkinkan sekumpulan server virtual (Guest) membentuk suatu network VLAN seperti layaknya server-server fisik yang terhubung dengan LAN. Dimana tiap pelanggan memiliki secure VLAN masing-masing yang tidak bisa saling memasuki. Sehingga aplikasi business online anda terutama di Indonesia, yang membutuhkan konfigurasi beberapa server dapat di akomodir oleh layanan cloud server.</li>
+    </ul>
+</li>
+</ol>
+
+
+
+
+<p align="center">
+<b>Sumber : </b><br />
+<a href="http://en.wikipedia.org/">en.Wikipedia.org</a><br />
+<a href="http://www.google.com/">www.google.com</a><br />
+</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Siklus Hidup Pengembangan Sistem]]></title>
+    <link href="http://ivansa.github.io/komputer/siklus-perangkat-lunak/"/>
+    <updated>2014-01-29T09:41:00+07:00</updated>
+    <id>http://ivansa.github.io/komputer/siklus-perangkat-lunak</id>
+    <content type="html"><![CDATA[<p>SDLC (Systems Development Life Cycle, Siklus Hidup Pengembangan Sistem) atau Systems Life Cycle (Siklus Hidup Sistem), dalam rekayasa sistem dan rekayasa perangkat lunak, adalah proses pembuatan dan pengubahan sistem serta model dan metodologi yang digunakan untuk mengembangkan sistem-sistem tersebut. Konsep ini umumnya merujuk pada sistem komputer atau informasi. SDLC juga merupakan pola yang diambil untuk mengembangkan sistem perangkat lunak, yang terdiri dari tahap-tahap:</p>
+
+<!--more-->
+
+
+<ul>
+<li>rencana(planning),</li>
+<li>analisis (analysis),</li>
+<li>desain (design),</li>
+<li>implementasi (implementation),</li>
+<li>uji coba (testing) dan</li>
+<li>pengelolaan (maintenance).</li>
+</ul>
+
+
+<p>Dalam rekayasa perangkat lunak, konsep SDLC mendasari berbagai jenis metodologi pengembangan perangkat lunak. Metodologi-metodologi ini membentuk suatu kerangka kerja untuk perencanaan dan pengendalian pembuatan sistem informasi, yaitu proses pengembangan perangkat lunak. Terdapat 3 jenis metode siklus hidup sistem yang paling banyak digunakan, yakni:</p>
+
+<ul>
+<li>siklus hidup sistem tradisional (traditional system life cycle),</li>
+<li>siklus hidup menggunakan prototyping (life cycle using prototyping), dan</li>
+<li>siklus hidup sistem orientasi objek (object-oriented system life cycle).</li>
+</ul>
+
+
+<p align=center>
+Sumber : Wikipedia
+</p>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Generasi Komputer]]></title>
+    <link href="http://ivansa.github.io/komputer/generasi-komputer/"/>
+    <updated>2014-01-29T08:41:00+07:00</updated>
+    <id>http://ivansa.github.io/komputer/generasi-komputer</id>
+    <content type="html"><![CDATA[<!-- more -->
+
+
+<h3>Generasi 1</h3>
+
+<p>Dengan terjadinya Perang Dunia Kedua, negara-negara yang terlibat dalam perang tersebut berusaha mengembangkan komputer untuk mengeksploit potensi strategis yang dimiliki komputer. Hal ini meningkatkan pendanaan pengembangan komputer serta mempercepat kemajuan teknik komputer. Pada tahun 1941, Konrad Zuse, seorang insinyur Jerman membangun sebuah komputer, Z3, untuk mendesain pesawat terbang dan peluru kendali.</p>
+
+<p>Pihak sekutu juga membuat kemajuan lain dalam pengembangan kekuatan komputer. Tahun 1943, pihak Inggris menyelesaikan komputer pemecah kode rahasia yang dinamakan Colossus untuk memecahkan kode rahasia yang digunakan Jerman. Dampak pembuatan Colossus tidak terlalu memengaruhi perkembangan industri komputer dikarenakan dua alasan. Pertama, Colossus bukan merupakan komputer serbaguna(general-purpose computer), ia hanya didesain untuk memecahkan kode rahasia. Kedua, keberadaan mesin ini dijaga kerahasiaannya hingga satu dekade setelah perang berakhir.</p>
+
+<p>Usaha yang dilakukan oleh pihak Amerika pada saat itu menghasilkan suatu kemajuan lain. Howard H. Aiken (1900-1973), seorang insinyur Harvard yang bekerja dengan IBM, berhasil memproduksi kalkulator elektronik untuk US Navy. Kalkulator tersebut berukuran panjang setengah lapangan bola kaki dan memiliki rentang kabel sepanjang 500 mil. The Harvard-IBM Automatic Sequence Controlled Calculator, atau Mark I, merupakan komputer relai elektronik. Ia menggunakan sinyal elektromagnetik untuk menggerakkan komponen mekanik. Mesin tersebut beropreasi dengan lambat (ia membutuhkan 3-5 detik untuk setiap perhitungan) dan tidak fleksibel (urutan kalkulasi tidak dapat diubah). Kalkulator tersebut dapat melakukan perhitungan aritmatik dasar dan persamaan yang lebih kompleks.</p>
+
+<p>Perkembangan komputer lain pada masa kini adalah Electronic Numerical Integrator and Computer (ENIAC), yang dibuat oleh kerjasama antara pemerintah Amerika Serikat dan University of Pennsylvania. Terdiri dari 18.000 tabung vakum, 70.000 resistor, dan 5 juta titik solder, komputer tersebut merupakan mesin yang sangat besar yang mengonsumsi daya sebesar 160kW.</p>
+
+<p>Komputer ini dirancang oleh John Presper Eckert (1919-1995) dan John W. Mauchly (1907-1980), ENIAC merupakan komputer serbaguna (general purpose computer) yang bekerja 1000 kali lebih cepat dibandingkan Mark I.</p>
+
+<p>Pada pertengahan 1940-an, John von Neumann (1903-1957) bergabung dengan tim University of Pennsylvania dalam usaha membangun konsep desain komputer yang hingga 40 tahun mendatang masih dipakai dalam teknik komputer. Von Neumann mendesain Electronic Discrete Variable Automatic Computer (EDVAC) pada tahun 1945 dengan sebuah memori untuk menampung baik program ataupun data. Teknik ini memungkinkan komputer untuk berhenti pada suatu saat dan kemudian melanjutkan pekerjaannya kembali. Kunci utama arsitektur von Neumann adalah unit pemrosesan sentral (CPU), yang memungkinkan seluruh fungsi komputer untuk dikoordinasikan melalui satu sumber tunggal. Tahun 1951, UNIVAC I (Universal Automatic Computer I) yang dibuat oleh Remington Rand, menjadi komputer komersial pertama yang memanfaatkan model arsitektur Von Neumann tersebut.</p>
+
+<p>Baik Badan Sensus Amerika Serikat dan General Electric memiliki UNIVAC. Salah satu hasil mengesankan yang dicapai oleh UNIVAC dalah keberhasilannya dalam memprediksi kemenangan Dwilight D. Eisenhower dalam pemilihan presiden tahun 1952.</p>
+
+<p>Komputer Generasi pertama dikarakteristik dengan fakta bahwa instruksi operasi dibuat secara spesifik untuk suatu tugas tertentu. Setiap komputer memiliki program kode biner yang berbeda yang disebut &ldquo;bahasa mesin&rdquo; (machine language). Hal ini menyebabkan komputer sulit untuk diprogram dan membatasi kecepatannya. Ciri lain komputer generasi pertama adalah penggunaan tube vakum (yang membuat komputer pada masa tersebut berukuran sangat besar) dan silinder magnetik untuk penyimpanan data.</p>
+
+<blockquote><p>Komputer Besar Menggunakan Tabung</p></blockquote>
+
+<h3>Generasi 2</h3>
+
+<p>Pada tahun 1948, penemuan transistor sangat memengaruhi perkembangan komputer. Transistor menggantikan tube vakum di televisi, radio, dan komputer. Akibatnya, ukuran mesin-mesin elektrik berkurang drastis.</p>
+
+<p>Transistor mulai digunakan di dalam komputer mulai pada tahun 1956. Penemuan lain yang berupa pengembangan memori inti-magnetik membantu pengembangan komputer generasi kedua yang lebih kecil, lebih cepat, lebih dapat diandalkan, dan lebih hemat energi dibanding para pendahulunya. Mesin pertama yang memanfaatkan teknologi baru ini adalah superkomputer. IBM membuat superkomputer bernama Stretch, dan Sprery-Rand membuat komputer bernama LARC. Komputer-komputer ini, yang dikembangkan untuk laboratorium energi atom, dapat menangani sejumlah besar data, sebuah kemampuan yang sangat dibutuhkan oleh peneliti atom. Mesin tersebut sangat mahal dan cenderung terlalu kompleks untuk kebutuhan komputasi bisnis, sehingga membatasi kepopulerannya. Hanya ada dua LARC yang pernah dipasang dan digunakan: satu di Lawrence Radiation Labs di Livermore, California, dan yang lainnya di US Navy Research and Development Center di Washington D.C. Komputer generasi kedua menggantikan bahasa mesin dengan bahasa assembly. Bahasa assembly adalah bahasa yang menggunakan singkatan-singakatan untuk menggantikan kode biner.</p>
+
+<p>Pada awal 1960-an, mulai bermunculan komputer generasi kedua yang sukses di bidang bisnis, di universitas, dan di pemerintahan. Komputer-komputer generasi kedua ini merupakan komputer yang sepenuhnya menggunakan transistor. Mereka juga memiliki komponen-komponen yang dapat diasosiasikan dengan komputer pada saat ini: printer, penyimpanan dalam disket, memory, sistem operasi, dan program.</p>
+
+<p>Salah satu contoh penting komputer pada masa ini adalah 1401 yang diterima secara luas di kalangan industri. Pada tahun 1965, hampir seluruh bisnis-bisnis besar menggunakan komputer generasi kedua untuk memprosesinformasi keuangan.</p>
+
+<p>Program yang tersimpan di dalam komputer dan bahasa pemrograman yang ada di dalamnya memberikan fleksibilitas kepada komputer. Fleksibilitas ini meningkatkan kinerja dengan harga yang pantas bagi penggunaan bisnis. Dengan konsep ini, komputer dapat mencetak faktur pembelian konsumen dan kemudian menjalankan desain produk atau menghitung daftar gaji. Beberapa bahasa pemrograman mulai bermunculan pada saat itu. Bahasa pemrograman Common Business-Oriented Language (COBOL) dan Formula Translator (FORTRAN) mulai umum digunakan. Bahasa pemrograman ini menggantikan kode mesin yang rumit dengan kata-kata, kalimat, dan formula matematika yang lebih mudah dipahami oleh manusia. Hal ini memudahkan seseorang untuk memprogram dan mengatur komputer. Berbagai macam karier baru bermunculan (programmer, analis sistem, dan ahli sistem komputer). Industr piranti lunak juga mulai bermunculan dan berkembang pada masa komputer generasi kedua ini.</p>
+
+<blockquote><p>Komputer Cepat Panas Dengan Penggunaan Transistor</p></blockquote>
+
+<h3>Generasi 3</h3>
+
+<p>Walaupun transistor dalam banyak hal mengungguli tube vakum, namun transistor menghasilkan panas yang cukup besar, yang dapat berpotensi merusak bagian-bagian internal komputer. Batu kuarsa (quartz rock) menghilangkan masalah ini. Jack Kilby, seorang insinyur di Texas Instrument, mengembangkan sirkuit terintegrasi (IC : integrated circuit) pada tahun 1958. IC mengkombinasikan tiga komponen elektronik dalam sebuah piringan silikon kecil yang terbuat dari pasir kuarsa. Pada ilmuwan kemudian berhasil memasukkan lebih banyak komponen-komponen ke dalam suatu chip tunggal yang disebut semikonduktor. Hasilnya, komputer menjadi semakin kecil karena komponen-komponen dapat dipadatkan dalam chip. Kemajuan komputer generasi ketiga lainnya adalah penggunaan sistem operasi (operating system) yang memungkinkan mesin untuk menjalankan berbagai program yang berbeda secara serentak dengan sebuah program utama yang memonitor dan mengkoordinasi memori komputer.</p>
+
+<blockquote><p>Komputer Sudah Mempunyai Sistem Operasi Dengan Penggunaan IC</p></blockquote>
+
+<h3>Generasi 4</h3>
+
+<p>Setelah IC, tujuan pengembangan menjadi lebih jelas: mengecilkan ukuran sirkuit dan komponen-komponen elektrik. Large Scale Integration (LSI) dapat memuat ratusan komponen dalam sebuah chip. Pada tahun 1980-an, Very Large Scale Integration (VLSI) memuat ribuan komponen dalam sebuah chip tunggal.</p>
+
+<p>Ultra-Large Scale Integration (ULSI) meningkatkan jumlah tersebut menjadi jutaan. Kemampuan untuk memasang sedemikian banyak komponen dalam suatu keping yang berukurang setengah keping uang logam mendorong turunnya harga dan ukuran komputer. Hal tersebut juga meningkatkan daya kerja, efisiensi dan keterandalan komputer. Chip Intel 4004 yang dibuat pada tahun 1971membawa kemajuan pada IC dengan meletakkan seluruh komponen dari sebuah komputer (central processing unit, memori, dan kendali input/output) dalam sebuah chip yang sangat kecil. Sebelumnya, IC dibuat untuk mengerjakan suatu tugas tertentu yang spesifik. Sekarang, sebuah mikroprosesor dapat diproduksi dan kemudian diprogram untuk memenuhi seluruh kebutuhan yang diinginkan. Tidak lama kemudian, setiap piranti rumah tangga seperti microwave, oven, televisi, dan mobil dengan electronic fuel injection (EFI) dilengkapi dengan mikroprosesor.</p>
+
+<p>Perkembangan yang demikian memungkinkan orang-orang biasa untuk menggunakan komputer biasa. Komputer tidak lagi menjadi dominasi perusahaan-perusahaan besar atau lembaga pemerintah. Pada pertengahan tahun 1970-an, perakit komputer menawarkan produk komputer mereka ke masyarakat umum. Komputer-komputer ini, yang disebut minikomputer, dijual dengan paket piranti lunak yang mudah digunakan oleh kalangan awam. Piranti lunak yang paling populer pada saat itu adalah program word processing dan spreadsheet. Pada awal 1980-an, video game seperti Atari 2600 menarik perhatian konsumen pada komputer rumahan yang lebih canggih dan dapat diprogram.</p>
+
+<p>Pada tahun 1981, IBM memperkenalkan penggunaan Personal Computer (PC) untuk penggunaan di rumah, kantor, dan sekolah. Jumlah PC yang digunakan melonjak dari 2 juta unit pada tahun 1981 menjadi 5,5 juta unit pada tahun 1982. Sepuluh tahun kemudian, 65 juta PC digunakan. Komputer melanjutkan evolusinya menuju ukuran yang lebih kecil, dari komputer yang berada di atas meja (desktop computer) menjadi komputer yang dapat dimasukkan ke dalam tas (laptop), atau bahkan komputer yang dapat digenggam (palmtop).</p>
+
+<p>IBM PC bersaing dengan Apple Macintosh dalam memperebutkan pasar komputer. Apple Macintosh menjadi terkenal karena memopulerkan sistem grafis pada komputernya, sementara saingannya masih menggunakan komputer yang berbasis teks. Macintosh juga memopulerkan penggunaan piranti mouse.</p>
+
+<p>Pada masa sekarang, kita mengenal perjalanan IBM compatible dengan pemakaian CPU: IBM PC/486, Pentium, Pentium II, Pentium III, Pentium IV (Serial dari CPU buatan Intel). Juga kita kenal AMD k6, Athlon, dsb. Ini semua masuk dalam golongan komputer generasi keempat.</p>
+
+<p>Seiring dengan menjamurnya penggunaan komputer di tempat kerja, cara-cara baru untuk menggali potensial terus dikembangkan. Seiring dengan bertambah kuatnya suatu komputer kecil, komputer-komputer tersebut dapat dihubungkan secara bersamaan dalam suatu jaringan untuk saling berbagi memori, piranti lunak, informasi, dan juga untuk dapat saling berkomunikasi satu dengan yang lainnya. Jaringan komputer memungkinkan komputer tunggal untuk membentuk kerjasama elektronik untuk menyelesaikan suatu proses tugas. Dengan menggunakan perkabelan langsung (disebut juga Local Area Network atau LAN), atau [kabel telepon, jaringan ini dapat berkembang menjadi sangat besar.</p>
+
+<blockquote><p>Komputer Sudah Menggunakan Chip Sebagai Processor</p></blockquote>
+
+<h3>Generasi 5</h3>
+
+<p>Mendefinisikan komputer generasi kelima menjadi cukup sulit karena tahap ini masih sangat muda. Contoh imajinatif komputer generasi kelima adalah komputer fiksi HAL9000 dari novel karya Arthur C. Clarke berjudul 2001: Space Odyssey. HAL menampilkan seluruh fungsi yang diinginkan dari sebuah komputer generasi kelima. Dengan kecerdasan buatan (artificial intelligence atau AI), HAL dapat cukup memiliki nalar untuk melakukan percapakan dengan manusia, menggunakan masukan visual, dan belajar dari pengalamannya sendiri.</p>
+
+<p>Walaupun mungkin realisasi HAL9000 masih jauh dari kenyataan, banyak fungsi-fungsi yang dimilikinya sudah terwujud. Beberapa komputer dapat menerima instruksi secara lisan dan mampu meniru nalar manusia. Kemampuan untuk menterjemahkan bahasa asing juga menjadi mungkin. Fasilitas ini tampak sederhana. Namun fasilitas tersebut menjadi jauh lebih rumit dari yang diduga ketika programmer menyadari bahwa pengertian manusia sangat bergantung pada konteks dan pengertian ketimbang sekedar menterjemahkan kata-kata secara langsung.</p>
+
+<p>Banyak kemajuan di bidang desain komputer dan teknologi yang semakin memungkinkan pembuatan komputer generasi kelima. Dua kemajuan rekayasa yang terutama adalah kemampuan pemrosesan paralel, yang akan menggantikan model non Neumann. Model non Neumann akan digantikan dengan sistem yang mampu mengkoordinasikan banyak CPU untuk bekerja secara serempak. Kemajuan lain adalah teknologi superkonduktor yang memungkinkan aliran elektrik tanpa ada hambatan apapun, yang nantinya dapat mempercepat kecepatan informasi.</p>
+
+<p>Jepang adalah negara yang terkenal dalam sosialisasi jargon dan proyek komputer generasi kelima. Lembaga ICOT (Institute for new Computer Technology) juga dibentuk untuk merealisasikannya. Banyak kabar yang menyatakan bahwa proyek ini telah gagal, namun beberapa informasi lain bahwa keberhasilan proyek komputer generasi kelima ini akan membawa perubahan baru paradigma komputerisasi di dunia.</p>
+
+<p align=center>
+Sumber : Wikipedia
+</p>
+
+
+
+]]></content>
+  </entry>
+  
+</feed>

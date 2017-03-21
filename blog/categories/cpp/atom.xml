@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: cpp | Ivans Ardiansyah]]></title>
+  <link href="http://ivansa.github.io/blog/categories/cpp/atom.xml" rel="self"/>
+  <link href="http://ivansa.github.io/"/>
+  <updated>2017-03-21T16:29:35+07:00</updated>
+  <id>http://ivansa.github.io/</id>
+  <author>
+    <name><![CDATA[Ivans Ardiansyah]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[CPP : Aplikasi Looping - Kondisi (UTS)]]></title>
+    <link href="http://ivansa.github.io/cpp/program-looping-swicth-ganjil-genap/"/>
+    <updated>2015-05-20T07:10:00+07:00</updated>
+    <id>http://ivansa.github.io/cpp/program-looping-swicth-ganjil-genap</id>
+    <content type="html"><![CDATA[<p>Berikut merupakan contoh program perulangan, kondisi ganjil &ndash; genap, dan menu makanan :</p>
+
+<!-- more -->
+
+
+<p><b>1. Program Looping :</b></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (nomor1.cpp)</span> <a href='/downloads/code/cpp/uts_program_2015/nomor1.cpp'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class='code'><pre><code class='cpp'><span class='line'><span class="cp">#include&lt;iostream.h&gt;</span>
+</span><span class='line'><span class="cp">#include&lt;conio.h&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="n">main</span><span class="p">(){</span>
+</span><span class='line'>	<span class="kt">int</span> <span class="n">angka</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Masukkan angka : &quot;</span><span class="p">;</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">angka</span><span class="p">;</span>
+</span><span class='line'>   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="n">angka</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span><span class='line'>		<span class="k">for</span><span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="n">j</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
+</span><span class='line'>      	<span class="k">if</span><span class="p">(</span><span class="n">j</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>      		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">j</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;B &quot;</span><span class="p">;</span>
+</span><span class='line'>      	<span class="k">else</span>
+</span><span class='line'>         	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">j</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;A &quot;</span><span class="p">;</span>               <span class="err"></span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>                              <span class="err"></span>
+</span><span class='line'>   <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="n">getch</span><span class="p">();</span>                          <span class="err"></span>
+</span><span class='line'>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><b>2. Program Ganjil &ndash; Genap :</b></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (nomor2.cpp)</span> <a href='/downloads/code/cpp/uts_program_2015/nomor2.cpp'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class='code'><pre><code class='cpp'><span class='line'><span class="cp">#include&lt;iostream.h&gt;</span>
+</span><span class='line'><span class="cp">#include&lt;conio.h&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="n">main</span><span class="p">(){</span>
+</span><span class='line'>	<span class="kt">int</span> <span class="n">angka</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Masukkan angka : &quot;</span><span class="p">;</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">angka</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="k">if</span><span class="p">(</span><span class="n">angka</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+</span><span class='line'>   	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Angka &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">angka</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; habis dibagi 2&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Jadi angka adalah angka genap&quot;</span><span class="p">;</span>
+</span><span class='line'>   <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span><span class='line'>      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Angka &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">angka</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; tidak habis dibagi 2&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Jadi angka adalah angka ganjil&quot;</span><span class="p">;</span>
+</span><span class='line'>   <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="n">getch</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><b>3. Program Menu Makanan :</b></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (nomor3.cpp)</span> <a href='/downloads/code/cpp/uts_program_2015/nomor3.cpp'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class='code'><pre><code class='cpp'><span class='line'><span class="cp">#include &lt;iostream.h&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;conio.h&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;ctype.h&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="n">main</span><span class="p">(){</span>
+</span><span class='line'>	<span class="kt">char</span> <span class="n">pil</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Menu Makan Siang&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;--------------------------------&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;A. Pizza         C. Nasi Goreng&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;B. Siomay        D. Nasi Gila&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Masukkan Kode Menu Makan Siang Anda [A . . D] : &quot;</span><span class="p">;</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">pil</span><span class="p">;</span>
+</span><span class='line'>   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="k">switch</span><span class="p">(</span><span class="n">toupper</span><span class="p">(</span><span class="n">pil</span><span class="p">)){</span>
+</span><span class='line'>	  <span class="k">case</span> <span class="sc">&#39;A&#39;</span><span class="o">:</span>
+</span><span class='line'>      	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Pizza&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">case</span> <span class="sc">&#39;B&#39;</span><span class="o">:</span>
+</span><span class='line'>      	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Siomay&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">case</span> <span class="sc">&#39;C&#39;</span><span class="o">:</span>
+</span><span class='line'>      	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Nasi Goreng&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">case</span> <span class="sc">&#39;D&#39;</span><span class="o">:</span>
+</span><span class='line'>      	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Nasi Gila&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">default</span><span class="o">:</span>
+</span><span class='line'>      	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Pilihan Anda Salah&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>   <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="n">getch</span><span class="p">();</span>
+</span><span class='line'>                             <span class="err"></span>
+</span><span class='line'>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CPP : Looping Segitiga]]></title>
+    <link href="http://ivansa.github.io/cpp/cpp-looping-segitiga-abc/"/>
+    <updated>2015-04-17T07:10:00+07:00</updated>
+    <id>http://ivansa.github.io/cpp/cpp-looping-segitiga-abc</id>
+    <content type="html"><![CDATA[<p>Berikut merupakan contoh program perulangan menggunakan bahasa cpp, dengan output menggunakan karakter/huruf :</p>
+
+<!-- more -->
+
+
+<p><b>Contoh Program :</b></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (looping.cpp)</span> <a href='/downloads/code/cpp/looping_segitiga_abc/looping.cpp'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class='code'><pre><code class='cpp'><span class='line'><span class="cp">#include&lt;conio.h&gt;</span>
+</span><span class='line'><span class="cp">#include&lt;iostream.h&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="n">main</span><span class="p">(){</span>
+</span><span class='line'>	<span class="kt">int</span> <span class="n">nilai</span><span class="p">;</span>
+</span><span class='line'>   <span class="kt">char</span> <span class="n">huruf</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Masukan angka : &quot;</span><span class="p">;</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">nilai</span><span class="p">;</span>
+</span><span class='line'>   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="p">((</span><span class="n">nilai</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="n">i</span> <span class="o">++</span> <span class="p">){</span>
+</span><span class='line'>      <span class="n">huruf</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">;</span>
+</span><span class='line'>   	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
+</span><span class='line'>      	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">huruf</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+</span><span class='line'>         <span class="n">huruf</span> <span class="o">++</span><span class="p">;</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>   	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>   <span class="p">}</span>
+</span><span class='line'>   <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="p">((</span><span class="n">nilai</span><span class="o">/</span><span class="mi">2</span><span class="p">));</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">;</span><span class="n">i</span> <span class="o">--</span> <span class="p">){</span>
+</span><span class='line'>   	<span class="n">huruf</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="p">;</span>
+</span><span class='line'>   	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
+</span><span class='line'>      	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">huruf</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+</span><span class='line'>         <span class="n">huruf</span> <span class="o">++</span><span class="p">;</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>   	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span><span class='line'>   <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="n">getch</span><span class="p">();</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Maka output yang dihasilkan adalah :</p>
+
+<p><img src="/images/blog/cpp/looping_segitiga_abc/output.png" style="border:1px solid grey;margin-top:0.8em"></p>
+]]></content>
+  </entry>
+  
+</feed>

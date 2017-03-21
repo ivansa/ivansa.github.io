@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: linux | Ivans Ardiansyah]]></title>
+  <link href="http://ivansa.github.io/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://ivansa.github.io/"/>
+  <updated>2017-03-21T16:29:35+07:00</updated>
+  <id>http://ivansa.github.io/</id>
+  <author>
+    <name><![CDATA[Ivans Ardiansyah]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Instalasi Octopress Di Linux]]></title>
+    <link href="http://ivansa.github.io/octopress/linux/instalasi-octopress/"/>
+    <updated>2014-05-06T08:41:00+07:00</updated>
+    <id>http://ivansa.github.io/octopress/linux/instalasi-octopress</id>
+    <content type="html"><![CDATA[<p>Octopress adalah framework blogger static yang di buat oleh Brandon Mathis, Octropress ini berbasis jekyll.
+Octopress ini juga dapat kita deploy di github. <br />Berikut adalah cara menginstall octopress yang akan di deploy di github :</p>
+
+<!--more-->
+
+
+
+
+<p><b>1. Download Atau Clone Octopress</b><br />
+<ul>
+    <li><code>$ git clone git://github.com/imathis/octopress.git yourgithubusername.github.io</code></li>
+</ul>
+</p>
+
+
+
+
+<p><b>2. Lalu masuk kedalam folder clone tadi</b><br />
+<ul>
+    <li><code>$ cd yourgithubusername.github.io</code></li>
+</ul>
+</p>
+
+
+
+
+<p><b>3. Jika belum install ruby (Kalau saya 1.9.1) <span style="color:red">(Optional)</span></b><br />
+<ul>
+    <li><code>$ sudo apt-get install ruby1.9.1-full</code></li>
+    <li><code>$ sudo update-alternatives --config ruby</code></li>
+</ul>
+</p>
+
+
+
+
+<p><b>4. Install bundler</b>
+<ul>
+    <li><code>$ sudo gem install bundler</code></li>
+</ul>
+</p>
+
+
+
+
+<p><b>5. Jika redcloth belum ke install <span style="color:red">(Optional)</span></b>
+<ul>
+    <li><code>$ sudo gem install RedCloth -v '4.2.9'</code></li>
+</ul>
+</p>
+
+
+
+
+<p><b>6. Install bundle</b>
+<ul>
+    <li><code>$ bundle install</code></li>
+</ul>
+</p>
+
+
+
+
+<p><b>7. Install Theme (tema)</b>
+<ul>
+    <li><code>$ rake install</code></li>
+</ul>
+</p>
+
+
+
+
+<p><b>8. Generate github pages</b>
+<ul>
+    <li><code>$ rake setup_github_pages</code></li>
+    <li>Kemudian masukan alamat repo github anda contoh : <br /><a>https://github.com/your_username/your_username.github.io</a> atau <a>git@github.com:your_username/your_username.github.io.git</a></li>
+</ul>
+</p>
+
+
+
+
+<p><b>9. Generate file html</b>
+<ul>
+    <li><code>$ rake generate</code></li>
+</ul>
+</p>
+
+
+
+
+<p><b>10. Membuat folder deploy</b>
+<ul>
+    <li><code>$ mkdir _deploy</code></li>
+    <li><code>$ rake deploy</code></li>
+</ul>
+</p>
+
+
+
+
+<p><b>11. Jika gagal push master/deploy <span style="color:red">(Optional)</span></b>
+<ul>
+    <li><code>$ cd _deploy</code></li>
+    <li><code>$ git push -f origin master</code></li>
+</ul>
+</p>
+
+
+
+
+<p><b>12. Push source ke branch source</b>
+<ul>
+    <li>Kembali ke folder yourgithubusername.github.io</li>
+    <li><code>$ git add .</code></li>
+    <li><code>$ git commit -m 'Initial Octopress source commit'</code></li>
+    <li><code>$ git push origin source</code></li>
+</ul>
+</p>
+
+
+<blockquote><p>Optional digunakan jika terjadi error</p></blockquote>
+
+<p>source : <a href="http://google.com">http://google.com</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Persiapan Software Setelah Install Linux]]></title>
+    <link href="http://ivansa.github.io/linux/instalasi-software-untuk-pemprograman-dilinux/"/>
+    <updated>2014-05-02T08:41:00+07:00</updated>
+    <id>http://ivansa.github.io/linux/instalasi-software-untuk-pemprograman-dilinux</id>
+    <content type="html"><![CDATA[<p>Setelah kita selesai menginstall Linux,
+kita akan melanjutkan untuk instalasi software yang mendukung pemprograman,
+untuk itu agar lebih mudah dalam penginstalan maka komputer/laptop harus di koneksikan ke internet.</p>
+
+<!--more-->
+
+
+<p><b>1. Pertama-tama kita melakukan update dan upgrade</b></p>
+
+<p><code>$ sudo apt-get update</code> dan <code>$ sudo apt-get upgrade</code></p>
+
+<p><b>2. Install Mysql, Apache2, PHP5,dan Phpmyadmin</b></p>
+
+<p><code>$ sudo apt-get install mysql-server mysql-client apache2 php5 phpmyadmin</code></p>
+
+<p><b>3. Install Jdk (Java) dan Netbeans</b></p>
+
+<p>Add Repository Java : <br />
+<code>$ sudo add-apt-repository ppa:webupd8team/java</code><br /><br />
+Update Repository : <br />
+<code>$ sudo apt-get update</code><br /><br /></p>
+
+<p>Install Java 7 : <br />
+<code>$ sudo apt-get install oracle-java7-installer</code><br /><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Atau</i> <br /><br />
+Install Java 8 : <br />
+<code>$ sudo apt-get install oracle-java8-installer</code><br /><br /></p>
+
+<p>Download netbeans disini :<br />
+<a href="https://netbeans.org/downloads/"><a href="https://netbeans.org/downloads/">https://netbeans.org/downloads/</a></a><br /></p>
+
+<p>Rename file netbeans yang di download jadi &ldquo;netbeans.sh&rdquo;<br /><br />
+masuk ke folder tempat file netbeans.sh<br /><br />
+Lalu jalankan dengan <code>$ ./netbeans.sh</code><br /><br /></p>
+
+<blockquote><p>Kalo saya waktu install netbeansnya, saya install di folder /opt/netbeans</p></blockquote>
+
+<p>Jadi harus di path dulu, agar bisa di panggil di terminal :
+<code>sudo nano /etc/profile</code> <br /></p>
+
+<p>Masukan path berikut :</p>
+
+<blockquote><p>export PATH=$PATH:/opt/netbeans/bin</p></blockquote>
+
+<p>Reboot</p>
+
+<p><b>4. Install Maven</b><br />
+<code>sudo apt-get install maven</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Install SDK Pada Ubuntu 14.04 64bit]]></title>
+    <link href="http://ivansa.github.io/android/linux/install-sdk-ubuntu-64bit/"/>
+    <updated>2014-04-30T09:41:00+07:00</updated>
+    <id>http://ivansa.github.io/android/linux/install-sdk-ubuntu-64bit</id>
+    <content type="html"><![CDATA[<p>Kali ini saya akan membahas cara install SDK pada ubuntu 64 bit, pada awalnya saya juga error waktu menjalankan adb (&ldquo;adb not found&rdquo;).
+Ternyata error tersebut karna adb tidak dapat dijalankan di 64 bit.</p>
+
+<!--more-->
+
+
+
+
+<p>
+    <b>1. Pertama Download SDK : </b><br /> 
+    <a href="http://developer.android.com/sdk/index.html">http://developer.android.com/sdk/index.html</a>
+</p>
+
+
+<p>
+    <b>2. Kedua Ekstrak SDK : </b><br /> Kalo saya install di folder /opt/
+    <br />Jangan lupa set permision <code>sudo chmod -R 777 /opt/sdk</code> 
+</p>
+
+
+<p>
+    <b>3. Ketiga Masukan PATH</b><br /> <code>sudo nano /etc/profile</code> 
+</p>
+
+
+<blockquote><p>export PATH=$PATH:/opt/sdk/platform-tools <br />
+export PATH=$PATH:/opt/sdk/tools</p></blockquote>
+
+<p>
+    <b>4. Install Library 32 bit, agar dapat di jalankan</b>
+</p>
+
+
+<p><code>sudo apt-get install ia32-libs</code></p>
+
+<p>Atau kalau yang atas tidak bisa, bisa pakai yang di bawah : <br /></p>
+
+<p><code>sudo apt-get install lib32z1</code> dan
+<code>sudo apt-get install lib32ncurses5 libstdc++6:i386</code></p>
+
+<p>
+    <b>5. Reboot dulu, Selesai ^-^</b>
+</p>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Disable Pesan Error Saat Penggunaan Rake]]></title>
+    <link href="http://ivansa.github.io/linux/disable-pesan-error-saat-rake/"/>
+    <updated>2014-04-30T08:41:00+07:00</updated>
+    <id>http://ivansa.github.io/linux/disable-pesan-error-saat-rake</id>
+    <content type="html"><![CDATA[<p>Pertama kita harus mencari path dimana ruby kita di install,
+gunakan perintah berikut : <br />
+<code>$ ruby -r rubygems -e &ldquo;p Gem.path&rdquo;</code></p>
+
+<!--more-->
+
+
+<p>Kemudian arahkan (&ldquo;cd&rdquo;) ke folder tempat ruby anda di install, lalu cari tempat library bundler.<br />
+Setelah masuk ke folder tempat library bundler, buka file <code>runtime.rb</code> dengan text editor. <br /></p>
+
+<p>Kalau saya file runtime.rb ada di folder :</p>
+
+<blockquote><p>/var/lib/gems/1.9.1/gems/bundler-1.6.2/lib/bundler</p></blockquote>
+
+<p>Masukan <code>$VERBOSE = nil</code>, seperti pada contoh di line kedua berikut :
+```
+require &ldquo;digest/sha1&rdquo;
+$VERBOSE = nil
+module Bundler <br/>
+class Runtime &lt; Environment</p>
+
+<pre><code>include SharedHelpers
+
+def setup(*groups)
+  # Has to happen first
+  clean_load_path
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Adb No Permissions On Ubuntu]]></title>
+    <link href="http://ivansa.github.io/android/linux/fix-adb-no-permissions/"/>
+    <updated>2013-11-28T14:51:00+07:00</updated>
+    <id>http://ivansa.github.io/android/linux/fix-adb-no-permissions</id>
+    <content type="html"><![CDATA[<p>This blog post explains how to fix the no permissions error the Android Debugger displays when running the adb devices command Linux. The solutions presented here have been tested and found working on Ubuntu Lucid, but they should also work on other Ubuntu and Linux versions as well.</p>
+
+<!-- more -->
+
+
+<p>This official help center page has many working and non-working answers to the problem, and many comments. The root cause of the problem is that the current user doesn&rsquo;t have sufficient permissions to access the USB device file created when the phone was connected in USB debug mode.</p>
+
+<p>Killing all running adb server instances with sudo killall adb, disconnecting the phone, reconnecting the phone, and then running sudo adb devices instead (so adb gets run as root) fixes the problem.</p>
+
+<p>Alternatively, it is possible to implement a long-term fix which doesn&rsquo;t require sudo, thus it works with e.g. IntelliJ IDE integration:</p>
+
+<ul>
+<li><p>Create a file named /tmp/android.rules with the following contents (hex vendor numbers were taken from the vendor list page):
+<code>
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0bb4", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0e79", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0502", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0b05", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="413c", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0489", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="091e", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="18d1", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0bb4", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="12d1", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="24e3", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="2116", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0482", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="17ef", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1004", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="22b8", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0409", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="2080", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0955", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="2257", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="10a9", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1d4d", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0471", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="04da", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="05c6", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1f53", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="04e8", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="04dd", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0fce", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0930", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="19d2", MODE="0666"
+</code></p></li>
+<li><p>Run the following commands (without the leading $):
+<code>
+$ sudo cp /tmp/android.rules /etc/udev/rules.d/51-android.rules
+$ sudo chmod 644   /etc/udev/rules.d/51-android.rules
+$ sudo chown root /etc/udev/rules.d/51-android.rules
+$ sudo service udev restart
+$ sudo killall adb
+</code></p></li>
+<li><p>Disconnect the USB cable between the phone and the computer.</p></li>
+<li>Reconnect the phone.</li>
+<li>Run adb devices to confirm that now it has permission to access the phone.</li>
+</ul>
+
+
+<blockquote><p>Please note that it&rsquo;s possible to use , USER=&ldquo;$LOGINNAME&rdquo; instead of , MODE=&ldquo;0666&rdquo; in the .rules file, substituting $LOGINNAME for your login name, i.e. what id -nu prints.</p></blockquote>
+
+<h5>Sumber : <a href="ptspts.blogspot.co.il/2011/10/how-to-fix-adb-no-permissions-error-on.html">ptspts.blogspot.co.il/2011/10/how-to-fix-adb-no-permissions-error-on.html</a></h5>
+]]></content>
+  </entry>
+  
+</feed>

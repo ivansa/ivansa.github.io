@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: android | Ivans Ardiansyah]]></title>
+  <link href="http://ivansa.github.io/blog/categories/android/atom.xml" rel="self"/>
+  <link href="http://ivansa.github.io/"/>
+  <updated>2017-03-21T16:29:35+07:00</updated>
+  <id>http://ivansa.github.io/</id>
+  <author>
+    <name><![CDATA[Ivans Ardiansyah]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Android : NFC Read Tag]]></title>
+    <link href="http://ivansa.github.io/android/nfc-read-tag/"/>
+    <updated>2014-12-19T14:41:00+07:00</updated>
+    <id>http://ivansa.github.io/android/nfc-read-tag</id>
+    <content type="html"><![CDATA[<p>Pada kesempatan kali ini saya akan memberikan contoh sederhana tentang aplikasi reader NFC Tag,
+saya membuat aplikasi ini karena pekerjaan kantor dan sekaligus pengalaman pertama mengenal NFC pada android.</p>
+
+<!--more-->
+
+
+<p></p>
+
+<p>Near Field Communication atau biasa di singkat dengan NFC adalah sebuah teknologi terbaru dalam perpindahan data berbasis teknologi RFID (Radio Frequency Identification) yang menggunakan konektivitas tanpa kabel sehingga sangat memungkinkan komunikasi data antar perangkat elektronik dalam jarak dekat menggunakan perantara induksi medan magnet yang terdapat dalam perangkat elektronik tersebut.</p>
+
+<p>Selama saya belajar membuat aplikasi NFC untuk lebih mudah mengingatnya maka saya putuskan untuk menulisnya di blog.</p>
+
+<p><b>Apa saja yang dibutuhkan untuk pembuatan write tag NFC ini ?</b></p>
+
+<ol>
+    <li>Smartphone / android yang terdapat chip NFC (Nexus S, Galaxy Nexus, Samsung Galaxy SIII ect)</li>
+    <li>NFC Tag untuk di tuliskan tagnya (bisa berupa kartu)</li>
+    <li>NFC Reader, untuk memastikan apakah sudah di tulis tagnya atau gagal</li>
+</ol>
+
+
+<p><b>Bagaimana Proses aplikasi ini akan berjalan ?</b></p>
+
+<ol>
+    <li>Menjalankan Aplikasi secara manual</li>
+    <li>Tempelkan NFC Tag ke smartphone</li>
+    <li>Muncul activity pada saat NFC Tag terbaca</li>
+    <li>Menuliskan data yang ada di NFC Tag ke android</li>
+</ol>
+
+
+<p>Setelah alat yang akan digunakan sudah lengkap dan kita sudah mengetahui bagaimana proses aplikasi ini akan
+berjalan, berikut ini contoh aplikasinya.</p>
+
+<p><a href="https://github.com/ivansa/nfc-reader">Android : NFC Read Tag</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Install SDK Pada Ubuntu 14.04 64bit]]></title>
+    <link href="http://ivansa.github.io/android/linux/install-sdk-ubuntu-64bit/"/>
+    <updated>2014-04-30T09:41:00+07:00</updated>
+    <id>http://ivansa.github.io/android/linux/install-sdk-ubuntu-64bit</id>
+    <content type="html"><![CDATA[<p>Kali ini saya akan membahas cara install SDK pada ubuntu 64 bit, pada awalnya saya juga error waktu menjalankan adb (&ldquo;adb not found&rdquo;).
+Ternyata error tersebut karna adb tidak dapat dijalankan di 64 bit.</p>
+
+<!--more-->
+
+
+
+
+<p>
+    <b>1. Pertama Download SDK : </b><br /> 
+    <a href="http://developer.android.com/sdk/index.html">http://developer.android.com/sdk/index.html</a>
+</p>
+
+
+<p>
+    <b>2. Kedua Ekstrak SDK : </b><br /> Kalo saya install di folder /opt/
+    <br />Jangan lupa set permision <code>sudo chmod -R 777 /opt/sdk</code> 
+</p>
+
+
+<p>
+    <b>3. Ketiga Masukan PATH</b><br /> <code>sudo nano /etc/profile</code> 
+</p>
+
+
+<blockquote><p>export PATH=$PATH:/opt/sdk/platform-tools <br />
+export PATH=$PATH:/opt/sdk/tools</p></blockquote>
+
+<p>
+    <b>4. Install Library 32 bit, agar dapat di jalankan</b>
+</p>
+
+
+<p><code>sudo apt-get install ia32-libs</code></p>
+
+<p>Atau kalau yang atas tidak bisa, bisa pakai yang di bawah : <br /></p>
+
+<p><code>sudo apt-get install lib32z1</code> dan
+<code>sudo apt-get install lib32ncurses5 libstdc++6:i386</code></p>
+
+<p>
+    <b>5. Reboot dulu, Selesai ^-^</b>
+</p>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Android With Webserver PHP]]></title>
+    <link href="http://ivansa.github.io/android/php/android-with-webserver-php/"/>
+    <updated>2014-02-14T08:41:00+07:00</updated>
+    <id>http://ivansa.github.io/android/php/android-with-webserver-php</id>
+    <content type="html"><![CDATA[<p>Membuat aplikasi android dengan webserver menggunakan php.</p>
+
+<!--more-->
+
+
+<h4>1 Buat Database test_android.</h4>
+
+<h4>2 Buat Table users(username, fullname).</h4>
+
+<h4>3 Buat file php :</h4>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (input_data.php)</span> <a href='/downloads/code/android/webserver_php/input_data.php'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
+</span><span class='line'><span class="c1">//http://localhost:8080/sample1/webservice2.php?json={%22UserName%22:1,%22FullName%22:2}</span>
+</span><span class='line'><span class="c1">//$json=$_GET [&#39;json&#39;];</span>
+</span><span class='line'><span class="nv">$json</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">&#39;php://input&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="nv">$obj</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$json</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//echo $json;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//Save</span>
+</span><span class='line'><span class="nv">$con</span> <span class="o">=</span> <span class="nb">mysql_connect</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span><span class="s1">&#39;root&#39;</span><span class="p">,</span><span class="s1">&#39;admin&#39;</span><span class="p">)</span> <span class="k">or</span> <span class="k">die</span><span class="p">(</span><span class="s1">&#39;Cannot connect to the DB&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="nb">mysql_select_db</span><span class="p">(</span><span class="s1">&#39;test_android&#39;</span><span class="p">,</span><span class="nv">$con</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="cm">/* grab the posts from the db */</span>
+</span><span class='line'>  <span class="c1">//$query = &quot;SELECT post_title, guid FROM wp_posts WHERE post_author = $user_id AND post_status = &#39;publish&#39; ORDER BY ID DESC LIMIT $number_of_posts&quot;;</span>
+</span><span class='line'><span class="nb">mysql_query</span><span class="p">(</span><span class="s2">&quot;INSERT INTO users (username, fullname)</span>
+</span><span class='line'><span class="s2">VALUES (&#39;&quot;</span><span class="o">.</span><span class="nv">$obj</span><span class="o">-&gt;</span><span class="p">{</span><span class="s1">&#39;username&#39;</span><span class="p">}</span><span class="o">.</span><span class="s2">&quot;&#39;, &#39;&quot;</span><span class="o">.</span><span class="nv">$obj</span><span class="o">-&gt;</span><span class="p">{</span><span class="s1">&#39;fullname&#39;</span><span class="p">}</span><span class="o">.</span><span class="s2">&quot;&#39;)&quot;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">mysql_close</span><span class="p">(</span><span class="nv">$con</span><span class="p">);</span>
+</span><span class='line'><span class="c1">//</span>
+</span><span class='line'>  <span class="c1">//$posts = array($json);</span>
+</span><span class='line'>  <span class="nv">$posts</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span><span class='line'>    <span class="nx">header</span><span class="p">(</span><span class="s1">&#39;Content-type: application/json&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;posts&#39;</span><span class="o">=&gt;</span><span class="nv">$posts</span><span class="p">));</span>
+</span><span class='line'>
+</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (select_table.php)</span> <a href='/downloads/code/android/webserver_php/select_table.php'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
+</span><span class='line'><span class="cm">/* require the user as the parameter */</span>
+</span><span class='line'><span class="c1">//http://localhost:8080/sample1/webservice1.php?user=1</span>
+</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nb">intval</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">]))</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>  <span class="cm">/* soak in the passed variable or set our own */</span>
+</span><span class='line'>  <span class="nv">$number_of_posts</span> <span class="o">=</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">])</span> <span class="o">?</span> <span class="nb">intval</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">])</span> <span class="o">:</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">//10 is the default</span>
+</span><span class='line'>  <span class="nv">$format</span> <span class="o">=</span> <span class="nx">strtolower</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;format&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="s1">&#39;json&#39;</span> <span class="o">?</span> <span class="s1">&#39;json&#39;</span> <span class="o">:</span> <span class="s1">&#39;xml&#39;</span><span class="p">;</span> <span class="c1">//xml is the default</span>
+</span><span class='line'>  <span class="c1">//$user_id = intval($_GET[&#39;user&#39;]); //no default</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="cm">/* connect to the db */</span>
+</span><span class='line'>  <span class="nv">$link</span> <span class="o">=</span> <span class="nb">mysql_connect</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span><span class="s1">&#39;root&#39;</span><span class="p">,</span><span class="s1">&#39;admin&#39;</span><span class="p">)</span> <span class="k">or</span> <span class="k">die</span><span class="p">(</span><span class="s1">&#39;Cannot connect to the DB&#39;</span><span class="p">);</span>
+</span><span class='line'>  <span class="nb">mysql_select_db</span><span class="p">(</span><span class="s1">&#39;test_android&#39;</span><span class="p">,</span><span class="nv">$link</span><span class="p">)</span> <span class="k">or</span> <span class="k">die</span><span class="p">(</span><span class="s1">&#39;Cannot select the DB&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="cm">/* grab the posts from the db */</span>
+</span><span class='line'>  <span class="c1">//$query = &quot;SELECT post_title, guid FROM wp_posts WHERE post_author = $user_id AND post_status = &#39;publish&#39; ORDER BY ID DESC LIMIT $number_of_posts&quot;;</span>
+</span><span class='line'>  <span class="nv">$query</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM users;&quot;</span><span class="p">;</span>
+</span><span class='line'>  <span class="nv">$result</span> <span class="o">=</span> <span class="nb">mysql_query</span><span class="p">(</span><span class="nv">$query</span><span class="p">,</span><span class="nv">$link</span><span class="p">)</span> <span class="k">or</span> <span class="k">die</span><span class="p">(</span><span class="s1">&#39;Errant query:  &#39;</span><span class="o">.</span><span class="nv">$query</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="cm">/* create one master array of the records */</span>
+</span><span class='line'>  <span class="nv">$posts</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="nb">mysql_num_rows</span><span class="p">(</span><span class="nv">$result</span><span class="p">))</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">while</span><span class="p">(</span><span class="nv">$post</span> <span class="o">=</span> <span class="nb">mysql_fetch_assoc</span><span class="p">(</span><span class="nv">$result</span><span class="p">))</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nv">$posts</span><span class="p">[]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="o">=&gt;</span><span class="nv">$post</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="cm">/* output in necessary format */</span>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="nv">$format</span> <span class="o">==</span> <span class="s1">&#39;json&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">header</span><span class="p">(</span><span class="s1">&#39;Content-type: application/json&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;posts&#39;</span><span class="o">=&gt;</span><span class="nv">$posts</span><span class="p">));</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">header</span><span class="p">(</span><span class="s1">&#39;Content-type: text/xml&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">echo</span> <span class="s1">&#39;&lt;posts&gt;&#39;</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">foreach</span><span class="p">(</span><span class="nv">$posts</span> <span class="k">as</span> <span class="nv">$index</span> <span class="o">=&gt;</span> <span class="nv">$post</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="nb">is_array</span><span class="p">(</span><span class="nv">$post</span><span class="p">))</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">foreach</span><span class="p">(</span><span class="nv">$post</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>          <span class="k">echo</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">,</span><span class="nv">$key</span><span class="p">,</span><span class="s1">&#39;&gt;&#39;</span><span class="p">;</span>
+</span><span class='line'>          <span class="k">if</span><span class="p">(</span><span class="nb">is_array</span><span class="p">(</span><span class="nv">$value</span><span class="p">))</span> <span class="p">{</span>
+</span><span class='line'>            <span class="k">foreach</span><span class="p">(</span><span class="nv">$value</span> <span class="k">as</span> <span class="nv">$tag</span> <span class="o">=&gt;</span> <span class="nv">$val</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>              <span class="k">echo</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">,</span><span class="nv">$tag</span><span class="p">,</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span><span class="nb">htmlentities</span><span class="p">(</span><span class="nv">$val</span><span class="p">),</span><span class="s1">&#39;&lt;/&#39;</span><span class="p">,</span><span class="nv">$tag</span><span class="p">,</span><span class="s1">&#39;&gt;&#39;</span><span class="p">;</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>          <span class="p">}</span>
+</span><span class='line'>          <span class="k">echo</span> <span class="s1">&#39;&lt;/&#39;</span><span class="p">,</span><span class="nv">$key</span><span class="p">,</span><span class="s1">&#39;&gt;&#39;</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="k">echo</span> <span class="s1">&#39;&lt;/posts&gt;&#39;</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="cm">/* disconnect from the db */</span>
+</span><span class='line'>  <span class="o">@</span><span class="nb">mysql_close</span><span class="p">(</span><span class="nv">$link</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'> <span class="cp">?&gt;</span><span class="x"> </span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4>4 Buat android project.</h4>
+
+<h4>5 MainActivity.java.</h4>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (MainActivity.java)</span> <a href='/downloads/code/android/webserver_php/MainActivity.java'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class='code'><pre><code class='java'><span class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">ivans</span><span class="o">.</span><span class="na">php</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">java.io.InputStream</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.http.HttpEntity</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.http.HttpResponse</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.http.client.ClientProtocolException</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.http.client.HttpClient</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.http.client.ResponseHandler</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.http.client.entity.UrlEncodedFormEntity</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.http.client.methods.HttpPost</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.http.entity.ByteArrayEntity</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.http.impl.client.BasicResponseHandler</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.http.NameValuePair</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.http.impl.client.DefaultHttpClient</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.http.message.BasicNameValuePair</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.http.params.BasicHttpParams</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.http.params.HttpConnectionParams</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.http.params.HttpParams</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.json.JSONArray</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.json.JSONObject</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">android.app.Activity</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">android.os.StrictMode</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">android.util.Log</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">android.widget.Toast</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="o">{</span>
+</span><span class='line'>	<span class="cm">/** Called when the activity is first created. */</span>
+</span><span class='line'>	<span class="kt">int</span> <span class="n">TIMEOUT_MILLISEC</span> <span class="o">=</span> <span class="mi">10000</span><span class="o">;</span> <span class="c1">// = 10 seconds</span>
+</span><span class='line'>
+</span><span class='line'>	<span class="nd">@Override</span>
+</span><span class='line'>	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>		<span class="k">try</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>			<span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+</span><span class='line'>			<span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_main</span><span class="o">);</span>
+</span><span class='line'>			
+</span><span class='line'>			<span class="n">StrictMode</span><span class="o">.</span><span class="na">ThreadPolicy</span> <span class="n">policy</span> <span class="o">=</span> <span class="k">new</span>
+</span><span class='line'>			<span class="n">StrictMode</span><span class="o">.</span><span class="na">ThreadPolicy</span><span class="o">.</span><span class="na">Builder</span><span class="o">().</span><span class="na">permitAll</span><span class="o">().</span><span class="na">build</span><span class="o">();</span>
+</span><span class='line'>			<span class="n">StrictMode</span><span class="o">.</span><span class="na">setThreadPolicy</span><span class="o">(</span><span class="n">policy</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Throwable</span> <span class="n">t</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>			<span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">&quot;Request failed: &quot;</span> <span class="o">+</span> <span class="n">t</span><span class="o">.</span><span class="na">toString</span><span class="o">(),</span>
+</span><span class='line'>					<span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+</span><span class='line'>		<span class="o">}</span>
+</span><span class='line'>	<span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">clickbuttonSent</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>		<span class="k">try</span> <span class="o">{</span>
+</span><span class='line'>			<span class="n">JSONObject</span> <span class="n">json</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+</span><span class='line'>			<span class="n">json</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;username&quot;</span><span class="o">,</span> <span class="s">&quot;ivans&quot;</span><span class="o">);</span>
+</span><span class='line'>			<span class="n">json</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;fullname&quot;</span><span class="o">,</span> <span class="s">&quot;ivans ganteng&quot;</span><span class="o">);</span>
+</span><span class='line'>			<span class="n">HttpParams</span> <span class="n">httpParams</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BasicHttpParams</span><span class="o">();</span>
+</span><span class='line'>			<span class="n">HttpConnectionParams</span><span class="o">.</span><span class="na">setConnectionTimeout</span><span class="o">(</span><span class="n">httpParams</span><span class="o">,</span>
+</span><span class='line'>					<span class="n">TIMEOUT_MILLISEC</span><span class="o">);</span>
+</span><span class='line'>			<span class="n">HttpConnectionParams</span><span class="o">.</span><span class="na">setSoTimeout</span><span class="o">(</span><span class="n">httpParams</span><span class="o">,</span> <span class="n">TIMEOUT_MILLISEC</span><span class="o">);</span>
+</span><span class='line'>			<span class="n">HttpClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DefaultHttpClient</span><span class="o">(</span><span class="n">httpParams</span><span class="o">);</span>
+</span><span class='line'>			<span class="c1">//</span>
+</span><span class='line'>			<span class="c1">//String url = &quot;http://10.0.2.2:8080/sample1/webservice2.php?json={\&quot;UserName\&quot;:1,\&quot;FullName\&quot;:2}&quot;;</span>
+</span><span class='line'>			<span class="n">String</span> <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;http://192.168.0.103/webservice2.php&quot;</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>			<span class="n">HttpPost</span> <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HttpPost</span><span class="o">(</span><span class="n">url</span><span class="o">);</span>
+</span><span class='line'>			<span class="n">request</span><span class="o">.</span><span class="na">setEntity</span><span class="o">(</span><span class="k">new</span> <span class="n">ByteArrayEntity</span><span class="o">(</span><span class="n">json</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">getBytes</span><span class="o">(</span>
+</span><span class='line'>					<span class="s">&quot;UTF8&quot;</span><span class="o">)));</span>
+</span><span class='line'>			<span class="n">request</span><span class="o">.</span><span class="na">setHeader</span><span class="o">(</span><span class="s">&quot;json&quot;</span><span class="o">,</span> <span class="n">json</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+</span><span class='line'>			<span class="n">HttpResponse</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>
+</span><span class='line'>			<span class="n">HttpEntity</span> <span class="n">entity</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">getEntity</span><span class="o">();</span>
+</span><span class='line'>			<span class="c1">// If the response does not enclose an entity, there is no need</span>
+</span><span class='line'>			<span class="k">if</span> <span class="o">(</span><span class="n">entity</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>				<span class="n">InputStream</span> <span class="n">instream</span> <span class="o">=</span> <span class="n">entity</span><span class="o">.</span><span class="na">getContent</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'>				<span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">StreamConverter</span><span class="o">.</span><span class="na">convertStreamToString</span><span class="o">(</span><span class="n">instream</span><span class="o">);</span>
+</span><span class='line'>				<span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;Read from server&quot;</span><span class="o">,</span> <span class="n">result</span><span class="o">);</span>
+</span><span class='line'>				<span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span>  <span class="n">result</span><span class="o">,</span>
+</span><span class='line'>						<span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+</span><span class='line'>			<span class="o">}</span>
+</span><span class='line'>		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Throwable</span> <span class="n">t</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>			<span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">&quot;Request failed: &quot;</span> <span class="o">+</span> <span class="n">t</span><span class="o">.</span><span class="na">toString</span><span class="o">(),</span>
+</span><span class='line'>					<span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+</span><span class='line'>		<span class="o">}</span>
+</span><span class='line'>	<span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">clickbuttonRecieve</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>		<span class="k">try</span> <span class="o">{</span>
+</span><span class='line'>			<span class="c1">// http://androidarabia.net/quran4android/phpserver/connecttoserver.php</span>
+</span><span class='line'>
+</span><span class='line'>			<span class="c1">// Log.i(getClass().getSimpleName(), &quot;send  task - start&quot;);</span>
+</span><span class='line'>			<span class="n">HttpParams</span> <span class="n">httpParams</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BasicHttpParams</span><span class="o">();</span>
+</span><span class='line'>			<span class="n">HttpConnectionParams</span><span class="o">.</span><span class="na">setConnectionTimeout</span><span class="o">(</span><span class="n">httpParams</span><span class="o">,</span>
+</span><span class='line'>					<span class="n">TIMEOUT_MILLISEC</span><span class="o">);</span>
+</span><span class='line'>			<span class="n">HttpConnectionParams</span><span class="o">.</span><span class="na">setSoTimeout</span><span class="o">(</span><span class="n">httpParams</span><span class="o">,</span> <span class="n">TIMEOUT_MILLISEC</span><span class="o">);</span>
+</span><span class='line'>			<span class="c1">//</span>
+</span><span class='line'>			<span class="n">HttpParams</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BasicHttpParams</span><span class="o">();</span>
+</span><span class='line'>			<span class="c1">// p.setParameter(&quot;name&quot;, pvo.getName());</span>
+</span><span class='line'>
+</span><span class='line'>			<span class="c1">// Instantiate an HttpClient</span>
+</span><span class='line'>			<span class="n">HttpClient</span> <span class="n">httpclient</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DefaultHttpClient</span><span class="o">(</span><span class="n">p</span><span class="o">);</span>
+</span><span class='line'>			<span class="n">String</span> <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;http://192.168.0.103/webservice1.php?user=1&amp;format=json&quot;</span><span class="o">;</span>
+</span><span class='line'>			<span class="n">HttpPost</span> <span class="n">httppost</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HttpPost</span><span class="o">(</span><span class="n">url</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>			<span class="c1">// Instantiate a GET HTTP method</span>
+</span><span class='line'>			<span class="k">try</span> <span class="o">{</span>
+</span><span class='line'>				<span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="n">getClass</span><span class="o">().</span><span class="na">getSimpleName</span><span class="o">(),</span> <span class="s">&quot;send  task - start&quot;</span><span class="o">);</span>
+</span><span class='line'>				
+</span><span class='line'>				<span class="c1">//List&lt;NameValuePair&gt; nameValuePairs = new ArrayList&lt;NameValuePair&gt;(2);</span>
+</span><span class='line'>				<span class="c1">//nameValuePairs.add(new BasicNameValuePair(&quot;user&quot;, &quot;1&quot;));</span>
+</span><span class='line'>				<span class="c1">//httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));</span>
+</span><span class='line'>				
+</span><span class='line'>				<span class="n">ResponseHandler</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">responseHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BasicResponseHandler</span><span class="o">();</span>
+</span><span class='line'>				<span class="n">String</span> <span class="n">responseBody</span> <span class="o">=</span> <span class="n">httpclient</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="n">httppost</span><span class="o">,</span>
+</span><span class='line'>						<span class="n">responseHandler</span><span class="o">);</span>
+</span><span class='line'>				<span class="c1">// Parse</span>
+</span><span class='line'>				<span class="n">JSONObject</span> <span class="n">json</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">(</span><span class="n">responseBody</span><span class="o">);</span>
+</span><span class='line'>				<span class="n">JSONArray</span> <span class="n">jArray</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="na">getJSONArray</span><span class="o">(</span><span class="s">&quot;posts&quot;</span><span class="o">);</span>
+</span><span class='line'>				<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">mylist</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;&gt;();</span>
+</span><span class='line'>
+</span><span class='line'>				<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">jArray</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span><span class='line'>					<span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;();</span>
+</span><span class='line'>					<span class="n">JSONObject</span> <span class="n">e</span> <span class="o">=</span> <span class="n">jArray</span><span class="o">.</span><span class="na">getJSONObject</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+</span><span class='line'>					<span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&quot;post&quot;</span><span class="o">);</span>
+</span><span class='line'>					<span class="n">JSONObject</span> <span class="n">jObject</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>					<span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;idusers&quot;</span><span class="o">,</span> <span class="n">jObject</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&quot;idusers&quot;</span><span class="o">));</span>
+</span><span class='line'>					<span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;username&quot;</span><span class="o">,</span> <span class="n">jObject</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&quot;username&quot;</span><span class="o">));</span>
+</span><span class='line'>					<span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;fullname&quot;</span><span class="o">,</span> <span class="n">jObject</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&quot;fullname&quot;</span><span class="o">));</span>
+</span><span class='line'>
+</span><span class='line'>					<span class="n">mylist</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">map</span><span class="o">);</span>
+</span><span class='line'>				<span class="o">}</span>
+</span><span class='line'>				<span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">responseBody</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'>			<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">ClientProtocolException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>				<span class="c1">// TODO Auto-generated catch block</span>
+</span><span class='line'>				<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span><span class='line'>			<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>				<span class="c1">// TODO Auto-generated catch block</span>
+</span><span class='line'>				<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span><span class='line'>			<span class="o">}</span>
+</span><span class='line'>			<span class="c1">// Log.i(getClass().getSimpleName(), &quot;send  task - end&quot;);</span>
+</span><span class='line'>
+</span><span class='line'>		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Throwable</span> <span class="n">t</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>			<span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">&quot;Request failed: &quot;</span> <span class="o">+</span> <span class="n">t</span><span class="o">.</span><span class="na">toString</span><span class="o">(),</span>
+</span><span class='line'>					<span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+</span><span class='line'>		<span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>	<span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>	<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Data</span> <span class="o">{</span>
+</span><span class='line'>		<span class="c1">// private List&lt;User&gt; users;</span>
+</span><span class='line'>		<span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">users</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>		<span class="c1">// +getters/setters</span>
+</span><span class='line'>	<span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>	<span class="kd">static</span> <span class="kd">class</span> <span class="nc">User</span> <span class="o">{</span>
+</span><span class='line'>		<span class="n">String</span> <span class="n">idusers</span><span class="o">;</span>
+</span><span class='line'>		<span class="n">String</span> <span class="n">username</span><span class="o">;</span>
+</span><span class='line'>		<span class="n">String</span> <span class="n">fullname</span><span class="o">;</span>
+</span><span class='line'>		
+</span><span class='line'>		<span class="kd">public</span> <span class="n">String</span> <span class="nf">getIdusers</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>			<span class="k">return</span> <span class="n">idusers</span><span class="o">;</span>
+</span><span class='line'>		<span class="o">}</span>
+</span><span class='line'>		<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setIdusers</span><span class="o">(</span><span class="n">String</span> <span class="n">idusers</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>			<span class="k">this</span><span class="o">.</span><span class="na">idusers</span> <span class="o">=</span> <span class="n">idusers</span><span class="o">;</span>
+</span><span class='line'>		<span class="o">}</span>
+</span><span class='line'>		<span class="kd">public</span> <span class="n">String</span> <span class="nf">getUsername</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>			<span class="k">return</span> <span class="n">username</span><span class="o">;</span>
+</span><span class='line'>		<span class="o">}</span>
+</span><span class='line'>		<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setUsername</span><span class="o">(</span><span class="n">String</span> <span class="n">username</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>			<span class="k">this</span><span class="o">.</span><span class="na">username</span> <span class="o">=</span> <span class="n">username</span><span class="o">;</span>
+</span><span class='line'>		<span class="o">}</span>
+</span><span class='line'>		<span class="kd">public</span> <span class="n">String</span> <span class="nf">getFullname</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>			<span class="k">return</span> <span class="n">fullname</span><span class="o">;</span>
+</span><span class='line'>		<span class="o">}</span>
+</span><span class='line'>		<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setFullname</span><span class="o">(</span><span class="n">String</span> <span class="n">fullname</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>			<span class="k">this</span><span class="o">.</span><span class="na">fullname</span> <span class="o">=</span> <span class="n">fullname</span><span class="o">;</span>
+</span><span class='line'>		<span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>	<span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<blockquote><p>IP didalam file sesuaikan sama ip server anda, dan juga nama file php yang dibuat tadi</p></blockquote>
+
+<h4>6 Buat java class baru &ldquo;StreamConverter.java&rdquo; mengubah data ke Stream agar dapat di tangkap di php.</h4>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (StreamConverter.java)</span> <a href='/downloads/code/android/webserver_php/StreamConverter.java'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class='code'><pre><code class='java'><span class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">ivans</span><span class="o">.</span><span class="na">php</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">java.io.InputStream</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">java.io.InputStreamReader</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.http.HttpEntity</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.http.HttpResponse</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.http.client.ClientProtocolException</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.http.client.HttpClient</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.http.client.methods.HttpGet</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.apache.http.impl.client.DefaultHttpClient</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.json.JSONArray</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.json.JSONException</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">org.json.JSONObject</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">android.util.Log</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">StreamConverter</span> <span class="o">{</span>
+</span><span class='line'>	<span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">convertStreamToString</span><span class="o">(</span><span class="n">InputStream</span> <span class="n">is</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>		<span class="cm">/*</span>
+</span><span class='line'><span class="cm">		 * To convert the InputStream to String we use the</span>
+</span><span class='line'><span class="cm">		 * BufferedReader.readLine() method. We iterate until the BufferedReader</span>
+</span><span class='line'><span class="cm">		 * return null which means there&#39;s no more data to read. Each line will</span>
+</span><span class='line'><span class="cm">		 * appended to a StringBuilder and returned as String.</span>
+</span><span class='line'><span class="cm">		 */</span>
+</span><span class='line'>		<span class="n">BufferedReader</span> <span class="n">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="n">InputStreamReader</span><span class="o">(</span><span class="n">is</span><span class="o">));</span>
+</span><span class='line'>		<span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'>		<span class="n">String</span> <span class="n">line</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+</span><span class='line'>		<span class="k">try</span> <span class="o">{</span>
+</span><span class='line'>			<span class="k">while</span> <span class="o">((</span><span class="n">line</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>				<span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">line</span> <span class="o">+</span> <span class="s">&quot;\n&quot;</span><span class="o">);</span>
+</span><span class='line'>			<span class="o">}</span>
+</span><span class='line'>		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>			<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span><span class='line'>		<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+</span><span class='line'>			<span class="k">try</span> <span class="o">{</span>
+</span><span class='line'>				<span class="n">is</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</span><span class='line'>			<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>				<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span><span class='line'>			<span class="o">}</span>
+</span><span class='line'>		<span class="o">}</span>
+</span><span class='line'>		<span class="k">return</span> <span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+</span><span class='line'>	<span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>	<span class="cm">/*</span>
+</span><span class='line'><span class="cm">	 * This is a test function which will connects to a given rest service and</span>
+</span><span class='line'><span class="cm">	 * prints it&#39;s response to Android Log with labels &quot;Praeda&quot;.</span>
+</span><span class='line'><span class="cm">	 */</span>
+</span><span class='line'>	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">connect</span><span class="o">(</span><span class="n">String</span> <span class="n">url</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>		<span class="n">HttpClient</span> <span class="n">httpclient</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DefaultHttpClient</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'>		<span class="c1">// Prepare a request object</span>
+</span><span class='line'>		<span class="n">HttpGet</span> <span class="n">httpget</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HttpGet</span><span class="o">(</span><span class="n">url</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>		<span class="c1">// Execute the request</span>
+</span><span class='line'>		<span class="n">HttpResponse</span> <span class="n">response</span><span class="o">;</span>
+</span><span class='line'>		<span class="k">try</span> <span class="o">{</span>
+</span><span class='line'>			<span class="n">response</span> <span class="o">=</span> <span class="n">httpclient</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="n">httpget</span><span class="o">);</span>
+</span><span class='line'>			<span class="c1">// Examine the response status</span>
+</span><span class='line'>			<span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;Praeda&quot;</span><span class="o">,</span> <span class="n">response</span><span class="o">.</span><span class="na">getStatusLine</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
+</span><span class='line'>
+</span><span class='line'>			<span class="c1">// Get hold of the response entity</span>
+</span><span class='line'>			<span class="n">HttpEntity</span> <span class="n">entity</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">getEntity</span><span class="o">();</span>
+</span><span class='line'>			<span class="c1">// If the response does not enclose an entity, there is no need</span>
+</span><span class='line'>			<span class="c1">// to worry about connection release</span>
+</span><span class='line'>
+</span><span class='line'>			<span class="k">if</span> <span class="o">(</span><span class="n">entity</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>				<span class="c1">// A Simple JSON Response Read</span>
+</span><span class='line'>				<span class="n">InputStream</span> <span class="n">instream</span> <span class="o">=</span> <span class="n">entity</span><span class="o">.</span><span class="na">getContent</span><span class="o">();</span>
+</span><span class='line'>				<span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">convertStreamToString</span><span class="o">(</span><span class="n">instream</span><span class="o">);</span>
+</span><span class='line'>				<span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;Praeda&quot;</span><span class="o">,</span> <span class="n">result</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>				<span class="c1">// A Simple JSONObject Creation</span>
+</span><span class='line'>				<span class="n">JSONObject</span> <span class="n">json</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">(</span><span class="n">result</span><span class="o">);</span>
+</span><span class='line'>				<span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;Praeda&quot;</span><span class="o">,</span> <span class="s">&quot;&lt;jsonobject&gt;\n&quot;</span> <span class="o">+</span> <span class="n">json</span><span class="o">.</span><span class="na">toString</span><span class="o">()</span>
+</span><span class='line'>						<span class="o">+</span> <span class="s">&quot;\n&lt;/jsonobject&gt;&quot;</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>				<span class="c1">// A Simple JSONObject Parsing</span>
+</span><span class='line'>				<span class="n">JSONArray</span> <span class="n">nameArray</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="na">names</span><span class="o">();</span>
+</span><span class='line'>				<span class="n">JSONArray</span> <span class="n">valArray</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="na">toJSONArray</span><span class="o">(</span><span class="n">nameArray</span><span class="o">);</span>
+</span><span class='line'>				<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">valArray</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span><span class='line'>					<span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;Praeda&quot;</span><span class="o">,</span>
+</span><span class='line'>							<span class="s">&quot;&lt;jsonname&quot;</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="s">&quot;&gt;\n&quot;</span> <span class="o">+</span> <span class="n">nameArray</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">i</span><span class="o">)</span>
+</span><span class='line'>									<span class="o">+</span> <span class="s">&quot;\n&lt;/jsonname&quot;</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="s">&quot;&gt;\n&quot;</span> <span class="o">+</span> <span class="s">&quot;&lt;jsonvalue&quot;</span>
+</span><span class='line'>									<span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="s">&quot;&gt;\n&quot;</span> <span class="o">+</span> <span class="n">valArray</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">i</span><span class="o">)</span>
+</span><span class='line'>									<span class="o">+</span> <span class="s">&quot;\n&lt;/jsonvalue&quot;</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="s">&quot;&gt;&quot;</span><span class="o">);</span>
+</span><span class='line'>				<span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>				<span class="c1">// A Simple JSONObject Value Pushing</span>
+</span><span class='line'>				<span class="n">json</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;sample key&quot;</span><span class="o">,</span> <span class="s">&quot;sample value&quot;</span><span class="o">);</span>
+</span><span class='line'>				<span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;Praeda&quot;</span><span class="o">,</span> <span class="s">&quot;&lt;jsonobject&gt;\n&quot;</span> <span class="o">+</span> <span class="n">json</span><span class="o">.</span><span class="na">toString</span><span class="o">()</span>
+</span><span class='line'>						<span class="o">+</span> <span class="s">&quot;\n&lt;/jsonobject&gt;&quot;</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>				<span class="c1">// Closing the input stream will trigger connection release</span>
+</span><span class='line'>				<span class="n">instream</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</span><span class='line'>			<span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">ClientProtocolException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>			<span class="c1">// TODO Auto-generated catch block</span>
+</span><span class='line'>			<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span><span class='line'>		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>			<span class="c1">// TODO Auto-generated catch block</span>
+</span><span class='line'>			<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span><span class='line'>		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">JSONException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>			<span class="c1">// TODO Auto-generated catch block</span>
+</span><span class='line'>			<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span><span class='line'>		<span class="o">}</span>
+</span><span class='line'>	<span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h4>7 activity_main.xml</h4>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (activity_main.xml)</span> <a href='/downloads/code/android/webserver_php/activity_main.xml'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'>    <span class="na">xmlns:tools=</span><span class="s">&quot;http://schemas.android.com/tools&quot;</span>
+</span><span class='line'>    <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'>    <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'>    <span class="na">android:orientation=</span><span class="s">&quot;vertical&quot;</span> <span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;Button</span>
+</span><span class='line'>        <span class="na">android:id=</span><span class="s">&quot;@+id/Button01&quot;</span>
+</span><span class='line'>        <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'>        <span class="na">android:layout_height=</span><span class="s">&quot;50dp&quot;</span>
+</span><span class='line'>        <span class="na">android:onClick=</span><span class="s">&quot;clickbuttonRecieve&quot;</span>
+</span><span class='line'>        <span class="na">android:text=</span><span class="s">&quot;@string/Button01&quot;</span> <span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/Button&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;Button</span>
+</span><span class='line'>        <span class="na">android:id=</span><span class="s">&quot;@+id/Button02&quot;</span>
+</span><span class='line'>        <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'>        <span class="na">android:layout_height=</span><span class="s">&quot;50dp&quot;</span>
+</span><span class='line'>        <span class="na">android:onClick=</span><span class="s">&quot;clickbuttonSent&quot;</span>
+</span><span class='line'>        <span class="na">android:text=</span><span class="s">&quot;@string/Button02&quot;</span> <span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/Button&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/LinearLayout&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Adb No Permissions On Ubuntu]]></title>
+    <link href="http://ivansa.github.io/android/linux/fix-adb-no-permissions/"/>
+    <updated>2013-11-28T14:51:00+07:00</updated>
+    <id>http://ivansa.github.io/android/linux/fix-adb-no-permissions</id>
+    <content type="html"><![CDATA[<p>This blog post explains how to fix the no permissions error the Android Debugger displays when running the adb devices command Linux. The solutions presented here have been tested and found working on Ubuntu Lucid, but they should also work on other Ubuntu and Linux versions as well.</p>
+
+<!-- more -->
+
+
+<p>This official help center page has many working and non-working answers to the problem, and many comments. The root cause of the problem is that the current user doesn&rsquo;t have sufficient permissions to access the USB device file created when the phone was connected in USB debug mode.</p>
+
+<p>Killing all running adb server instances with sudo killall adb, disconnecting the phone, reconnecting the phone, and then running sudo adb devices instead (so adb gets run as root) fixes the problem.</p>
+
+<p>Alternatively, it is possible to implement a long-term fix which doesn&rsquo;t require sudo, thus it works with e.g. IntelliJ IDE integration:</p>
+
+<ul>
+<li><p>Create a file named /tmp/android.rules with the following contents (hex vendor numbers were taken from the vendor list page):
+<code>
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0bb4", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0e79", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0502", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0b05", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="413c", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0489", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="091e", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="18d1", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0bb4", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="12d1", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="24e3", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="2116", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0482", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="17ef", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1004", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="22b8", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0409", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="2080", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0955", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="2257", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="10a9", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1d4d", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0471", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="04da", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="05c6", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1f53", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="04e8", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="04dd", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0fce", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0930", MODE="0666"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="19d2", MODE="0666"
+</code></p></li>
+<li><p>Run the following commands (without the leading $):
+<code>
+$ sudo cp /tmp/android.rules /etc/udev/rules.d/51-android.rules
+$ sudo chmod 644   /etc/udev/rules.d/51-android.rules
+$ sudo chown root /etc/udev/rules.d/51-android.rules
+$ sudo service udev restart
+$ sudo killall adb
+</code></p></li>
+<li><p>Disconnect the USB cable between the phone and the computer.</p></li>
+<li>Reconnect the phone.</li>
+<li>Run adb devices to confirm that now it has permission to access the phone.</li>
+</ul>
+
+
+<blockquote><p>Please note that it&rsquo;s possible to use , USER=&ldquo;$LOGINNAME&rdquo; instead of , MODE=&ldquo;0666&rdquo; in the .rules file, substituting $LOGINNAME for your login name, i.e. what id -nu prints.</p></blockquote>
+
+<h5>Sumber : <a href="ptspts.blogspot.co.il/2011/10/how-to-fix-adb-no-permissions-error-on.html">ptspts.blogspot.co.il/2011/10/how-to-fix-adb-no-permissions-error-on.html</a></h5>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: octopress | Ivans Ardiansyah]]></title>
+  <link href="http://ivansa.github.io/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://ivansa.github.io/"/>
+  <updated>2017-03-21T16:29:35+07:00</updated>
+  <id>http://ivansa.github.io/</id>
+  <author>
+    <name><![CDATA[Ivans Ardiansyah]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Instalasi Octopress Di Linux]]></title>
+    <link href="http://ivansa.github.io/octopress/linux/instalasi-octopress/"/>
+    <updated>2014-05-06T08:41:00+07:00</updated>
+    <id>http://ivansa.github.io/octopress/linux/instalasi-octopress</id>
+    <content type="html"><![CDATA[<p>Octopress adalah framework blogger static yang di buat oleh Brandon Mathis, Octropress ini berbasis jekyll.
+Octopress ini juga dapat kita deploy di github. <br />Berikut adalah cara menginstall octopress yang akan di deploy di github :</p>
+
+<!--more-->
+
+
+
+
+<p><b>1. Download Atau Clone Octopress</b><br />
+<ul>
+    <li><code>$ git clone git://github.com/imathis/octopress.git yourgithubusername.github.io</code></li>
+</ul>
+</p>
+
+
+
+
+<p><b>2. Lalu masuk kedalam folder clone tadi</b><br />
+<ul>
+    <li><code>$ cd yourgithubusername.github.io</code></li>
+</ul>
+</p>
+
+
+
+
+<p><b>3. Jika belum install ruby (Kalau saya 1.9.1) <span style="color:red">(Optional)</span></b><br />
+<ul>
+    <li><code>$ sudo apt-get install ruby1.9.1-full</code></li>
+    <li><code>$ sudo update-alternatives --config ruby</code></li>
+</ul>
+</p>
+
+
+
+
+<p><b>4. Install bundler</b>
+<ul>
+    <li><code>$ sudo gem install bundler</code></li>
+</ul>
+</p>
+
+
+
+
+<p><b>5. Jika redcloth belum ke install <span style="color:red">(Optional)</span></b>
+<ul>
+    <li><code>$ sudo gem install RedCloth -v '4.2.9'</code></li>
+</ul>
+</p>
+
+
+
+
+<p><b>6. Install bundle</b>
+<ul>
+    <li><code>$ bundle install</code></li>
+</ul>
+</p>
+
+
+
+
+<p><b>7. Install Theme (tema)</b>
+<ul>
+    <li><code>$ rake install</code></li>
+</ul>
+</p>
+
+
+
+
+<p><b>8. Generate github pages</b>
+<ul>
+    <li><code>$ rake setup_github_pages</code></li>
+    <li>Kemudian masukan alamat repo github anda contoh : <br /><a>https://github.com/your_username/your_username.github.io</a> atau <a>git@github.com:your_username/your_username.github.io.git</a></li>
+</ul>
+</p>
+
+
+
+
+<p><b>9. Generate file html</b>
+<ul>
+    <li><code>$ rake generate</code></li>
+</ul>
+</p>
+
+
+
+
+<p><b>10. Membuat folder deploy</b>
+<ul>
+    <li><code>$ mkdir _deploy</code></li>
+    <li><code>$ rake deploy</code></li>
+</ul>
+</p>
+
+
+
+
+<p><b>11. Jika gagal push master/deploy <span style="color:red">(Optional)</span></b>
+<ul>
+    <li><code>$ cd _deploy</code></li>
+    <li><code>$ git push -f origin master</code></li>
+</ul>
+</p>
+
+
+
+
+<p><b>12. Push source ke branch source</b>
+<ul>
+    <li>Kembali ke folder yourgithubusername.github.io</li>
+    <li><code>$ git add .</code></li>
+    <li><code>$ git commit -m 'Initial Octopress source commit'</code></li>
+    <li><code>$ git push origin source</code></li>
+</ul>
+</p>
+
+
+<blockquote><p>Optional digunakan jika terjadi error</p></blockquote>
+
+<p>source : <a href="http://google.com">http://google.com</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Membuat Categories Aside]]></title>
+    <link href="http://ivansa.github.io/octopress/membuat-categories-aside/"/>
+    <updated>2013-07-03T12:38:00+07:00</updated>
+    <id>http://ivansa.github.io/octopress/membuat-categories-aside</id>
+    <content type="html"><![CDATA[<p>Ada satu fitur yang cukup esensial di blog engine tapi tidak ada di Octopress yaitu tampilan daftar kategori. Alhamdulillah, ternyata sudah ada yang membuat plugin tersebut. Namun, di sini ada beberapa perbaikan dari plugin tersebut.</p>
+
+<!-- more -->
+
+
+<p>Berikut ini langkah-langkahnya :<br />
+<strong>1. Download <code>category_list.rb</code> berikut ini</strong><br />
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (category_list.rb)</span> <a href='/downloads/code/categories/category_list.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class='code'><pre><code class='rb'><span class='line'><span class="c1"># Tag Cloud for Octopress, modified by pf_miles, for use with utf-8 encoded blogs(all regexp added &#39;u&#39; option).</span>
+</span><span class='line'><span class="c1"># modified by alswl, tag_cloud -&gt; category_cloud</span>
+</span><span class='line'><span class="c1"># =======================</span>
+</span><span class='line'><span class="c1"># </span>
+</span><span class='line'><span class="c1"># Description:</span>
+</span><span class='line'><span class="c1"># ------------</span>
+</span><span class='line'><span class="c1"># Easy output tag cloud and category list.</span>
+</span><span class='line'><span class="c1"># </span>
+</span><span class='line'><span class="c1"># Syntax:</span>
+</span><span class='line'><span class="c1"># -------</span>
+</span><span class='line'><span class="c1">#     {% tag_cloud [counter:true] %}</span>
+</span><span class='line'><span class="c1">#     {% category_list [counter:true] %}</span>
+</span><span class='line'><span class="c1"># </span>
+</span><span class='line'><span class="c1"># Example:</span>
+</span><span class='line'><span class="c1"># --------</span>
+</span><span class='line'><span class="c1"># In some template files, you can add the following markups.</span>
+</span><span class='line'><span class="c1"># </span>
+</span><span class='line'><span class="c1"># ### source/_includes/custom/asides/tag_cloud.html ###</span>
+</span><span class='line'><span class="c1"># </span>
+</span><span class='line'><span class="c1">#     &lt;section&gt;</span>
+</span><span class='line'><span class="c1">#       &lt;h1&gt;Tag Cloud&lt;/h1&gt;</span>
+</span><span class='line'><span class="c1">#         &lt;span id=&quot;tag-cloud&quot;&gt;{% tag_cloud %}&lt;/span&gt;</span>
+</span><span class='line'><span class="c1">#     &lt;/section&gt;</span>
+</span><span class='line'><span class="c1"># </span>
+</span><span class='line'><span class="c1"># ### source/_includes/custom/asides/category_list.html ###</span>
+</span><span class='line'><span class="c1"># </span>
+</span><span class='line'><span class="c1">#     &lt;section&gt;</span>
+</span><span class='line'><span class="c1">#       &lt;h1&gt;Categories&lt;/h1&gt;</span>
+</span><span class='line'><span class="c1">#         &lt;ul id=&quot;category-list&quot;&gt;{% category_list counter:true %}&lt;/ul&gt;</span>
+</span><span class='line'><span class="c1">#     &lt;/section&gt;</span>
+</span><span class='line'><span class="c1"># </span>
+</span><span class='line'><span class="c1"># Notes:</span>
+</span><span class='line'><span class="c1"># ------</span>
+</span><span class='line'><span class="c1"># Be sure to insert above template files into `default_asides` array in `_config.yml`.</span>
+</span><span class='line'><span class="c1"># And also you can define styles for &#39;tag-cloud&#39; or &#39;category-list&#39; in a `.scss` file.</span>
+</span><span class='line'><span class="c1"># (ex: `sass/custom/_styles.scss`)</span>
+</span><span class='line'><span class="c1"># </span>
+</span><span class='line'><span class="c1"># Licence:</span>
+</span><span class='line'><span class="c1"># --------</span>
+</span><span class='line'><span class="c1"># Distributed under the [MIT License][MIT].</span>
+</span><span class='line'><span class="c1"># </span>
+</span><span class='line'><span class="c1"># [MIT]: http://www.opensource.org/licenses/mit-license.php</span>
+</span><span class='line'><span class="c1"># </span>
+</span><span class='line'><span class="k">module</span> <span class="nn">Jekyll</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">class</span> <span class="nc">CategoryCloud</span> <span class="o">&lt;</span> <span class="ss">Liquid</span><span class="p">:</span><span class="ss">:Tag</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">tag_name</span><span class="p">,</span> <span class="n">markup</span><span class="p">,</span> <span class="n">tokens</span><span class="p">)</span>
+</span><span class='line'>      <span class="vi">@opts</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'>      <span class="k">if</span> <span class="n">markup</span><span class="o">.</span><span class="n">strip</span> <span class="o">=~</span> <span class="sr">/\s*counter:(\w+)/iu</span>
+</span><span class='line'>        <span class="vi">@opts</span><span class="o">[</span><span class="s1">&#39;counter&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="p">(</span><span class="vg">$1</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">markup</span> <span class="o">=</span> <span class="n">markup</span><span class="o">.</span><span class="n">strip</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sr">/counter:\w+/iu</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>      <span class="k">super</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">lists</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'>      <span class="n">max</span><span class="p">,</span> <span class="n">min</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
+</span><span class='line'>      <span class="n">config</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">registers</span><span class="o">[</span><span class="ss">:site</span><span class="o">].</span><span class="n">config</span>
+</span><span class='line'>      <span class="n">category_dir</span> <span class="o">=</span> <span class="n">config</span><span class="o">[</span><span class="s1">&#39;root&#39;</span><span class="o">]</span> <span class="o">+</span> <span class="n">config</span><span class="o">[</span><span class="s1">&#39;category_dir&#39;</span><span class="o">]</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span>
+</span><span class='line'>      <span class="n">categories</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">registers</span><span class="o">[</span><span class="ss">:site</span><span class="o">].</span><span class="n">categories</span>
+</span><span class='line'>      <span class="n">categories</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">sort_by</span><span class="p">{</span> <span class="o">|</span><span class="n">str</span><span class="o">|</span> <span class="n">str</span><span class="o">.</span><span class="n">downcase</span> <span class="p">}</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">category</span><span class="o">|</span>
+</span><span class='line'>        <span class="n">count</span> <span class="o">=</span> <span class="n">categories</span><span class="o">[</span><span class="n">category</span><span class="o">].</span><span class="n">count</span>
+</span><span class='line'>        <span class="n">lists</span><span class="o">[</span><span class="n">category</span><span class="o">]</span> <span class="o">=</span> <span class="n">count</span>
+</span><span class='line'>        <span class="n">max</span> <span class="o">=</span> <span class="n">count</span> <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="n">max</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">html</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</span><span class='line'>      <span class="n">lists</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span> <span class="n">category</span><span class="p">,</span> <span class="n">counter</span> <span class="o">|</span>
+</span><span class='line'>        <span class="n">url</span> <span class="o">=</span> <span class="n">category_dir</span> <span class="o">+</span> <span class="n">category</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/_|\P{Word}/u</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/-{2,}/u</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">downcase</span>
+</span><span class='line'>        <span class="n">style</span> <span class="o">=</span> <span class="s2">&quot;font-size: </span><span class="si">#{</span><span class="mi">100</span> <span class="o">+</span> <span class="p">(</span><span class="mi">60</span> <span class="o">*</span> <span class="nb">Float</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span><span class="o">/</span><span class="n">max</span><span class="p">)</span><span class="si">}</span><span class="s2">%&quot;</span>
+</span><span class='line'>        <span class="n">html</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;&lt;a href=&#39;</span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2">&#39; style=&#39;</span><span class="si">#{</span><span class="n">style</span><span class="si">}</span><span class="s2">&#39;&gt;</span><span class="si">#{</span><span class="n">category</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>        <span class="k">if</span> <span class="vi">@opts</span><span class="o">[</span><span class="s1">&#39;counter&#39;</span><span class="o">]</span>
+</span><span class='line'>          <span class="n">html</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;(</span><span class="si">#{</span><span class="n">categories</span><span class="o">[</span><span class="n">category</span><span class="o">].</span><span class="n">count</span><span class="si">}</span><span class="s2">)&quot;</span>
+</span><span class='line'>        <span class="k">end</span>
+</span><span class='line'>        <span class="n">html</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;&lt;/a&gt; &quot;</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>      <span class="n">html</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">class</span> <span class="nc">CategoryList</span> <span class="o">&lt;</span> <span class="ss">Liquid</span><span class="p">:</span><span class="ss">:Tag</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">tag_name</span><span class="p">,</span> <span class="n">markup</span><span class="p">,</span> <span class="n">tokens</span><span class="p">)</span>
+</span><span class='line'>      <span class="vi">@opts</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'>      <span class="k">if</span> <span class="n">markup</span><span class="o">.</span><span class="n">strip</span> <span class="o">=~</span> <span class="sr">/\s*counter:(\w+)/iu</span>
+</span><span class='line'>        <span class="vi">@opts</span><span class="o">[</span><span class="s1">&#39;counter&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="p">(</span><span class="vg">$1</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">markup</span> <span class="o">=</span> <span class="n">markup</span><span class="o">.</span><span class="n">strip</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sr">/counter:\w+/iu</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>      <span class="k">super</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">html</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</span><span class='line'>      <span class="n">config</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">registers</span><span class="o">[</span><span class="ss">:site</span><span class="o">].</span><span class="n">config</span>
+</span><span class='line'>      <span class="n">category_dir</span> <span class="o">=</span> <span class="n">config</span><span class="o">[</span><span class="s1">&#39;root&#39;</span><span class="o">]</span> <span class="o">+</span> <span class="n">config</span><span class="o">[</span><span class="s1">&#39;category_dir&#39;</span><span class="o">]</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span>
+</span><span class='line'>      <span class="n">categories</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">registers</span><span class="o">[</span><span class="ss">:site</span><span class="o">].</span><span class="n">categories</span>
+</span><span class='line'>      <span class="n">categories</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">sort_by</span><span class="p">{</span> <span class="o">|</span><span class="n">str</span><span class="o">|</span> <span class="n">str</span><span class="o">.</span><span class="n">downcase</span> <span class="p">}</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">category</span><span class="o">|</span>
+</span><span class='line'>        <span class="n">url</span> <span class="o">=</span> <span class="n">category_dir</span> <span class="o">+</span> <span class="n">category</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/_|\P{Word}/u</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/-{2,}/u</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">downcase</span>
+</span><span class='line'>        <span class="n">html</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;&lt;li&gt;&lt;a href=&#39;</span><span class="si">#{</span><span class="n">url</span><span class="si">}</span><span class="s2">&#39;&gt;</span><span class="si">#{</span><span class="n">category</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>        <span class="k">if</span> <span class="vi">@opts</span><span class="o">[</span><span class="s1">&#39;counter&#39;</span><span class="o">]</span>
+</span><span class='line'>          <span class="n">html</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot; (</span><span class="si">#{</span><span class="n">categories</span><span class="o">[</span><span class="n">category</span><span class="o">].</span><span class="n">count</span><span class="si">}</span><span class="s2">)&quot;</span>
+</span><span class='line'>        <span class="k">end</span>
+</span><span class='line'>        <span class="n">html</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;&lt;/a&gt;&lt;/li&gt;&quot;</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>      <span class="n">html</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="ss">Liquid</span><span class="p">:</span><span class="ss">:Template</span><span class="o">.</span><span class="n">register_tag</span><span class="p">(</span><span class="s1">&#39;category_cloud&#39;</span><span class="p">,</span> <span class="ss">Jekyll</span><span class="p">:</span><span class="ss">:CategoryCloud</span><span class="p">)</span>
+</span><span class='line'><span class="ss">Liquid</span><span class="p">:</span><span class="ss">:Template</span><span class="o">.</span><span class="n">register_tag</span><span class="p">(</span><span class="s1">&#39;category_list&#39;</span><span class="p">,</span> <span class="ss">Jekyll</span><span class="p">:</span><span class="ss">:CategoryList</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><strong>2. Buat file <code>source/_includes/custom/asides/categories.html</code> dengan isi sebagai berikut :</strong></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (categories.html)</span> <a href='/downloads/code/categories/categories.html'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;section&gt;</span>
+</span><span class='line'>	<span class="nt">&lt;h1&gt;</span>Categories<span class="nt">&lt;/h1&gt;</span>
+</span><span class='line'>	<span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">&quot;categories&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>		{% category_list %}
+</span><span class='line'>	<span class="nt">&lt;/ul&gt;</span>
+</span><span class='line'><span class="nt">&lt;/section&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><strong>3. Tambahkan nilai <code>custom/asides/categories.html</code> pada properti <code>default_asides</code> di file <code>_config.yml</code> sehingga menjadi seperti ini : </strong></p>
+
+<p><code>
+default_asides: [asides/recent_posts.html, custom/asides/categories.html,
+asides/github.html, asides/delicious.html, asides/pinboard.html, asides/googleplus.html]
+</code></p>
+
+<p><strong>4. Selesai. Daftar kategori akan tampil di sidebar blog.</strong></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Membuat Read More]]></title>
+    <link href="http://ivansa.github.io/octopress/membuat-read-more/"/>
+    <updated>2013-07-03T08:25:00+07:00</updated>
+    <id>http://ivansa.github.io/octopress/membuat-read-more</id>
+    <content type="html"><![CDATA[<p>Saya akan memberikan tips sederhana
+bagaimana membuat Read more pada postingan
+di Octopress.</p>
+
+<!-- more -->
+
+
+<p>```</p>
+
+<!-- more -->
+
+
+<p>```</p>
+
+<p>Bagi anda yang membuat postingan pada
+Octopress, dan merasa postingan anda
+terlalu panjang untuk ditampilkan secara
+keseluruhan, anda bisa membuat read more pada postingan anda di Octopress. Anda
+Cukup memberi syntax sederhana seperti ini</p>
+
+<br />
+
+
+<p>Selamat Mencoba</p>
+]]></content>
+  </entry>
+  
+</feed>

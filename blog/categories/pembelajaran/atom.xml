@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: pembelajaran | Ivans Ardiansyah]]></title>
+  <link href="http://ivansa.github.io/blog/categories/pembelajaran/atom.xml" rel="self"/>
+  <link href="http://ivansa.github.io/"/>
+  <updated>2017-03-21T16:29:35+07:00</updated>
+  <id>http://ivansa.github.io/</id>
+  <author>
+    <name><![CDATA[Ivans Ardiansyah]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Escape Markdown Syntax]]></title>
+    <link href="http://ivansa.github.io/pembelajaran/escape-markdown-syntax/"/>
+    <updated>2013-11-19T08:25:00+07:00</updated>
+    <id>http://ivansa.github.io/pembelajaran/escape-markdown-syntax</id>
+    <content type="html"><![CDATA[<p>Artikel Kali ini akan membahas cara agar syntax markdown tidak terbaca di web, sehingga hanya di running sebagai string atau text saja.</p>
+
+<!-- more -->
+
+
+<p>Cara membuat syntax markdown menjadi string atau text adalah dengan <b>backslash</b>.<br>
+Backslash akan membuat beberapa character tertentu terbaca menjadi string atau text.</p>
+
+<p><b>Contoh Character : </b></p>
+
+<p><code>``
+\   backslash
+</code>   backtick
+*   asterisk
+_   underscore
+{}  curly braces
+[]  square brackets
+()  parentheses</p>
+
+<h1>hash mark</h1>
+
+<ul>
+<li>plus sign</li>
+<li>minus sign (hyphen)
+.   dot
+!   exclamation mark
+```</li>
+</ul>
+
+
+<p><b>Contoh Penggunaan : </b>
+```</p>
+
+<h2>\ ` * _ { } [ ] ( ) # + - . !</h2>
+
+<p># not h1
+## not h2
+### not h3
++ not ul
+- not ul
+```</p>
+
+<p><b>Hasil Yang Dicetak : </b><br></p>
+
+<blockquote><h2>\ ` * _ { } [ ] ( ) # + - . !</h2>
+
+<p># not h1
+## not h2
+### not h3
++ not ul
+- not ul</p></blockquote>
+]]></content>
+  </entry>
+  
+</feed>

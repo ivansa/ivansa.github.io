@@ -1,0 +1,332 @@
+
+
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>SQL Server 2008 Error : 'Access is Denied' Ivans Ardiansyah</title>
+    <meta name="author" content="Ivans Ardiansyah">
+    
+    <meta name="description" content="SQL Server 2008 Error : 'Access is Denied' Feb 27th, 2014 &nbsp;windows_microsoft I have been trying to resolve an issue while installing SQL Server &hellip;">
+    
+    <meta name="viewport" content="width=device-width">
+    
+    <link rel="canonical" href="http://ivansa.github.io/windows_microsoft/sql-server-2008-setup-error">
+    <link href="/favicon.ico" rel="icon">
+    <link href='//fonts.googleapis.com/css?family=Ruluko' rel='stylesheet'>
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="//atom.xml" rel="alternate" title="Ivans Ardiansyah" type="application/atom+xml">
+    <style>
+      body {
+        font-family: 'Ruluko';font-size: 22px;
+      }
+    </style>
+    
+	<meta property="fb:app_id" content="597527150322328" />
+	
+  </head>
+
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item two-fifths lap-four-sixths palm-one-whole">
+  <a href="/" class="site-title">Ivans Ardiansyah</a>
+</div>
+
+<div class="grid__item three-fifths lap-two-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/">Blog</a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="post">
+  <header>
+  
+  <h2 class="title indent">SQL Server 2008 Error : 'Access is Denied'</h2>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-02-27T08:41:00+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Feb 27<span>th</span>, 2014</time>
+    
+
+
+
+  
+  <div class="pull-left">
+    
+      <li style="float:left;margin-right:1em;"><i class="icon-tags"></i>&nbsp;<a href="/blog/categories/windows_microsoft/">windows_microsoft</a></li>
+    
+  </div>
+  
+
+
+    
+  </div>
+  
+</header>
+
+
+
+
+  <p>I have been trying to resolve an issue while installing SQL Server 2008 Express on a Windows XP SP3 machine.  I kept getting an &ldquo;Access is Denied&rdquo; error in the logs.</p>
+
+<!--more-->
+
+
+<p>Here&rsquo;s the error itself :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class='code'><pre><code class=''><span class='line'>2012-06-20 09:27:58 Slp: Configuration action failed for feature SQL_Engine_Core_Inst during timing ConfigNonRC and scenario ConfigNonRC.
+</span><span class='line'>2012-06-20 09:27:58 Slp: Access is denied
+</span><span class='line'>2012-06-20 09:27:58 Slp: Configuration action failed for feature SQL_Engine_Core_Inst during timing ConfigNonRC and scenario ConfigNonRC.
+</span><span class='line'>2012-06-20 09:27:58 Slp: System.ComponentModel.Win32Exception (0x80004005): Access is denied
+</span><span class='line'>2012-06-20 09:27:58 Slp:    at Microsoft.SqlServer.Configuration.SqlEngine.RsFxConfiguration.Install()
+</span><span class='line'>2012-06-20 09:27:58 Slp:    at Microsoft.SqlServer.Configuration.SqlEngine.FilestreamConfiguration.Install()
+</span><span class='line'>2012-06-20 09:27:58 Slp:    at Microsoft.SqlServer.Configuration.SqlEngine.SqlEngineSetupPrivate.SetupFilestream(EffectiveProperties properties)
+</span><span class='line'>2012-06-20 09:27:58 Slp:    at Microsoft.SqlServer.Configuration.SqlEngine.SqlEngineSetupPrivate.Install_ConfigNonRC_Prepare(EffectiveProperties properties)
+</span><span class='line'>2012-06-20 09:27:58 Slp:    at Microsoft.SqlServer.Configuration.SqlEngine.SqlEngineSetupPrivate.Install(ConfigActionTiming timing, Dictionary`2 actionData, PublicConfigurationBase spcb)
+</span><span class='line'>2012-06-20 09:27:58 Slp:    at Microsoft.SqlServer.Configuration.SqlConfigBase.PrivateConfigurationBase.Execute(ConfigActionScenario scenario, ConfigActionTiming timing, Dictionary`2 actionData, PublicConfigurationBase spcbCurrent)
+</span><span class='line'>2012-06-20 09:27:58 Slp:    at Microsoft.SqlServer.Configuration.SqlConfigBase.SqlFeatureConfigBase.Execute(ConfigActionScenario scenario, ConfigActionTiming timing, Dictionary`2 actionData, PublicConfigurationBase spcbCurrent)
+</span><span class='line'>2012-06-20 09:27:58 Slp:    at Microsoft.SqlServer.Configuration.SqlConfigBase.SlpConfigAction.ExecuteAction(String actionId)
+</span><span class='line'>2012-06-20 09:27:58 Slp:    at Microsoft.SqlServer.Configuration.SqlConfigBase.SlpConfigAction.Execute(String actionId, TextWriter errorStream)
+</span><span class='line'>2012-06-20 09:27:58 Slp: Exception: System.ComponentModel.Win32Exception.
+</span><span class='line'>2012-06-20 09:27:58 Slp: Source: Microsoft.SqlServer.Configuration.SqlServer_ConfigExtension.
+</span><span class='line'>2012-06-20 09:27:58 Slp: Message: Access is denied.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I tried the steps mentioned on MULTIPLE websites that all basically copied this <a href="http://support.microsoft.com/kb/2000257">KB article</a>.  Unfortunately, that didn&rsquo;t help.  So, I kept digging.. and digging.. and digging.  I finally was reminded of Process Explorer, which can be downloaded <a href="http://technet.microsoft.com/en-us/sysinternals/bb896645.aspx">here</a>, and I ran that while the setup was running to figure out what access was being &ldquo;denied.&rdquo;</p>
+
+<p>Keep in mind, these steps are for Windows XP SP3 and they assume that your account is in the Administrators group.  So, if you&rsquo;re troubleshooting on Windows Vista, 7, or one of the Server products, the steps may be different.  And if you don&rsquo;t have Administrator access, you&rsquo;ll need to get that too.  But, here&rsquo;s what I did to solve my problem.</p>
+
+<ul>
+<li>Open RegEdit.</li>
+<li>Browse to : HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI</li>
+<li>Right-click on <b>Security</b> and open Permissions.</li>
+</ul>
+
+
+<p><img src="/images/blog/windows_microsoft/sql_server_2008_setup_error/open-permissions.png" style="border:1px solid grey"></p>
+
+<ul>
+<li>Make sure the Administrators group has Full Control.</li>
+</ul>
+
+
+<p><img src="/images/blog/windows_microsoft/sql_server_2008_setup_error/permissions.png" style="border:1px solid grey"></p>
+
+<ul>
+<li>If Administrators do not have Full Control, click the checkbox under &ldquo;allow,&rdquo; next to Full Control.</li>
+<li>Click Ok.</li>
+<li>Re-run setup.</li>
+</ul>
+
+
+<p>I hope this helps someone.</p>
+
+<p>Thanks for reading this!<br />
+Michael</p>
+
+
+
+</article>
+
+
+
+
+	
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=597527150322328&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <section>
+    <h1 class="indent title">Comments</h1>
+    <div id="facebook_comments" aria-live="polite">
+      <noscript>Please enable JavaScript to view the comments powered by facebook</a></noscript>
+<div
+  class="fb-comments"
+  data-href="http://ivansa.github.io/windows_microsoft/sql-server-2008-setup-error/"
+  data-num-posts="2"
+  data-width=""
+  data-colorscheme="light" ></div>
+
+    </div>
+  </section>
+
+
+        
+        </div>
+        
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+  
+<section class="social aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">
+    Stalk me!
+  </h1>
+  <ul class="unstyled">
+    
+    
+    <li><a class="github" href="//github.com/ivansa"><i class="icon-github"></i> Github</a></li>
+    <li><a class="facebook" href="//facebook.com/vaansaa"><i class="icon-facebook-sign"></i> Facebook</a></li>
+    <li><a class="gplus" href="//plus.google.com/110834282881538125936"><i class="icon-google-plus-sign"></i> Google+</a></li>
+    
+    
+    
+    <li><a class="twitter" href="//twitter.com/ivans_A"><i class="icon-twitter"></i> Twitter</a></li>
+    
+  </ul>
+</section>
+
+
+
+  <!--<section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      <li class="post">
+        <a href="/tulisan/layanan-telematika/">Layanan Telematika</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tulisan/customer-relationship-management/">Customer Relationship Management</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tulisan/enterprise-resource-planning/">Enterprise Resource Planning</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tulisan/arsitektur-telematika/">Arsitektur Telematika</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tulisan/supply-chain-management/">Supply Chain Management</a>
+      </li>
+    
+  </ul>
+</section>
+-->
+<section class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Categories</h1>
+  <ul class="divided" id="categories">
+    <li class='post'><a href='/blog/categories/android'>android</a></li><li class='post'><a href='/blog/categories/cobol'>cobol</a></li><li class='post'><a href='/blog/categories/cpp'>cpp</a></li><li class='post'><a href='/blog/categories/ilmu-budaya-dasar'>ilmu_budaya_dasar</a></li><li class='post'><a href='/blog/categories/ilmu-sosial-dasar'>ilmu_sosial_dasar</a></li><li class='post'><a href='/blog/categories/java'>java</a></li><li class='post'><a href='/blog/categories/komputer'>komputer</a></li><li class='post'><a href='/blog/categories/linux'>linux</a></li><li class='post'><a href='/blog/categories/octopress'>octopress</a></li><li class='post'><a href='/blog/categories/pascal'>pascal</a></li><li class='post'><a href='/blog/categories/pembelajaran'>pembelajaran</a></li><li class='post'><a href='/blog/categories/php'>php</a></li><li class='post'><a href='/blog/categories/qbasic'>qbasic</a></li><li class='post'><a href='/blog/categories/tulisan'>tulisan</a></li><li class='post'><a href='/blog/categories/windows-microsoft'>windows_microsoft</a></li>
+  </ul>
+</section>
+<section class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Monthly Archives</h1>
+  <script>function show_months(x){$("#month_ul_"+x).toggle(500);}</script><div class="monthly_archive"><ul class="year_list divided"><li class="year" style="text-decoration: none" onclick="show_months(2016)">2016 (14)<ul class="month_list" style="display: none;list-style-type: square;" id="month_ul_2016"><li class="month"><a href='/2016/11/'>November (3)</a></li><li class="month"><a href='/2016/10/'>October (5)</a></li><li class="month"><a href='/2016/04/'>April (2)</a></li><li class="month"><a href='/2016/03/'>March (2)</a></li><li class="month"><a href='/2016/01/'>January (2)</a></li></ul></li><li class="year" style="text-decoration: none" onclick="show_months(2015)">2015 (20)<ul class="month_list" style="display: none;list-style-type: square;" id="month_ul_2015"><li class="month"><a href='/2015/12/'>December (1)</a></li><li class="month"><a href='/2015/10/'>October (1)</a></li><li class="month"><a href='/2015/06/'>June (6)</a></li><li class="month"><a href='/2015/05/'>May (1)</a></li><li class="month"><a href='/2015/04/'>April (5)</a></li><li class="month"><a href='/2015/03/'>March (6)</a></li></ul></li><li class="year" style="text-decoration: none" onclick="show_months(2014)">2014 (38)<ul class="month_list" style="display: none;list-style-type: square;" id="month_ul_2014"><li class="month"><a href='/2014/12/'>December (6)</a></li><li class="month"><a href='/2014/11/'>November (10)</a></li><li class="month"><a href='/2014/10/'>October (3)</a></li><li class="month"><a href='/2014/09/'>September (1)</a></li><li class="month"><a href='/2014/05/'>May (2)</a></li><li class="month"><a href='/2014/04/'>April (9)</a></li><li class="month"><a href='/2014/03/'>March (2)</a></li><li class="month"><a href='/2014/02/'>February (3)</a></li><li class="month"><a href='/2014/01/'>January (2)</a></li></ul></li><li class="year" style="text-decoration: none" onclick="show_months(2013)">2013 (15)<ul class="month_list" style="display: none;list-style-type: square;" id="month_ul_2013"><li class="month"><a href='/2013/11/'>November (12)</a></li><li class="month"><a href='/2013/10/'>October (1)</a></li><li class="month"><a href='/2013/07/'>July (2)</a></li></ul></li></ul></div>
+</section>
+<!--
+<section id="github-repos" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">
+    GitHub Repos
+    
+    <small class="pull-right">
+      <a class="btn" href="//github.com/ivansa" title="@ivansa on GitHub" target="_blank">
+        <i class="icon-external-link"></i>
+      </a>
+    </small>
+    
+  </h1>
+  <ul id="gh_repos" class="divided">
+    <li class="loading">
+      <i class="icon-spinner icon-spin"></i>
+    </li>
+  </ul>
+</section>
+
+-->
+
+
+
+</div>
+
+        </aside>
+        
+      </div>
+    </div>
+    
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <p class="copyright">
+  All content by Ivans Ardiansyah and licenced under <a href="//creativecommons.org/licenses/by-nc-sa/3.0/ie/">Creative Commons</a>.<br>
+  Code under <a href="//github.com/coogie/oscailte/blob/master/README.md">MIT Licence</a>.
+</p>
+    </div>
+  </div>
+</div>
+
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="/javascripts/libs/cryptojs_3_1_2/rollups/md5.js"></script>
+<script defer src="/javascripts/octopress.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

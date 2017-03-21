@@ -1,0 +1,539 @@
+
+
+<!doctype html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Tipe Data Dalam PHP Ivans Ardiansyah</title>
+    <meta name="author" content="Ivans Ardiansyah">
+    
+    <meta name="description" content="Tipe Data Dalam PHP Dec 3rd, 2014 &nbsp;tulisan &nbsp;php Setiap bahasa pemprograman pada umumnya pasti memiliki tipe data yang akan digunakan untuk &hellip;">
+    
+    <meta name="viewport" content="width=device-width">
+    
+    <link rel="canonical" href="http://ivansa.github.io/tulisan/php/tipe-data-php">
+    <link href="/favicon.ico" rel="icon">
+    <link href='//fonts.googleapis.com/css?family=Ruluko' rel='stylesheet'>
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet">
+    <link href="//atom.xml" rel="alternate" title="Ivans Ardiansyah" type="application/atom+xml">
+    <style>
+      body {
+        font-family: 'Ruluko';font-size: 22px;
+      }
+    </style>
+    
+	<meta property="fb:app_id" content="597527150322328" />
+	
+  </head>
+
+
+  <body >
+
+    <header>
+      <div class="grid-wrapper">
+  <div class="grid">
+
+    <div class="grid__item two-fifths lap-four-sixths palm-one-whole">
+  <a href="/" class="site-title">Ivans Ardiansyah</a>
+</div>
+
+<div class="grid__item three-fifths lap-two-sixths palm-one-whole">
+  <nav>
+    <input type="checkbox" id="toggle">
+<label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu"></label>
+<ul class="menu pull-right">
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/">Blog</a></li>
+</ul>
+  </nav>
+</div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+    <div class="grid-wrapper">
+      <div class="grid grid-center">
+        
+        <div class="grid__item two-thirds lap-one-whole palm-one-whole">
+        
+
+          <article class="post">
+  <header>
+  
+  <h2 class="title indent">Tipe Data Dalam PHP</h2>
+  
+
+  
+  <div class="meta clearfix">
+    
+
+
+
+
+
+
+
+
+  
+
+
+<time class="pull-left" datetime="2014-12-03T14:41:00+07:00" pubdate data-updated="true"><i class="icon-calendar"></i> Dec 3<span>rd</span>, 2014</time>
+    
+
+
+
+  
+  <div class="pull-left">
+    
+      <li style="float:left;margin-right:1em;"><i class="icon-tags"></i>&nbsp;<a href="/blog/categories/tulisan/">tulisan</a></li>
+    
+      <li style="float:left;margin-right:1em;"><i class="icon-tags"></i>&nbsp;<a href="/blog/categories/php/">php</a></li>
+    
+  </div>
+  
+
+
+    
+  </div>
+  
+</header>
+
+
+
+
+  <p>Setiap bahasa pemprograman pada umumnya pasti memiliki tipe data yang akan digunakan untuk
+menentukan tipe/jenis/sifat dari suatu variable. Pada kesempatan kali ini saya akan menuliskan beberapa
+tipe data yang ada di bahasa pemprograman PHP.</p>
+
+<!--more-->
+
+
+<blockquote></blockquote>
+
+<p>Berikut ini 8 macam tipe data pada PHP, diantaranya :</p>
+
+<h4>1. Integer</h4>
+
+
+<p>Tipe data integer adalah tipe data yang berguna untuk menyimpan bilangan bulat,
+bukan desimal. Sebagai contoh <code>(1),(2),(3),(4),(5),(-1),(-2),(-3),(-4) dan lain-lain</code>.
+data ini memiliki range antara <code>-2,147,483,648</code> sampai dengan <code>+2,147,483,648</code> platform 32 bit.</p>
+
+<p>Namun bila terdapat data diluar jangkauan tersebut, maka secara otomatis PHP akan mengkonversikannya ke dalam tipe data Floating Point.
+Integer merupakan Tipe Data yang berisikan bilangan bulat negatif dan positif atautanpa ada nilai pecahan.</p>
+
+<p>Tipe ini juga dapat dinyatakan dalam bentuk oktal (berbasis 8), desimal (berbasis 10), heksadesimal (berbasis 16). Seperti dalam contoh berikut :</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
+</span><span class='line'>  <span class="nv">$oktal</span> <span class="o">=</span> <span class="mo">031</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nv">$desimal</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
+</span><span class='line'>  <span class="nv">$heksadesimal</span> <span class="o">=</span> <span class="mh">0x10</span><span class="p">;</span>
+</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<h4>2. Double Floating</h4>
+
+
+<p>Tipe data floating point numbers biasa juga disebut dengan “double”,
+”float” atau “real” adalah tipe data yang berguna untuk menyimpan bilangan desimal.</p>
+
+<p>Sebagai contoh <code>(0.1),(1.3),(1.7),(1.8),(9.7),(2.4) dan lain-lain</code>.</p>
+
+<p>Contoh penulisannya :</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
+</span><span class='line'>  <span class="nv">$a</span> <span class="o">=</span> <span class="mf">1.234</span><span class="p">;</span>
+</span><span class='line'>  <span class="nv">$b</span> <span class="o">=</span> <span class="mf">1.2e3</span><span class="p">;</span>
+</span><span class='line'>  <span class="nv">$c</span> <span class="o">=</span> <span class="mf">2E-6</span><span class="p">;</span>
+</span><span class='line'>  <span class="nv">$d</span> <span class="o">=</span> <span class="mf">1.2E8</span><span class="p">;</span>
+</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<h4>3. Boolean</h4>
+
+
+<p>Tipe Data ini adalah tipe data yang paling sederhana. Hanya berupa <code>true</code> atau <code>false</code>.
+Cara memasukan ke dalam variabel adalah dengan memberikan nilai true atau false pada variabel tersebut.</p>
+
+<p>Penulisannya tidak dipengaruhi penggunaan huruf besar atau kecil.<br />
+Contoh penulisannya :</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
+</span><span class='line'>  <span class="nv">$a</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span> <span class="c1">//bernilai 1</span>
+</span><span class='line'>  <span class="nv">$b</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span> <span class="c1">//bernilai 1</span>
+</span><span class='line'>  <span class="nv">$c</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span> <span class="c1">//bernilai 0</span>
+</span><span class='line'>  <span class="nv">$d</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span> <span class="c1">//bernilai 0</span>
+</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Setiap Tipe Data dalam PHP mempunyai Boolean untuk melakukan Seleksi Kondisi.
+dan Tipe Data tersebut akan memberikan nilai true atau false pada seleksi kondisi tersebut.</p>
+
+<ul>
+    <li>Pada Variabel yang bertipe Data integer=0 (nol) mempunyai boolean false, selain itu true.</li>
+    <li>Pada Variabel yang bertipe Data float=0.0 (nol) mempunyai boolean false, selain itu true.</li>
+    <li>Array yang tidak mempunyai element mempunyai boolean false, selain itu true.</li>
+    <li>Objek yang tidak mempunyai member mempunyai boolean false, selain itu true.</li>
+    <li>Tipe NULL dan Variabel yang belum terisi mempunyai boolean false.</li>
+</ul>
+
+
+
+
+<h4>4. String</h4>
+
+
+<p>String adalah sebuah tipe data yang terdiri dari kata, bisa berupa kata tunggal maupun kalimat.
+Penulisan string harus diapit oleh tanda petik, baik petik tunggal <code>(‘ ‘)</code> maupun petik ganda <code>(” “)</code>.</p>
+
+<p>Contoh penulisan tipe data string :</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
+</span><span class='line'>  <span class="nv">$kata1</span> <span class="o">=</span> <span class="s1">&#39;String yang diapit oleh petik tunggal&#39;</span><span class="p">;</span>
+</span><span class='line'>  <span class="nv">$kata2</span> <span class="o">=</span> <span class="s2">&quot;String yang diapit oleh petik ganda&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Perbedaan antara petik ganda dan petik tunggal adalah,
+ketika kita menggunakan petik tunggal maka variabel didalam petik tunggal tidak akan terbaca nilainya.
+Beda halnya dengan penggunaan petik genap yang akan membaca nilai dari suatu variabel.</p>
+
+<p>Lebih spesifiknya :</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
+</span><span class='line'>  <span class="nv">$kata</span> <span class="o">=</span> <span class="s2">&quot;halo dunia&quot;</span>
+</span><span class='line'>  <span class="k">echo</span> <span class="s1">&#39;Apa kabar semua, $kata&#39;</span><span class="p">;</span>
+</span><span class='line'>  <span class="c1">//Penggunaan petik tunggal, maka akan tampil (Apa kabar semua, $kata)</span>
+</span><span class='line'>  <span class="k">echo</span> <span class="s2">&quot;Apa kabar semua, </span><span class="si">$kata</span><span class="s2">&quot;</span><span class="p">;</span>
+</span><span class='line'>  <span class="c1">//Penggunaan petik ganda, maka akan tampil (Apa kabar semua, halo dunia)</span>
+</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Jika string yang tertutup dalam tanda kutip ganda <code>(” “)</code>,
+PHP akan menafsirkan escape sequence lebih untuk karakter khusus.
+Maka penulisan untuk karakter khusus tersebut harus ditambahkan slash didepan karakter tersebut.</p>
+
+<h4>5. Object</h4>
+
+
+<p>Tipe data object dibuat dengan tujuan agar para programmer terbiasa dengan OOP.
+Tipe data object bisa berupa bilangan, variabel atau fungsi.
+Data ini dapat dimasukkan ke dalam kode program sehingga meringkas beberapa fungsi dan memperkecil ukuran file.</p>
+
+<p>Agar lebih mudah dapat menggunakan variabel dengan nilai string :</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
+</span><span class='line'>  <span class="k">class</span> <span class="nc">Nama</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">var</span> <span class="nv">$jenis</span> <span class="o">=</span> <span class="s2">&quot;halo dunia&quot;</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">function</span> <span class="nf">gantiNama</span><span class="p">(</span><span class="nv">$jenis</span><span class="p">){</span>
+</span><span class='line'>          <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">jenis</span> <span class="o">=</span> <span class="nv">$jenis</span><span class="p">;</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="nv">$nama</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Nama</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">echo</span> <span class="nv">$nama</span><span class="o">-&gt;</span><span class="na">jenis</span><span class="p">;</span>
+</span><span class='line'>  <span class="nv">$nama</span><span class="o">-&gt;</span><span class="na">gantiNama</span><span class="p">(</span><span class="s2">&quot;halo semua&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">echo</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="o">.</span><span class="nv">$nama</span><span class="o">-&gt;</span><span class="na">jenis</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="cm">/*</span>
+</span><span class='line'><span class="cm"> Output :</span>
+</span><span class='line'><span class="cm">     halo dunia</span>
+</span><span class='line'><span class="cm">     halo semua</span>
+</span><span class='line'><span class="cm"> */</span>
+</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<h4>6. Array</h4>
+
+
+<p>Array atau Larik merupakan Tipe Compound Primitif,
+terdapat juga pada bahasa-bahasa pemrograman lain.
+Tipe data array digunakan untuk menyimpan banyak data dalam satu variabel.</p>
+
+<p>Jenis array dalam php ada 3 (tiga) macam yakni :</p>
+
+<ol>
+    <li><b>Numeric Array</b> <br />
+        
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
+</span><span class='line'>  <span class="nv">$hari</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Senin&quot;</span><span class="p">;</span>
+</span><span class='line'>  <span class="nv">$hari</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Selasa&quot;</span><span class="p">;</span>
+</span><span class='line'>  <span class="nv">$hari</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Rabu&quot;</span><span class="p">;</span>
+</span><span class='line'>  <span class="nv">$hari</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Kamis&quot;</span><span class="p">;</span>
+</span><span class='line'>  <span class="nv">$hari</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Jumat&quot;</span><span class="p">;</span>
+</span><span class='line'>  <span class="nv">$hari</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Sabtu&quot;</span><span class="p">;</span>
+</span><span class='line'>  <span class="nv">$hari</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Minggu&quot;</span><span class="p">;</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="k">for</span><span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">){</span>
+</span><span class='line'>      <span class="k">echo</span> <span class="nv">$hari</span><span class="p">[</span><span class="nv">$i</span><span class="p">]</span><span class="o">.</span><span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  
+</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
+</span></code></pre></td></tr></table></div></figure>
+
+        Pada contoh numeric array diatas dapat disimpulkan bahwa pemanggilan data array tersebut menggunakan angka, 
+        angka dimulai dari 0 sampai jumlah data yang dimasukkan. 
+        <code>$hari[0]</code> adalah pemanggilan untuk data pertama, 
+        <code>$hari[1]</code> adalah pemanggilan untuk data kedua dan seterusnya.<br /><br />
+    </li>
+    
+    <li><b>Associative Array</b>  <br />
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
+</span><span class='line'>  <span class="nv">$hari</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;Senin&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Ayam&quot;</span><span class="p">,</span>
+</span><span class='line'>                <span class="s2">&quot;Selas&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Lele&quot;</span><span class="p">,</span>
+</span><span class='line'>                <span class="s2">&quot;Rabu&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Pecel&quot;</span>
+</span><span class='line'>                <span class="s2">&quot;Kamis&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Teri&quot;</span>
+</span><span class='line'>                <span class="s2">&quot;Jumat&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Rendang&quot;</span>
+</span><span class='line'>                <span class="s2">&quot;Sabtu&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Tempe&quot;</span>
+</span><span class='line'>                <span class="s2">&quot;Minggu&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Tahu&quot;</span><span class="p">);</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="c1">//Menampilkan salah satu isi array</span>
+</span><span class='line'>  <span class="k">echo</span> <span class="s2">&quot;Menu makanan hari senin adalah </span><span class="si">$hari[Senin]</span><span class="s2">&quot;</span><span class="p">;</span>
+</span><span class='line'>  
+</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
+</span></code></pre></td></tr></table></div></figure>
+
+    Pada contoh associative array diatas dapat disimpulkan bahwa pemanggilan data array tersebut 
+    menggunakan <code>string</code> yang ditentukan oleh kita, 
+    dengan kata lain pemanggilan menggunakan angka kita ganti menjadi <code>string</code> yang kita inginkan.<br /><br />
+    </li>
+    
+    <li><b>Multidimensional Array</b>   <br />
+    Pengertian multidimension array adalah array didalam array. 
+    Pemanggilan array ini bisa menggunakan numeric array maupun associative array. 
+    <code>$makan[0]["pagi"]</code> dapat diartikan sebagai menampilkan nilai array pertama dan array pagi dari variabel makan, 
+    <code>$makan["senin"]["pagi"]</code> dapat diartikan sebagai menampilkan nilai array senin dan array pagi dari variabel makan.
+    
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
+</span><span class='line'>  <span class="nv">$makan</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+</span><span class='line'>      <span class="k">array</span><span class="p">(</span><span class="s2">&quot;pagi&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;bubur&quot;</span><span class="p">,</span> <span class="s2">&quot;siang&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;nasi&quot;</span><span class="p">,</span> <span class="s2">&quot;sore&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;nasi&quot;</span><span class="p">),</span>
+</span><span class='line'>      <span class="k">array</span><span class="p">(</span><span class="s2">&quot;pagi&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;ayam&quot;</span><span class="p">,</span> <span class="s2">&quot;siang&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;sayur&quot;</span><span class="p">,</span> <span class="s2">&quot;sore&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;tahu&quot;</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">);</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="k">echo</span> <span class="s2">&quot;Menu makan siang adalah </span><span class="si">$makan[0][siang]</span><span class="s2"> dan </span><span class="si">$makan[1][siang]</span><span class="s2">&quot;</span>
+</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
+</span></code></pre></td></tr></table></div></figure>
+    
+    </li>
+</ol>
+
+
+
+
+<h4>7. Null</h4>
+
+
+<p>NULL adalah Tipe Data yang tidak memuat apapun.
+Setiap Variabel yang diset menjadi Tipe Data NULL ini akan
+menjadikan Variabel tersebut kosong, seperti dalam penggunaan fungsi <code>unset()</code>.</p>
+
+<p>Cara untuk menset Variabel menjadi NULL adalah dengan memasukan nilai NULL pada variabel yang dimaksud seperti pada
+Contoh berikut:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
+</span><span class='line'>  <span class="c1">//Nilai awal $foo adalah 10</span>
+</span><span class='line'>  <span class="nv">$foo</span> <span class="o">=</span> <span class="mi">10</span>
+</span><span class='line'>  <span class="c1">//Nilai foo di ganti NULL</span>
+</span><span class='line'>  <span class="nv">$foo</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">;</span>
+</span><span class='line'>  <span class="c1">//Penggantian nilai tersebut sama halnya dengan menggunakan unset()</span>
+</span><span class='line'>  <span class="nb">unset</span><span class="p">(</span><span class="nv">$foo</span><span class="p">);</span>
+</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<h4>8. Resources</h4>
+
+
+<p>Tipe Data Spesial yang satu ini di khususkan untuk menyimpan resource, sumber atau alamat.
+Variabel tersebut hanya dapat diciptakan oleh suatu
+fungsi khusus yang mengembalikan nilai berupa resource seperti penggunaan fungsi <code>fopen, opendir, mysql_connect, mysql_query dan semacamnya</code>.</p>
+
+
+
+</article>
+
+
+
+
+	
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=597527150322328&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <section>
+    <h1 class="indent title">Comments</h1>
+    <div id="facebook_comments" aria-live="polite">
+      <noscript>Please enable JavaScript to view the comments powered by facebook</a></noscript>
+<div
+  class="fb-comments"
+  data-href="http://ivansa.github.io/tulisan/php/tipe-data-php/"
+  data-num-posts="2"
+  data-width=""
+  data-colorscheme="light" ></div>
+
+    </div>
+  </section>
+
+
+        
+        </div>
+        
+        
+        <aside id="sidebar" class="grid__item one-third lap-one-whole palm-one-whole">
+          <div class="grid">
+
+  
+<section class="social aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">
+    Stalk me!
+  </h1>
+  <ul class="unstyled">
+    
+    
+    <li><a class="github" href="//github.com/ivansa"><i class="icon-github"></i> Github</a></li>
+    <li><a class="facebook" href="//facebook.com/vaansaa"><i class="icon-facebook-sign"></i> Facebook</a></li>
+    <li><a class="gplus" href="//plus.google.com/110834282881538125936"><i class="icon-google-plus-sign"></i> Google+</a></li>
+    
+    
+    
+    <li><a class="twitter" href="//twitter.com/ivans_A"><i class="icon-twitter"></i> Twitter</a></li>
+    
+  </ul>
+</section>
+
+
+
+  <!--<section id="recent-posts" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Recent Posts</h1>
+  <ul class="divided">
+    
+      <li class="post">
+        <a href="/tulisan/layanan-telematika/">Layanan Telematika</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tulisan/customer-relationship-management/">Customer Relationship Management</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tulisan/enterprise-resource-planning/">Enterprise Resource Planning</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tulisan/arsitektur-telematika/">Arsitektur Telematika</a>
+      </li>
+    
+      <li class="post">
+        <a href="/tulisan/supply-chain-management/">Supply Chain Management</a>
+      </li>
+    
+  </ul>
+</section>
+-->
+<section class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Categories</h1>
+  <ul class="divided" id="categories">
+    <li class='post'><a href='/blog/categories/android'>android</a></li><li class='post'><a href='/blog/categories/cobol'>cobol</a></li><li class='post'><a href='/blog/categories/cpp'>cpp</a></li><li class='post'><a href='/blog/categories/ilmu-budaya-dasar'>ilmu_budaya_dasar</a></li><li class='post'><a href='/blog/categories/ilmu-sosial-dasar'>ilmu_sosial_dasar</a></li><li class='post'><a href='/blog/categories/java'>java</a></li><li class='post'><a href='/blog/categories/komputer'>komputer</a></li><li class='post'><a href='/blog/categories/linux'>linux</a></li><li class='post'><a href='/blog/categories/octopress'>octopress</a></li><li class='post'><a href='/blog/categories/pascal'>pascal</a></li><li class='post'><a href='/blog/categories/pembelajaran'>pembelajaran</a></li><li class='post'><a href='/blog/categories/php'>php</a></li><li class='post'><a href='/blog/categories/qbasic'>qbasic</a></li><li class='post'><a href='/blog/categories/tulisan'>tulisan</a></li><li class='post'><a href='/blog/categories/windows-microsoft'>windows_microsoft</a></li>
+  </ul>
+</section>
+<section class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">Monthly Archives</h1>
+  <script>function show_months(x){$("#month_ul_"+x).toggle(500);}</script><div class="monthly_archive"><ul class="year_list divided"><li class="year" style="text-decoration: none" onclick="show_months(2016)">2016 (14)<ul class="month_list" style="display: none;list-style-type: square;" id="month_ul_2016"><li class="month"><a href='/2016/11/'>November (3)</a></li><li class="month"><a href='/2016/10/'>October (5)</a></li><li class="month"><a href='/2016/04/'>April (2)</a></li><li class="month"><a href='/2016/03/'>March (2)</a></li><li class="month"><a href='/2016/01/'>January (2)</a></li></ul></li><li class="year" style="text-decoration: none" onclick="show_months(2015)">2015 (20)<ul class="month_list" style="display: none;list-style-type: square;" id="month_ul_2015"><li class="month"><a href='/2015/12/'>December (1)</a></li><li class="month"><a href='/2015/10/'>October (1)</a></li><li class="month"><a href='/2015/06/'>June (6)</a></li><li class="month"><a href='/2015/05/'>May (1)</a></li><li class="month"><a href='/2015/04/'>April (5)</a></li><li class="month"><a href='/2015/03/'>March (6)</a></li></ul></li><li class="year" style="text-decoration: none" onclick="show_months(2014)">2014 (38)<ul class="month_list" style="display: none;list-style-type: square;" id="month_ul_2014"><li class="month"><a href='/2014/12/'>December (6)</a></li><li class="month"><a href='/2014/11/'>November (10)</a></li><li class="month"><a href='/2014/10/'>October (3)</a></li><li class="month"><a href='/2014/09/'>September (1)</a></li><li class="month"><a href='/2014/05/'>May (2)</a></li><li class="month"><a href='/2014/04/'>April (9)</a></li><li class="month"><a href='/2014/03/'>March (2)</a></li><li class="month"><a href='/2014/02/'>February (3)</a></li><li class="month"><a href='/2014/01/'>January (2)</a></li></ul></li><li class="year" style="text-decoration: none" onclick="show_months(2013)">2013 (15)<ul class="month_list" style="display: none;list-style-type: square;" id="month_ul_2013"><li class="month"><a href='/2013/11/'>November (12)</a></li><li class="month"><a href='/2013/10/'>October (1)</a></li><li class="month"><a href='/2013/07/'>July (2)</a></li></ul></li></ul></div>
+</section>
+<!--
+<section id="github-repos" class="aside-module grid__item one-whole lap-one-half">
+  <h1 class="title delta">
+    GitHub Repos
+    
+    <small class="pull-right">
+      <a class="btn" href="//github.com/ivansa" title="@ivansa on GitHub" target="_blank">
+        <i class="icon-external-link"></i>
+      </a>
+    </small>
+    
+  </h1>
+  <ul id="gh_repos" class="divided">
+    <li class="loading">
+      <i class="icon-spinner icon-spin"></i>
+    </li>
+  </ul>
+</section>
+
+-->
+
+
+
+</div>
+
+        </aside>
+        
+      </div>
+    </div>
+    
+    <footer>
+      <div class="grid-wrapper">
+  <div class="grid">
+    <div class="grid__item">
+      <p class="copyright">
+  All content by Ivans Ardiansyah and licenced under <a href="//creativecommons.org/licenses/by-nc-sa/3.0/ie/">Creative Commons</a>.<br>
+  Code under <a href="//github.com/coogie/oscailte/blob/master/README.md">MIT Licence</a>.
+</p>
+    </div>
+  </div>
+</div>
+
+    </footer>
+
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="/javascripts/libs/cryptojs_3_1_2/rollups/md5.js"></script>
+<script defer src="/javascripts/octopress.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

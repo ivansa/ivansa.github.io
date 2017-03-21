@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: pascal | Ivans Ardiansyah]]></title>
+  <link href="http://ivansa.github.io/blog/categories/pascal/atom.xml" rel="self"/>
+  <link href="http://ivansa.github.io/"/>
+  <updated>2017-03-21T16:29:35+07:00</updated>
+  <id>http://ivansa.github.io/</id>
+  <author>
+    <name><![CDATA[Ivans Ardiansyah]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Pascal : Menghitung Basis 8]]></title>
+    <link href="http://ivansa.github.io/pascal/pascal-basis-8/"/>
+    <updated>2015-03-27T15:10:00+07:00</updated>
+    <id>http://ivansa.github.io/pascal/pascal-basis-8</id>
+    <content type="html"><![CDATA[<p>Berikut merupakan contoh program untuk menghitung basis 8 dengan soal :</p>
+
+<blockquote><p>N = (4, 3, 6, 7)<sub>8</sub></p></blockquote>
+
+<!-- more -->
+
+
+<p>Langsung saja berikut ini programnya :</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (tugas2.pas)</span> <a href='/downloads/code/pascal/pascal-basis-8/tugas2.pas'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class='code'><pre><code class='pas'><span class='line'><span class="k">program</span> <span class="n">Ivans2</span><span class="o">;</span>
+</span><span class='line'><span class="k">uses</span> <span class="n">crt</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">var</span>
+</span><span class='line'>    <span class="n">i</span> <span class="o">:</span> <span class="kt">integer</span><span class="o">;</span>
+</span><span class='line'>    <span class="n">n</span> <span class="o">:</span> <span class="kt">real</span><span class="o">;</span>
+</span><span class='line'>    <span class="n">x</span><span class="o">:</span> <span class="k">array</span> <span class="p">[</span><span class="mi">0</span><span class="o">..</span><span class="mi">3</span><span class="p">]</span> <span class="k">of</span> <span class="kt">integer</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">function</span> <span class="nf">pangkat</span><span class="p">(</span><span class="n">x</span><span class="o">,</span><span class="n">y</span> <span class="o">:</span> <span class="kt">integer</span><span class="p">)</span> <span class="o">:</span> <span class="kt">real</span><span class="o">;</span>
+</span><span class='line'>    <span class="k">var</span> <span class="n">hasil</span> <span class="o">:</span> <span class="kt">real</span><span class="o">;</span>
+</span><span class='line'>    <span class="k">begin</span>
+</span><span class='line'>         <span class="n">hasil</span> <span class="o">:=</span> <span class="nb">exp</span><span class="p">(</span> <span class="n">x</span> <span class="o">*</span> <span class="nb">ln</span><span class="p">(</span><span class="n">y</span><span class="p">))</span><span class="o">;</span>
+</span><span class='line'>         <span class="n">pangkat</span> <span class="o">:=</span> <span class="n">hasil</span><span class="o">;</span>
+</span><span class='line'>    <span class="k">end</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">begin</span>
+</span><span class='line'>        <span class="n">clrscr</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">:=</span> <span class="mi">4</span><span class="o">;</span>
+</span><span class='line'>        <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">:=</span> <span class="mi">3</span><span class="o">;</span>
+</span><span class='line'>        <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">:=</span> <span class="mi">6</span><span class="o">;</span>
+</span><span class='line'>        <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">:=</span> <span class="mi">7</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">for</span> <span class="n">i</span><span class="o">:=</span> <span class="mi">3</span> <span class="k">downto</span> <span class="mi">0</span> <span class="k">do</span>
+</span><span class='line'>            <span class="k">begin</span>
+</span><span class='line'>                 <span class="n">n</span> <span class="o">:=</span> <span class="n">n</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">pangkat</span><span class="p">(</span><span class="n">i</span><span class="o">,</span><span class="mi">8</span><span class="p">))</span><span class="o">;</span>
+</span><span class='line'>            <span class="k">end</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nb">write</span><span class="p">(</span><span class="s">&#39;N = &#39;</span><span class="o">,</span><span class="n">n</span><span class="o">:</span><span class="mi">2</span><span class="o">:</span><span class="mi">0</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nb">readln</span><span class="p">()</span><span class="o">;</span>
+</span><span class='line'><span class="k">end</span><span class="o">.</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Maka output yang dihasilkan adalah hasil dari basis 8 tersebut :</p>
+
+<p><img src="/images/blog/pascal/pascal-basis-8/output.png" style="border:1px solid grey;margin-top:0.8em"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pascal : Deret Aritmatika]]></title>
+    <link href="http://ivansa.github.io/pascal/pascal-penjumlahan-berulang/"/>
+    <updated>2015-03-27T14:10:00+07:00</updated>
+    <id>http://ivansa.github.io/pascal/pascal-penjumlahan-berulang</id>
+    <content type="html"><![CDATA[<p>Berikut merupakan contoh program penjumlahan bilangan secara berulang sampai dengan angka terakhir, dengan soal :</p>
+
+<blockquote><p>3 + 7 + 11 + &hellip; + 403</p></blockquote>
+
+<!-- more -->
+
+
+<p><img src="/images/blog/pascal/deret-aritmatika/flowchart.png" style="border:1px solid grey;margin-top:0.8em"></p>
+
+<p>Dari flowchart diatas maka saya membuat program dengan mengikuti alur tersebut :</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (tugas1.pas)</span> <a href='/downloads/code/pascal/pascal-deret-aritmatika/tugas1.pas'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class='code'><pre><code class='pas'><span class='line'><span class="k">program</span> <span class="n">Ivans1</span><span class="o">;</span>
+</span><span class='line'><span class="k">uses</span> <span class="n">crt</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">var</span> <span class="n">a</span><span class="o">,</span><span class="n">s</span> <span class="o">:</span> <span class="kt">integer</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">begin</span>
+</span><span class='line'>        <span class="n">clrscr</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="n">s</span> <span class="o">:=</span> <span class="mi">0</span><span class="o">;</span>
+</span><span class='line'>        <span class="n">a</span> <span class="o">:=</span> <span class="mi">3</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">while</span> <span class="n">a</span> <span class="o">&lt;=</span> <span class="mi">403</span> <span class="k">do</span>
+</span><span class='line'>            <span class="k">begin</span>
+</span><span class='line'>                 <span class="n">s</span> <span class="o">:=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">a</span><span class="o">;</span>
+</span><span class='line'>                 <span class="n">a</span> <span class="o">:=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">4</span><span class="o">;</span>
+</span><span class='line'>            <span class="k">end</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nb">write</span><span class="p">(</span><span class="s">&#39;s = &#39;</span><span class="o">,</span><span class="n">s</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nb">readln</span><span class="p">()</span><span class="o">;</span>
+</span><span class='line'><span class="k">end</span><span class="o">.</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Maka output yang dihasilkan adalah hasil dari penjumlahan semua bilangan tersebut :</p>
+
+<p><img src="/images/blog/pascal/deret-aritmatika/output.png" style="border:1px solid grey;margin-top:0.8em"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pascal : Operasi Matriks]]></title>
+    <link href="http://ivansa.github.io/pascal/pascal-operasi-matriks/"/>
+    <updated>2014-11-14T18:41:00+07:00</updated>
+    <id>http://ivansa.github.io/pascal/pascal-operasi-matriks</id>
+    <content type="html"><![CDATA[<p>Berikut merupakan program pascal untuk melakukan operasi matriks dengan penggunaan tipe data array.</p>
+
+<!--more-->
+
+
+<h3>Programnya :</h3>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (matriks.pas)</span> <a href='/downloads/code/pascal/pascal-operasi-matriks/matriks.pas'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class='code'><pre><code class='pas'><span class='line'><span class="k">uses</span> <span class="n">crt</span><span class="o">;</span>
+</span><span class='line'><span class="k">type</span> <span class="n">t</span> <span class="o">=</span> <span class="k">object</span>
+</span><span class='line'><span class="n">m1</span><span class="o">,</span> <span class="n">m2</span> <span class="o">:</span> <span class="k">array</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">2</span><span class="o">,</span><span class="mi">1</span><span class="o">..</span><span class="mi">2</span><span class="p">]</span> <span class="k">of</span> <span class="kt">integer</span><span class="o">;</span>
+</span><span class='line'><span class="n">lok</span> <span class="o">:</span> <span class="k">array</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">4</span><span class="p">]</span> <span class="k">of</span> <span class="kt">integer</span><span class="o">;</span>
+</span><span class='line'><span class="k">procedure</span> <span class="nf">tampil</span><span class="o">;</span>
+</span><span class='line'><span class="k">procedure</span> <span class="nf">input</span><span class="o">;</span>
+</span><span class='line'><span class="k">procedure</span> <span class="nf">kali</span><span class="o">;</span>
+</span><span class='line'><span class="k">procedure</span> <span class="nf">determinan</span><span class="o">;</span>
+</span><span class='line'><span class="k">procedure</span> <span class="nf">transpose</span><span class="o">;</span>
+</span><span class='line'><span class="k">end</span><span class="o">;</span>
+</span><span class='line'><span class="k">var</span> <span class="n">m</span> <span class="o">:</span> <span class="n">t</span><span class="o">;</span>
+</span><span class='line'><span class="n">i</span><span class="o">,</span><span class="n">j</span><span class="o">,</span><span class="n">k</span><span class="o">,</span><span class="n">pil</span><span class="o">,</span><span class="n">b</span><span class="o">,</span><span class="n">c</span> <span class="o">:</span> <span class="kt">integer</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">procedure</span> <span class="nc">t</span><span class="o">.</span><span class="nf">input</span><span class="o">;</span>
+</span><span class='line'><span class="k">begin</span>
+</span><span class='line'>     <span class="n">clrscr</span><span class="o">;</span>
+</span><span class='line'>     <span class="nb">writeln</span> <span class="p">(</span><span class="s">&#39;---Input Matrik I---&#39;</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="k">for</span> <span class="n">i</span> <span class="o">:=</span> <span class="mi">1</span> <span class="k">to</span> <span class="mi">2</span> <span class="k">do</span>
+</span><span class='line'>     <span class="k">begin</span>
+</span><span class='line'>          <span class="k">for</span> <span class="n">j</span> <span class="o">:=</span> <span class="mi">1</span> <span class="k">to</span> <span class="mi">2</span> <span class="k">do</span>
+</span><span class='line'>          <span class="k">begin</span>
+</span><span class='line'>               <span class="nb">write</span> <span class="p">(</span><span class="s">&#39;Elemen Matrik [&#39;</span><span class="o">,</span><span class="n">i</span><span class="o">,</span><span class="s">&#39;,&#39;</span><span class="o">,</span><span class="n">j</span><span class="o">,</span><span class="s">&#39;]:&#39;</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>               <span class="nb">readln</span> <span class="p">(</span><span class="n">m1</span><span class="p">[</span><span class="n">i</span><span class="o">,</span><span class="n">j</span><span class="p">])</span><span class="o">;</span>
+</span><span class='line'>          <span class="k">end</span><span class="o">;</span>
+</span><span class='line'>     <span class="k">end</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">35</span><span class="o">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">;</span> <span class="nb">writeln</span><span class="p">(</span><span class="s">&#39;---Input Matriik II---&#39;</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">k</span> <span class="o">:=</span> <span class="mi">2</span><span class="o">;</span>
+</span><span class='line'>     <span class="k">for</span> <span class="n">i</span> <span class="o">:=</span> <span class="mi">1</span> <span class="k">to</span> <span class="mi">2</span> <span class="k">do</span>
+</span><span class='line'>     <span class="k">begin</span>
+</span><span class='line'>          <span class="k">for</span> <span class="n">j</span> <span class="o">:=</span><span class="mi">1</span> <span class="k">to</span> <span class="mi">2</span> <span class="k">do</span>
+</span><span class='line'>          <span class="k">begin</span>
+</span><span class='line'>               <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">35</span><span class="o">,</span><span class="n">k</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>               <span class="nb">inc</span> <span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>               <span class="nb">write</span> <span class="p">(</span><span class="s">&#39;Elemen Matrik [&#39;</span><span class="o">,</span><span class="n">i</span><span class="o">,</span><span class="s">&#39;,&#39;</span><span class="o">,</span><span class="n">j</span><span class="o">,</span><span class="s">&#39;]:&#39;</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>               <span class="nb">readln</span> <span class="p">(</span><span class="n">m2</span><span class="p">[</span><span class="n">i</span><span class="o">,</span><span class="n">j</span><span class="p">])</span><span class="o">;</span>
+</span><span class='line'>               <span class="k">end</span><span class="o">;</span>
+</span><span class='line'>          <span class="k">end</span><span class="o">;</span>
+</span><span class='line'>     <span class="k">end</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>     <span class="k">procedure</span> <span class="nc">t</span><span class="o">.</span><span class="nf">tampil</span><span class="o">;</span>
+</span><span class='line'>     <span class="k">begin</span>
+</span><span class='line'>     <span class="nb">writeln</span><span class="o">;</span>
+</span><span class='line'>     <span class="nb">writeln</span><span class="cm">(***Matrik I ***)</span><span class="o">;</span>
+</span><span class='line'>     <span class="nb">writeln</span> <span class="p">(</span><span class="n">m1</span><span class="p">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span><span class="mi">5</span><span class="o">,</span><span class="n">m1</span><span class="p">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="p">]</span><span class="o">:</span><span class="mi">5</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="nb">writeln</span> <span class="p">(</span><span class="n">m1</span><span class="p">[</span><span class="mi">2</span><span class="o">,</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span><span class="mi">5</span><span class="o">,</span><span class="n">m1</span><span class="p">[</span><span class="mi">2</span><span class="o">,</span><span class="mi">2</span><span class="p">]</span><span class="o">:</span><span class="mi">5</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">gotoxy</span><span class="p">(</span><span class="mi">35</span><span class="o">,</span><span class="mi">7</span><span class="p">)</span><span class="o">;</span><span class="nb">writeln</span> <span class="cm">(*** Matrik II ***)</span> <span class="o">;</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">35</span><span class="o">,</span><span class="mi">8</span><span class="p">)</span><span class="o">;</span><span class="nb">writeln</span> <span class="p">(</span><span class="n">m2</span><span class="p">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span><span class="mi">5</span><span class="o">,</span><span class="n">m2</span><span class="p">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="p">]</span><span class="o">:</span><span class="mi">5</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">35</span><span class="o">,</span><span class="mi">9</span><span class="p">)</span><span class="o">;</span><span class="nb">writeln</span> <span class="p">(</span><span class="n">m2</span><span class="p">[</span><span class="mi">2</span><span class="o">,</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span><span class="mi">5</span><span class="o">,</span><span class="n">m2</span><span class="p">[</span><span class="mi">2</span><span class="o">,</span><span class="mi">2</span><span class="p">]</span><span class="o">:</span><span class="mi">5</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="nb">readln</span><span class="o">;</span>
+</span><span class='line'><span class="k">end</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">procedure</span> <span class="nc">t</span><span class="o">.</span><span class="nf">kali</span><span class="o">;</span>
+</span><span class='line'><span class="k">begin</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">26</span><span class="o">,</span><span class="mi">12</span><span class="p">)</span><span class="o">;</span> <span class="nb">writeln</span> <span class="p">(</span><span class="s">&#39;---Hasil Perkalian Matrik---&#39;</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">lok</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">:=</span> <span class="n">m1</span><span class="p">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">m2</span><span class="p">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">m1</span><span class="p">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">m2</span><span class="p">[</span><span class="mi">2</span><span class="o">,</span><span class="mi">1</span><span class="p">]</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">lok</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">:=</span> <span class="n">m1</span><span class="p">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">m2</span><span class="p">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">m1</span><span class="p">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">m2</span><span class="p">[</span><span class="mi">2</span><span class="o">,</span><span class="mi">2</span><span class="p">]</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">lok</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">:=</span> <span class="n">m1</span><span class="p">[</span><span class="mi">2</span><span class="o">,</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">m2</span><span class="p">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">m1</span><span class="p">[</span><span class="mi">2</span><span class="o">,</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">m2</span><span class="p">[</span><span class="mi">2</span><span class="o">,</span><span class="mi">1</span><span class="p">]</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">lok</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">:=</span> <span class="n">m1</span><span class="p">[</span><span class="mi">2</span><span class="o">,</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">m2</span><span class="p">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">m1</span><span class="p">[</span><span class="mi">2</span><span class="o">,</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">m2</span><span class="p">[</span><span class="mi">2</span><span class="o">,</span><span class="mi">2</span><span class="p">]</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">30</span><span class="o">,</span><span class="mi">14</span><span class="p">)</span><span class="o">;</span><span class="nb">writeln</span> <span class="p">(</span><span class="n">lok</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span><span class="mi">5</span><span class="o">,</span><span class="n">lok</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">:</span><span class="mi">5</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">30</span><span class="o">,</span><span class="mi">15</span><span class="p">)</span><span class="o">;</span><span class="nb">writeln</span>  <span class="p">(</span><span class="n">lok</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">:</span><span class="mi">5</span><span class="o">,</span><span class="n">lok</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">:</span><span class="mi">5</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="nb">readln</span><span class="o">;</span>
+</span><span class='line'><span class="k">end</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">procedure</span> <span class="nc">t</span><span class="o">.</span><span class="nf">determinan</span><span class="o">;</span>
+</span><span class='line'><span class="k">begin</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">28</span><span class="o">,</span><span class="mi">11</span><span class="p">)</span><span class="o">;</span> <span class="nb">writeln</span> <span class="p">(</span><span class="s">&#39;--Determninan Matrik--&#39;</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="nb">writeln</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">lok</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">:=</span> <span class="n">m1</span><span class="p">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">m1</span><span class="p">[</span><span class="mi">2</span><span class="o">,</span><span class="mi">2</span><span class="p">]</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">lok</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">:=</span> <span class="n">m1</span><span class="p">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">m1</span><span class="p">[</span><span class="mi">2</span><span class="o">,</span><span class="mi">1</span><span class="p">]</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">lok</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">:=</span> <span class="n">m2</span><span class="p">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">m2</span><span class="p">[</span><span class="mi">2</span><span class="o">,</span><span class="mi">2</span><span class="p">]</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">lok</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">:=</span> <span class="n">m2</span><span class="p">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">m2</span><span class="p">[</span><span class="mi">2</span><span class="o">,</span><span class="mi">1</span><span class="p">]</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">b</span><span class="o">:=</span><span class="n">lok</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">lok</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">c</span><span class="o">:=</span><span class="n">lok</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">-</span> <span class="n">lok</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">27</span><span class="o">,</span><span class="mi">12</span><span class="p">)</span><span class="o">;</span><span class="nb">writeln</span> <span class="p">(</span><span class="s">&#39;Determinan Matrik I : &#39;</span><span class="o">,</span><span class="n">b</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="nb">writeln</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">27</span><span class="o">,</span><span class="mi">14</span><span class="p">)</span><span class="o">;</span><span class="nb">writeln</span> <span class="p">(</span><span class="s">&#39;Determinan Matrik II : &#39;</span><span class="o">,</span><span class="n">c</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="nb">readln</span><span class="o">;</span>
+</span><span class='line'><span class="k">end</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">procedure</span> <span class="nc">t</span><span class="o">.</span><span class="nf">transpose</span><span class="o">;</span>
+</span><span class='line'><span class="k">begin</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">6</span><span class="o">,</span><span class="mi">10</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="nb">writeln</span><span class="p">(</span><span class="s">&#39;--Hasil Transpose Matrik I--&#39;</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">lok</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">:=</span> <span class="n">m1</span><span class="p">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="p">]</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">lok</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">:=</span> <span class="n">m1</span><span class="p">[</span><span class="mi">2</span><span class="o">,</span><span class="mi">1</span><span class="p">]</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">lok</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">:=</span> <span class="n">m1</span><span class="p">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="p">]</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">lok</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">:=</span> <span class="n">m1</span><span class="p">[</span><span class="mi">2</span><span class="o">,</span><span class="mi">1</span><span class="p">]</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">12</span><span class="o">,</span><span class="mi">12</span><span class="p">)</span><span class="o">;</span><span class="nb">writeln</span><span class="p">(</span><span class="n">lok</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span><span class="mi">5</span><span class="o">,</span><span class="n">lok</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">:</span><span class="mi">5</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">12</span><span class="o">,</span><span class="mi">13</span><span class="p">)</span><span class="o">;</span><span class="nb">writeln</span><span class="p">(</span><span class="n">lok</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">:</span><span class="mi">5</span><span class="o">,</span><span class="n">lok</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">:</span><span class="mi">5</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">42</span><span class="o">,</span><span class="mi">10</span><span class="p">)</span><span class="o">;</span><span class="nb">writeln</span> <span class="p">(</span><span class="s">&#39;--Hasil Transpose Matrik II--&#39;</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">lok</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">:=</span> <span class="n">m2</span><span class="p">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">1</span><span class="p">]</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">lok</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">:=</span> <span class="n">m2</span><span class="p">[</span><span class="mi">2</span><span class="o">,</span><span class="mi">1</span><span class="p">]</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">lok</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">:=</span> <span class="n">m2</span><span class="p">[</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="p">]</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">lok</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">:=</span> <span class="n">m2</span><span class="p">[</span><span class="mi">2</span><span class="o">,</span><span class="mi">1</span><span class="p">]</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">49</span><span class="o">,</span><span class="mi">12</span><span class="p">)</span><span class="o">;</span><span class="nb">writeln</span><span class="p">(</span><span class="n">lok</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span><span class="mi">5</span><span class="o">,</span><span class="n">lok</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">:</span><span class="mi">5</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">49</span><span class="o">,</span><span class="mi">13</span><span class="p">)</span><span class="o">;</span><span class="nb">writeln</span><span class="p">(</span><span class="n">lok</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">:</span><span class="mi">5</span><span class="o">,</span><span class="n">lok</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">:</span><span class="mi">5</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="nb">readln</span><span class="o">;</span>
+</span><span class='line'><span class="k">end</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">begin</span>
+</span><span class='line'>     <span class="k">repeat</span>
+</span><span class='line'>     <span class="n">clrscr</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">25</span><span class="o">,</span><span class="mi">1</span><span class="p">)</span><span class="o">;</span><span class="nb">writeln</span><span class="p">(</span><span class="s">&#39;|*****Manu Matrik*****|&#39;</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">25</span><span class="o">,</span><span class="mi">2</span><span class="p">)</span><span class="o">;</span><span class="nb">writeln</span><span class="p">(</span><span class="s">&#39;|1. Input Matrik      |&#39;</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">25</span><span class="o">,</span><span class="mi">3</span><span class="p">)</span><span class="o">;</span><span class="nb">writeln</span><span class="p">(</span><span class="s">&#39;|2. Perkalian Matrik  |&#39;</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">25</span><span class="o">,</span><span class="mi">4</span><span class="p">)</span><span class="o">;</span><span class="nb">writeln</span><span class="p">(</span><span class="s">&#39;|3. Determinan Matrik |&#39;</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">25</span><span class="o">,</span><span class="mi">5</span><span class="p">)</span><span class="o">;</span><span class="nb">writeln</span><span class="p">(</span><span class="s">&#39;|4. Transporse Matrik |&#39;</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">25</span><span class="o">,</span><span class="mi">6</span><span class="p">)</span><span class="o">;</span><span class="nb">writeln</span><span class="p">(</span><span class="s">&#39;|5. Keluar            |&#39;</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">25</span><span class="o">,</span><span class="mi">7</span><span class="p">)</span><span class="o">;</span><span class="nb">writeln</span><span class="p">(</span><span class="s">&#39;|*********************|&#39;</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="n">gotoxy</span> <span class="p">(</span><span class="mi">29</span><span class="o">,</span><span class="mi">8</span><span class="p">)</span><span class="o">;</span><span class="nb">write</span><span class="p">(</span><span class="s">&#39;Pilihan [1..5] : &#39;</span><span class="p">)</span><span class="o">;</span><span class="nb">readln</span> <span class="p">(</span><span class="n">pil</span><span class="p">)</span><span class="o">;</span>
+</span><span class='line'>     <span class="k">case</span> <span class="n">pil</span> <span class="k">of</span>
+</span><span class='line'>     <span class="mi">1</span> <span class="o">:</span> <span class="k">begin</span>
+</span><span class='line'>       <span class="n">m</span><span class="o">.</span><span class="n">input</span><span class="o">;</span>
+</span><span class='line'>       <span class="n">m</span><span class="o">.</span><span class="n">tampil</span><span class="o">;</span>
+</span><span class='line'>       <span class="k">end</span><span class="o">;</span>
+</span><span class='line'>     <span class="mi">2</span> <span class="o">:</span> <span class="n">m</span><span class="o">.</span><span class="n">kali</span><span class="o">;</span>
+</span><span class='line'>     <span class="mi">3</span> <span class="o">:</span> <span class="n">m</span><span class="o">.</span><span class="n">determinan</span><span class="o">;</span>
+</span><span class='line'>     <span class="mi">4</span> <span class="o">:</span> <span class="n">m</span><span class="o">.</span><span class="n">transpose</span><span class="o">;</span>
+</span><span class='line'>     <span class="k">end</span><span class="o">;</span>
+</span><span class='line'>     <span class="k">until</span> <span class="p">(</span><span class="n">pil</span><span class="p">)</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
+</span><span class='line'><span class="k">end</span><span class="o">.</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>Hasil Output nya :</h3>
+
+<p><img src="/images/blog/pascal/pascal-operasi-matriks/pascal1.png" style="border:1px solid grey;margin-top:0.8em">
+<img src="/images/blog/pascal/pascal-operasi-matriks/pascal2.png" style="border:1px solid grey;margin-top:0.8em">
+<img src="/images/blog/pascal/pascal-operasi-matriks/pascal3.png" style="border:1px solid grey;margin-top:0.8em">
+<img src="/images/blog/pascal/pascal-operasi-matriks/pascal4.png" style="border:1px solid grey;margin-top:0.8em">
+<img src="/images/blog/pascal/pascal-operasi-matriks/pascal5.png" style="border:1px solid grey;margin-top:0.8em">
+<img src="/images/blog/pascal/pascal-operasi-matriks/pascal6.png" style="border:1px solid grey;margin-top:0.8em"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pascal : Penggunaan Kondisi]]></title>
+    <link href="http://ivansa.github.io/pascal/pascal-kondisi/"/>
+    <updated>2014-04-14T10:41:00+07:00</updated>
+    <id>http://ivansa.github.io/pascal/pascal-kondisi</id>
+    <content type="html"><![CDATA[<p>Berikut merupakan contoh program sederhana menggunakan kondisi (IF-THEN):</p>
+
+<!--more-->
+
+
+<p><b>Login Sederhana : </b></p>
+
+<p>```pascal
+program ivansLogin;
+uses crt;</p>
+
+<p>var username,password : string;</p>
+
+<p>begin</p>
+
+<pre><code>    clrscr;
+    write('Username : ');readln(username);
+    write('Password : ');readln(password);
+
+    if((username = 'doni') and (password = '123')) or ((username = 'santi') and (password = 'abc')) then
+            writeln('Welcome')
+    else if((username = 'doni') and (password &lt;&gt; '123')) or ((username = 'santi') and (password &lt;&gt; 'abc')) then
+            writeln('Salah Password')
+    else if((username &lt;&gt; 'doni') and (password = '123')) or ((username &lt;&gt; 'santi') and (password = 'abc')) then
+            writeln('Username belum terdaftar')
+    else
+            writeln('Username Dan Password Salah');
+</code></pre>
+
+<p>end.</p>
+
+<p>```</p>
+
+<ul>
+<li>Kondisi pertama, jika username dan password benar maka akan menghasilkan “Welcome”</li>
+<li>Kondisi kedua, jika username benar dan password salah maka akan menghasilkan &ldquo;Salah Password&rdquo;</li>
+<li>Kondisi Ketiga, jika username salah dan password benar maka akan menghasilkan &ldquo;Username belum terdaftar&rdquo;</li>
+<li>Kondisi terakhir merupakan kondisi selain dari konsi yang di deklarasikan, yaitu menggunakan ELSE</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pascal : Luas Segitiga Dan Volume Tabung]]></title>
+    <link href="http://ivansa.github.io/pascal/pascal-segitiga-tabung/"/>
+    <updated>2014-04-06T09:41:00+07:00</updated>
+    <id>http://ivansa.github.io/pascal/pascal-segitiga-tabung</id>
+    <content type="html"><![CDATA[<p>Berikut merupakan contoh program sederhana dengan rumus luas segitiga dan volume tabung :</p>
+
+<!--more-->
+
+
+<p><b>Luas Segitiga : </b></p>
+
+<p>```pascal
+program LuasSegitiga;</p>
+
+<p>uses crt;</p>
+
+<p>var a,t : Integer;
+luas : Real;</p>
+
+<p>Begin</p>
+
+<pre><code>    clrscr;
+    write('Alas : ');readln(a);
+    write('Tinggi : ');readln(t);
+    luas := a*t/2;
+    write('Luas Segitiga adalah ',luas:3:1);
+    readln;
+</code></pre>
+
+<p>end.</p>
+
+<p>```</p>
+
+<p><b>Volume Tabung : </b></p>
+
+<p>```pascal
+program VolumeTabung;</p>
+
+<p>uses crt;</p>
+
+<p>var r,t : Integer;
+volume : Real;</p>
+
+<p>Begin</p>
+
+<pre><code>    clrscr;
+    write('Jari-jari : ');readln(r);
+    write('Tinggi : ');readln(t);
+    volume := (3.14*r*r)*t;
+    write('Volume tabung adalah ',volume:3:1);
+    readln;
+</code></pre>
+
+<p>end.
+```</p>
+
+<p><b>Penulisan variable real (volume:3:1):</b></p>
+
+<blockquote><p>volume adalah nama variabel,<br />
+3 merupakan banyaknya digit angka sebelum desimal/koma (123.),<br />
+1 merupakan banyaknya digit angka setelah desimal/koma (.9)</p></blockquote>
+]]></content>
+  </entry>
+  
+</feed>

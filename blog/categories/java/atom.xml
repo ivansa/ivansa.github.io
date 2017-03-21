@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: java | Ivans Ardiansyah]]></title>
+  <link href="http://ivansa.github.io/blog/categories/java/atom.xml" rel="self"/>
+  <link href="http://ivansa.github.io/"/>
+  <updated>2017-03-21T16:29:35+07:00</updated>
+  <id>http://ivansa.github.io/</id>
+  <author>
+    <name><![CDATA[Ivans Ardiansyah]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Remove Duplikat Value From List]]></title>
+    <link href="http://ivansa.github.io/java/remove-duplikat-value-from-list/"/>
+    <updated>2014-04-03T08:41:00+07:00</updated>
+    <id>http://ivansa.github.io/java/remove-duplikat-value-from-list</id>
+    <content type="html"><![CDATA[<p>Berikut merupakan cara menghilangkan data yang sama pada sebuah list atau array list pada java, ini merupakan pengalaman saya saat ingin
+menghilangkan record yang sama saat query. setelah cari cari di google.. akhirnya ketemu cara berikut :</p>
+
+<!--more-->
+
+
+<p>```java
+package java4s;</p>
+
+<p>import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;</p>
+
+<p>public class RemDupFromList {</p>
+
+<pre><code>public static void main(String[] args)
+{
+    List li = new ArrayList();
+
+          li.add("one");
+          li.add("two");
+          li.add("three");
+          li.add("one");//Duplicate
+          li.add("one");//Duplicate
+
+         // We have facility to pass a List into Set constructor and vice verse to cast      
+
+            List li2 = new ArrayList(new HashSet(li)); //no order
+
+         // List li2 = new ArrayList(new LinkedHashSet(li)); //If you need to preserve the order use 'LinkedHashSet'
+
+         Iterator it= li2.iterator();
+         while(it.hasNext())
+         {
+             System.out.println(it.next());
+         }
+
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<p><b>Berikut Penjelasannya :</b></p>
+
+<ul>
+<li>Contoh tersebut merupakan normal list object / list sederhana yang biasa di gunakan.</li>
+<li>Kalau saya lebih cenderung memakai fungsi linkedhashset, karena tidak merubah susunan data yang ada.</li>
+</ul>
+
+
+<blockquote><p>Output:</p>
+
+<p>one<br />
+two<br />
+three<br /></p></blockquote>
+
+<p>Sumber : <a href="http://www.java4s.com/core-java/how-to-remove-duplicate-values-from-java-listarraylist/">http://www.java4s.com/core-java/how-to-remove-duplicate-values-from-java-listarraylist/</a></p>
+]]></content>
+  </entry>
+  
+</feed>

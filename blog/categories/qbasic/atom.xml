@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: qbasic | Ivans Ardiansyah]]></title>
+  <link href="http://ivansa.github.io/blog/categories/qbasic/atom.xml" rel="self"/>
+  <link href="http://ivansa.github.io/"/>
+  <updated>2017-03-21T16:29:35+07:00</updated>
+  <id>http://ivansa.github.io/</id>
+  <author>
+    <name><![CDATA[Ivans Ardiansyah]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Program Qbasic Dengan Menu]]></title>
+    <link href="http://ivansa.github.io/qbasic/contoh-program-qbasic-9/"/>
+    <updated>2013-11-29T12:51:00+07:00</updated>
+    <id>http://ivansa.github.io/qbasic/contoh-program-qbasic-9</id>
+    <content type="html"><![CDATA[<p>Berikut merupakan contoh program QBasic menggunakan menu pemilihan, dan gabungan dari berbagai perintah.</p>
+
+<!-- more -->
+
+
+<p><b>Program : </b>
+```vbnet
+10 CLS
+20 PRINT &ldquo;### Menu ###&rdquo;
+30 PRINT &ldquo;1. Manipulasi Data&rdquo;
+40 PRINT &ldquo;2. Looping&rdquo;
+50 PRINT &ldquo;3. Kondisi&rdquo;
+60 PRINT &ldquo;4. Exit&rdquo;
+70 INPUT &ldquo;Masukan Pilihan (1,2,3,4) : &rdquo;, pilihan</p>
+
+<p>80 SELECT CASE pilihan</p>
+
+<pre><code>CASE 1
+    CLS
+    PRINT "### 1. Manipulasi Data  ###"
+    PRINT
+    INPUT "Masukan Nama Anda : ", nama$
+    INPUT "Left(Jumlah Karakter Yang Dipilih) : ", left
+    INPUT "Mid(Jumlah Karakter Yang Dipilih) : ", midle1
+    INPUT "Mid(Urutan Mulai)  ", midle2
+
+    PRINT
+    PRINT "Nama Anda Adalah "; nama$
+    PRINT "Jumlah Karakter Nama Anda Adalah "; LEN(nama$)
+    PRINT left; "Karakter Dari Kiri Adalah "; LEFT$(nama$, left)
+    PRINT midle1; "Karakter Dimulai Dari Urutan ke "; midle2; " adalah "; MID$(nama$, midle2, midle1)
+    INPUT "", enter
+    GOTO 10
+
+CASE 2
+    CLS
+    PRINT "### 2. Looping  ###"
+    PRINT
+    INPUT "Masukan Angka : ", angka
+
+    setengah = ABS(angka / 2)
+    FOR counter1 = 1 TO angka
+        IF (counter1 &gt; setengah) THEN
+            FOR counter3 = setengah TO (counter1 - setengah) STEP -1
+                PRINT "*";
+            NEXT counter3
+
+        ELSE
+
+            FOR counter2 = 1 TO counter1
+                PRINT "*";
+            NEXT counter2
+
+        END IF
+
+        PRINT
+    NEXT counter1
+    INPUT "", enter
+    GOTO 10
+
+CASE 3
+    CLS
+    PRINT "### 3. Kondisi  ###"
+    PRINT
+    INPUT "Masukan Tahun Kelahiran : ", tahun
+    LET umur = 2013 - tahun
+    IF umur &gt; 20 THEN
+        PRINT "Anda Sudah Tua"
+    ELSE
+        PRINT "Anda Masih Muda"
+    END IF
+    INPUT "", enter
+    GOTO 10
+
+CASE 4
+    END
+</code></pre>
+
+<p>END SELECT
+```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Program Qbasic Prima]]></title>
+    <link href="http://ivansa.github.io/qbasic/contoh-program-qbasic-8/"/>
+    <updated>2013-11-28T12:51:00+07:00</updated>
+    <id>http://ivansa.github.io/qbasic/contoh-program-qbasic-8</id>
+    <content type="html"><![CDATA[<p>Kali ini saya akan membuat contoh pencarian bilangan prima, dengan penggunaan looping dan kondisi.</p>
+
+<!-- more -->
+
+
+<p><b>Prima : </b>
+```vbnet
+CLS</p>
+
+<p>DIM a, b, c, d AS INTEGER</p>
+
+<p>INPUT &ldquo;Masukan Angka : &rdquo;, a</p>
+
+<p>b = 1</p>
+
+<p>WHILE b &lt;= a</p>
+
+<pre><code>c = 2
+d = 1
+
+DO WHILE c &lt;= b
+    IF b MOD c = 0 THEN
+        d = d + 1
+    END IF
+    c = c + 1
+LOOP
+
+IF d = 2 THEN
+    PRINT b
+END IF
+
+b = b + 1
+</code></pre>
+
+<p>WEND</p>
+
+<p>END
+```
+<b>Output :</b>
+<img src="/images/blog/qbasic/qbasic-output8.png" style="border:1px solid grey;margin-top:0.8em"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Program Qbasic Genap Dan Ganjil]]></title>
+    <link href="http://ivansa.github.io/qbasic/contoh-program-qbasic-7/"/>
+    <updated>2013-11-28T12:51:00+07:00</updated>
+    <id>http://ivansa.github.io/qbasic/contoh-program-qbasic-7</id>
+    <content type="html"><![CDATA[<p>Kali ini saya akan membuat contoh pencarian bilangan genap dan ganjil, dengan penggunaan looping dan kondisi.</p>
+
+<!-- more -->
+
+
+<p><b>Genap dan ganjil : </b>
+```vbnet
+CLS</p>
+
+<p>DIM a, b AS INTEGER
+INPUT &ldquo;Masukan Angka : &rdquo;, a</p>
+
+<p>b = 1</p>
+
+<p>WHILE b &lt;= a</p>
+
+<pre><code>IF b MOD 2 = 0 THEN
+    PRINT b;" Bilangan Genap"
+ELSE
+    PRINT b;" Bilangan Ganjil"
+END IF
+b = b + 1
+</code></pre>
+
+<p>WEND</p>
+
+<p>END</p>
+
+<p>```
+<b>Output :</b>
+<img src="/images/blog/qbasic/qbasic-output7.png" style="border:1px solid grey;margin-top:0.8em"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Program Qbasic Manipulasi Data]]></title>
+    <link href="http://ivansa.github.io/qbasic/contoh-program-qbasic-6/"/>
+    <updated>2013-11-27T12:51:00+07:00</updated>
+    <id>http://ivansa.github.io/qbasic/contoh-program-qbasic-6</id>
+    <content type="html"><![CDATA[<p>manipulasi data adalah proses pengolahan data menjadi informasi yang kita butuhkan di dalam program. <br>
+manipulasi data dapat berupa shorting, calculating, mengambil sebagian karakter, konversi, operasi aritmatika atau editing.</p>
+
+<!-- more -->
+
+
+<p><b>Fungsi String : </b></p>
+
+<table border=1 style="width:100%">
+    <tr>
+        <td>LEN</td>
+        <td><center>:</center></td>
+        <td>Menghitung jumlah karakter dari suatu string.</td>
+    </tr>
+    <tr>
+        <td>LEFT$</td>
+        <td><center>:</center></td>
+        <td>Mengambil sejumlah karakter dari posisi kiri</td>
+    </tr>
+    <tr>
+        <td>RIGHT$</td>
+        <td><center>:</center></td>
+        <td>Mengambil sejumlah karakter dari posisi kanan.</td>
+    </tr>
+    <tr>
+        <td>MID$</td>
+        <td><center>:</center></td>
+        <td>Mengambil sejumlah karakter ditengah pada posisi tertentu.</td>
+    </tr>
+    <tr>
+        <td>VAL</td>
+        <td><center>:</center></td>
+        <td>Mengkonversi data string menjadi data numerik.</td>
+    </tr>
+    <tr>
+        <td>STR$</td>
+        <td><center>:</center></td>
+        <td>Mengkonversi data numerik menjadi data string.</td>
+    </tr>
+</table>
+
+
+<p><b>Fungsi Aritmatika : </b></p>
+
+<table border=1>
+    <tr>
+        <td>SIN</td>
+        <td><center>:</center></td>
+        <td>Menghitung harga sinus suatu sudut yang dinyatakan dalam radian.</td>
+    </tr>
+    <tr>
+        <td>COS</td>
+        <td><center>:</center></td>
+        <td>Menghitung harga cosinus suatu sudut yang dinyatakan dalam radian.</td>
+    </tr>
+    <tr>
+        <td>ABS</td>
+        <td><center>:</center></td>
+        <td>Mengambil harga mutlak dari suatu ekspresi numerik.</td>
+    </tr>
+    <tr>
+        <td>SQR</td>
+        <td><center>:</center></td>
+        <td>Menghitung akar kuadrat suatu bilangan.</td>
+    </tr>
+    <tr>
+        <td>INT</td>
+        <td><center>:</center></td>
+        <td>Membulatkan suatu pecahan ke bilangan bulat terkecil.</td>
+    </tr>
+    <tr>
+        <td>MOD</td>
+        <td><center>:</center></td>
+        <td>Menghitung sisa pembagian dari dua buah operasi.</td>
+    </tr>
+</table>
+
+
+<p><b>Contoh Program : </b>
+```vbnet
+CLS</p>
+
+<p>DIM a AS STRING
+DIM b AS INTEGER</p>
+
+<p>INPUT &ldquo;Masukan Text : &rdquo;, a
+INPUT &ldquo;Masukan Angka : &rdquo;, b</p>
+
+<p>PRINT &ldquo;Jumlah Karakter : &rdquo;; LEN(a)
+PRINT &ldquo;2 Huruf dari kiri : &rdquo;; LEFT$(a,2)
+PRINT &ldquo;2 Huruf dari kanan : &rdquo;; RIGHT$(a,2)
+PRINT &ldquo;2 Huruf dimulai dari urutan ke 3 : &rdquo;; MID$(a,3,2)
+PRINT &ldquo;Konversi ke Angka : &rdquo;; VAL(a)
+PRINT &ldquo;Konversi ke String : &rdquo;; STR$(b)</p>
+
+<p>PRINT</p>
+
+<p>PRINT &ldquo;Sin : &rdquo;; SIN(b)
+PRINT &ldquo;Cos : &rdquo;; COS(b)
+PRINT &ldquo;Nilai Mutlak : &rdquo;; ABS(b)
+PRINT &ldquo;Akar : &rdquo;; SQR(b)
+PRINT &ldquo;Pembulatan : &rdquo;; INT(b)
+PRINT &ldquo;Mod 2 : &rdquo;; b MOD 2</p>
+
+<p>END
+```
+<b>Output :</b>
+<img src="/images/blog/qbasic/qbasic-output6.png" style="border:1px solid grey;margin-top:0.8em"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Program Qbasic Array]]></title>
+    <link href="http://ivansa.github.io/qbasic/contoh-program-qbasic-5/"/>
+    <updated>2013-11-26T12:51:00+07:00</updated>
+    <id>http://ivansa.github.io/qbasic/contoh-program-qbasic-5</id>
+    <content type="html"><![CDATA[<p>Pada post kali ini saya akan membahas tentang program Qbasic yang menggunakan array,
+penggunaan array ditujukan untuk menghemat memori, jadi memakai array sama saja menggabungkan tipe variable yang sama.</p>
+
+<!-- more -->
+
+
+<p>Contoh: Terdapat 2 variabel yang bertipe sama,<br>
+maka bisa ditulis:<br></p>
+
+<blockquote><p><b>a(2)</b> &ndash;> <b>a(1), a(2)</b><br>
+<b>a(1)</b> &ndash;> <b>a(0), a(1)</b></p></blockquote>
+
+<p><b>Contoh Program 1 :</b>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class='code'><pre><code class='vbnet'><span class='line'><span class="n">CLS</span>
+</span><span class='line'><span class="k">DIM</span> <span class="n">nilai</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="ow">AS</span> <span class="kt">INTEGER</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="na">&lt;p&gt;</span><span class="n">INPUT</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="err">;</span><span class="n">Nilai</span> <span class="n">Array</span> <span class="mi">1</span> <span class="p">:</span> <span class="o">&amp;</span><span class="n">rdquo</span><span class="err">;</span><span class="p">,</span><span class="n">nilai</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'><span class="n">INPUT</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="err">;</span><span class="n">Nilai</span> <span class="n">Array</span> <span class="mi">2</span> <span class="p">:</span> <span class="o">&amp;</span><span class="n">rdquo</span><span class="err">;</span><span class="p">,</span><span class="n">nilai</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span><span class='line'><span class="n">INPUT</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="err">;</span><span class="n">Nilai</span> <span class="n">Array</span> <span class="mi">3</span> <span class="p">:</span> <span class="o">&amp;</span><span class="n">rdquo</span><span class="err">;</span><span class="p">,</span><span class="n">nilai</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span><span class='line'><span class="n">INPUT</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="err">;</span><span class="n">Nilai</span> <span class="n">Array</span> <span class="mi">4</span> <span class="p">:</span> <span class="o">&amp;</span><span class="n">rdquo</span><span class="err">;</span><span class="p">,</span><span class="n">nilai</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</span><span class='line'><span class="n">INPUT</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="err">;</span><span class="n">Nilai</span> <span class="n">Array</span> <span class="mi">5</span> <span class="p">:</span> <span class="o">&amp;</span><span class="n">rdquo</span><span class="err">;</span><span class="p">,</span><span class="n">nilai</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="na">&lt;p&gt;</span><span class="n">PRINT</span>
+</span><span class='line'><span class="n">PRINT</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="err">;</span><span class="n">Jumlah</span> <span class="p">:</span> <span class="o">&amp;</span><span class="n">rdquo</span><span class="err">;;</span> <span class="n">nilai</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">nilai</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">nilai</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">nilai</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="n">nilai</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="na">&lt;p&gt;</span><span class="k">END</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><b>Output Program 2 :</b>
+<img src="/images/blog/qbasic/qbasic-output5.png" style="border:1px solid grey;margin-top:0.8em"></p>
+]]></content>
+  </entry>
+  
+</feed>
