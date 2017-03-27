@@ -10,7 +10,7 @@ Jadi, dalam kebanyakan situasi, seseorang atau organisasi yang dihadapkan pada k
 <!-- more -->
 
 Banyaknya aplikasi dan peningkatan penggunaan TI telah menimbulkan berbagai isu etika, 
-salah satunya akan dibahas dalam posting kali ini, yaitu <b>Isu Privasi</b>:
+salah satunya akan dibahas dalam posting kali ini, yaitu <b>Isu Privasi</b>.
 
 #### Isu Privasi ( Privacy Issue )
 
@@ -94,11 +94,19 @@ Terdapat beberapa sistem pertahanan yang sangat penting pada saat ini, diantaran
 	</li>
 </ol>
 
+#### Kesimpulan Dan Saran
+
+<hr />
+ 
+> Teknologi diciptakan untuk membantu manusia dalam melakukan kegiatan dan pekerjaan mereka, salah satu isu dalam penggunaan teknologi adalah informasi yang telah tersebar didalam internet dapat saja diakses oleh siapapun dan dimanapun bahkan yang berkaitan dengan informasi pribadi.
+> Maka dari itu perlu kita melakukan pengamanan terhadap informasi pribadi kita agar tidak digunakan oleh orang yang tidak bertanggung jawab untuk melakukan hal hal yang berhubungan dengan tindak kejahatan.
+
 <hr />
 <b>Sumber : </b>
 <ul>
-<li><a href="https://www.scribd.com/doc/42654932/Pengantar-Telematika-4ka04-Layanan-Telematika">www.scribd.com</a></li>
-<li><a href="https://news.detik.com/berita/d-3356235/ini-7-poin-utama-revisi-uu-ite-yang-mulai-diberlakukan-hari-ini">news.detik.com</a></li>
+<li><a href="https://fajarmouhammad24wordpress.com/2015/06/23/keamanan-dan-etika-dalam-teknologi-informasi/">fajarmouhammad24wordpress.com</a></li>
+<li><a href="http://nita-afrilia.blogspot.co.id/2012/03/etika-dan-profesi-dalam-teknologi.html">nita-afrilia.blogspot.co.id</a></li>
+<li><a href="https://www.google.com/">Google</a></li>
 </ul>
 
 
