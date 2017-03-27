@@ -4,7 +4,7 @@
   <title><![CDATA[Category: php | Ivans Ardiansyah]]></title>
   <link href="http://ivansa.github.io/blog/categories/php/atom.xml" rel="self"/>
   <link href="http://ivansa.github.io/"/>
-  <updated>2017-03-24T09:23:28+07:00</updated>
+  <updated>2017-03-27T16:01:49+07:00</updated>
   <id>http://ivansa.github.io/</id>
   <author>
     <name><![CDATA[Ivans Ardiansyah]]></name>
@@ -331,10 +331,10 @@ Perilisan ini diumumkan pada 8 Juni 1995 di alamat comp.infosystems.www.authorin
 
 <p>Isi dari pengumuman tersebut:
 ```
-From: <a href="&#x6d;&#97;&#x69;&#108;&#x74;&#x6f;&#58;&#x72;&#x61;&#115;&#109;&#x75;&#x73;&#x40;&#105;&#x6f;&#46;&#111;&#x72;&#103;">&#x72;&#x61;&#115;&#109;&#117;&#x73;&#x40;&#105;&#x6f;&#x2e;&#111;&#114;&#x67;</a> (Rasmus Lerdorf)
+From: <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#114;&#x61;&#115;&#109;&#117;&#x73;&#64;&#105;&#111;&#46;&#x6f;&#114;&#x67;">&#114;&#97;&#x73;&#x6d;&#117;&#x73;&#x40;&#105;&#111;&#x2e;&#111;&#x72;&#103;</a> (Rasmus Lerdorf)
 Subject: Announce: Personal Home Page Tools (PHP Tools)
 Date: 1995/06/08
-Message-ID: &lt;3r7pgp$<a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#x3a;&#97;&#97;&#49;&#64;&#105;&#111;&#x6e;&#101;&#119;&#x73;&#46;&#105;&#111;&#46;&#111;&#114;&#103;">&#x61;&#x61;&#x31;&#64;&#x69;&#x6f;&#x6e;&#101;&#119;&#115;&#46;&#105;&#111;&#x2e;&#x6f;&#114;&#x67;</a>>#1/1
+Message-ID: &lt;3r7pgp$<a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#x61;&#x61;&#x31;&#x40;&#x69;&#x6f;&#x6e;&#x65;&#x77;&#x73;&#x2e;&#x69;&#x6f;&#46;&#x6f;&#x72;&#x67;">&#97;&#x61;&#x31;&#x40;&#105;&#x6f;&#x6e;&#x65;&#119;&#115;&#x2e;&#x69;&#x6f;&#x2e;&#x6f;&#114;&#103;</a>>#1/1
 organization: none
 newsgroups: comp.infosystems.www.authoring.cgi</p>
 
@@ -377,7 +377,7 @@ at: <a href="http://www.io.org/~rasmus">http://www.io.org/~rasmus</a></p>
 
 <p>&mdash;
 Rasmus Lerdorf
-<a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#x3a;&#x72;&#97;&#x73;&#x6d;&#x75;&#115;&#x40;&#105;&#x6f;&#46;&#x6f;&#114;&#103;">&#114;&#97;&#115;&#109;&#117;&#115;&#64;&#x69;&#x6f;&#x2e;&#111;&#114;&#x67;</a></p>
+<a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x72;&#97;&#115;&#x6d;&#x75;&#115;&#x40;&#x69;&#x6f;&#46;&#111;&#x72;&#x67;">&#x72;&#97;&#115;&#x6d;&#117;&#x73;&#64;&#x69;&#111;&#46;&#x6f;&#114;&#x67;</a></p>
 
 <p><a href="http://www.io.org/~rasmus">http://www.io.org/~rasmus</a>
 ```
@@ -403,7 +403,7 @@ sehingga butuh penambahan fitur lanjutan.</p>
 
 <p>Berikut adalah email dari Lerdorf yang ditujukan kepada group diskusi Usenet pada tahun 1996.
 ```
-From: <a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#114;&#97;&#115;&#109;&#117;&#x73;&#x40;&#109;&#97;&#x64;&#104;&#97;&#x75;&#115;&#x2e;&#x75;&#x74;&#x63;&#115;&#46;&#117;&#116;&#x6f;&#114;&#x6f;&#110;&#116;&#111;&#46;&#x63;&#x61;">&#114;&#x61;&#115;&#109;&#x75;&#x73;&#x40;&#109;&#x61;&#100;&#104;&#x61;&#x75;&#x73;&#46;&#117;&#116;&#99;&#115;&#46;&#117;&#x74;&#x6f;&#114;&#111;&#x6e;&#116;&#111;&#46;&#x63;&#x61;</a> (Rasmus Lerdorf)
+From: <a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#x72;&#x61;&#115;&#x6d;&#117;&#115;&#x40;&#109;&#97;&#100;&#104;&#97;&#x75;&#115;&#x2e;&#x75;&#x74;&#99;&#115;&#46;&#117;&#x74;&#111;&#114;&#x6f;&#110;&#116;&#x6f;&#x2e;&#x63;&#97;">&#x72;&#97;&#x73;&#109;&#117;&#x73;&#x40;&#x6d;&#x61;&#100;&#x68;&#x61;&#x75;&#x73;&#x2e;&#117;&#116;&#x63;&#115;&#46;&#x75;&#x74;&#x6f;&#x72;&#111;&#x6e;&#x74;&#111;&#x2e;&#x63;&#97;</a> (Rasmus Lerdorf)
 Subject: ANNOUNCE: PHP/FI Server-side HTML-Embedded Scripting Language
 Date: 1996/04/16
 Newsgroups: comp.infosystems.www.authoring.cgi</p>
@@ -450,7 +450,7 @@ tags.</p>
 <h2>It can be downloaded from the File Archive at: &lt;URL:<a href="http://www.vex.net/php">http://www.vex.net/php</a>></h2>
 
 <p>Rasmus Lerdorf
-<a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#114;&#x61;&#x73;&#x6d;&#x75;&#115;&#64;&#x76;&#x65;&#120;&#x2e;&#x6e;&#101;&#116;">&#114;&#97;&#115;&#109;&#x75;&#x73;&#64;&#x76;&#101;&#120;&#46;&#x6e;&#x65;&#x74;</a>
+<a href="&#109;&#x61;&#x69;&#108;&#116;&#111;&#58;&#x72;&#97;&#115;&#109;&#x75;&#x73;&#x40;&#118;&#x65;&#x78;&#x2e;&#x6e;&#101;&#x74;">&#114;&#x61;&#115;&#x6d;&#117;&#115;&#x40;&#x76;&#x65;&#x78;&#x2e;&#110;&#x65;&#116;</a>
 ```</p>
 
 <p>Didalam email tersebut, dijelaskan juga penambahan fitur-fitur baru di dalam PHP/FI versi 2.
@@ -516,7 +516,7 @@ several platforms at <a href="http://www.php.net/.">http://www.php.net/.</a></p>
 <p>The PHP Development Team is an international group of programmers who
 lead the open development of PHP and related projects.
 For more information, the PHP Development Team can be contacted at
-<a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#99;&#x6f;&#x72;&#101;&#64;&#x70;&#x68;&#x70;&#46;&#x6e;&#101;&#116;&#46;">&#99;&#x6f;&#x72;&#x65;&#x40;&#x70;&#x68;&#x70;&#x2e;&#110;&#101;&#x74;&#46;</a>
+<a href="&#109;&#x61;&#105;&#x6c;&#x74;&#111;&#x3a;&#x63;&#x6f;&#114;&#x65;&#64;&#112;&#x68;&#x70;&#46;&#110;&#x65;&#x74;&#46;">&#99;&#x6f;&#114;&#x65;&#x40;&#x70;&#x68;&#112;&#46;&#110;&#101;&#116;&#x2e;</a>
 ```</p>
 
 <p>Perilisan PHP versi 3 juga ditandai dengan penamaan singkatan PHP baru yang sebelumnya PHP/FI:
