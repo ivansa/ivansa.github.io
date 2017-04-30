@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tulisan | Ivans Ardiansyah]]></title>
   <link href="http://ivansa.github.io/blog/categories/tulisan/atom.xml" rel="self"/>
   <link href="http://ivansa.github.io/"/>
-  <updated>2017-03-27T16:01:49+07:00</updated>
+  <updated>2017-04-30T10:38:16+07:00</updated>
   <id>http://ivansa.github.io/</id>
   <author>
     <name><![CDATA[Ivans Ardiansyah]]></name>
@@ -12,6 +12,53 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Keterbatasan  UU Telekomunikasi No 36]]></title>
+    <link href="http://ivansa.github.io/tulisan/keterbatasan-uu-telekomunikasi-no-36/"/>
+    <updated>2017-03-23T15:32:00+07:00</updated>
+    <id>http://ivansa.github.io/tulisan/keterbatasan-uu-telekomunikasi-no-36</id>
+    <content type="html"><![CDATA[<p>Undang-Undang Telekomunikasi (secara resmi bernama Undang-Undang Nomor 36 Tahun 1999 tentang Telekomunikasi) adalah undang-undang yang mengatur tentang penyelenggaraan dan aturan-aturan yang harus dipenuhi oleh seluruh penyelenggara dan pengguna telekomunikasi di Indonesia. Hal itu mencakup tentang asas &amp; tujuan telekomunikasi, hak dan kewajiban penyelenggara dan pengguna telekomunikasi, penomoran, interkoneksi, tarif, dan perangkat telekomuniasi, juga ketentuan pidana dan sanksi.</p>
+
+<!-- more -->
+
+
+<p>Pada postingan kali ini saya akan membahas tentang UU nomor 36, khususnya dalam hal penyadapan.</p>
+
+<p><b>UU Nomor 36, Pasal 40</b></p>
+
+<blockquote><p>Setiap orang dilarang melakukan kegiatan penyadapan atas informasi yang disalurkan melaiui
+jaringan telekomunikasi dalam bentuk apapun.</p></blockquote>
+
+<p><b>UU Nomor 36, Pasal 43</b></p>
+
+<blockquote><p>Pemberian rekaman informasi oleh penyelenggara jasa telekomunikasi kepada pengguna jasa
+telekomunikasi sebagaimana dimaksud dalam Pasal 41 dan untuk kepentingan proses peradilan
+pidana sebagaimana dimaksud dalam Pasal 42 ayat (2), tidak merupakan pelanggaran Pasal 40.</p></blockquote>
+
+<p>Pada pasal 40 dijelaskan bahwa setiap orang dilarang melakukan kegiatan penyadapan informasi, kecuali untuk proses peradilan pidana.
+Menurut saya pengembangan dari pasal ini masih sangat luas, seperti halnya perlu dijelaskan sanksi secara lebih detail.</p>
+
+<p>Sebagai contoh Kasus penyadapan presiden dimana dilakukan oleh negara lain, apakah kasus penyadapan ini akan dikenakan sanksi yang sama
+seperti halnya terhadap perorangan ? Pada dasarnya dalam UU Nomor 36 hanya menjelaskan bahwa pelanggaran terhadap pasal 40 adalah  pidana penjara paling lama 15 (lima belas) tahun.</p>
+
+<p>Jadi menurut saya perlunya menjelaskan lingkup penyadapan, apakah hanya perorangan, organisasi, tingkat pemerintahan daerah atau hingga antar negara.
+Dan juga pemberian sanksi harus sesuai dengan lingkup penyadapan.</p>
+
+<hr />
+
+
+<p><b>Sumber : </b></p>
+
+<ul>
+<li><a href="https://id.wikipedia.org/wiki/Undang-Undang_Telekomunikasi">wikipedia</a></li>
+<li><a href="http://www.postel.go.id/content/ID/regulasi/frekuensi/uu/uu-ri-no-36-1999.pdf">www.postel.go.id</a></li>
+</ul>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Isu Privasi Teknologi Informasi]]></title>
@@ -602,109 +649,6 @@ terdapat pembobolan sistem keamanan</li>
 
 
 <blockquote><p>sumber : <a href="http://referensi.dosen.narotama.ac.id/files/2011/12/ENTERPRISE-RESOURCE-PLANNING-ERP.pdf">http://referensi.dosen.narotama.ac.id/files/2011/12/ENTERPRISE-RESOURCE-PLANNING-ERP.pdf</a></p></blockquote>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Arsitektur Telematika]]></title>
-    <link href="http://ivansa.github.io/tulisan/arsitektur-telematika/"/>
-    <updated>2016-10-28T09:21:00+07:00</updated>
-    <id>http://ivansa.github.io/tulisan/arsitektur-telematika</id>
-    <content type="html"><![CDATA[<p>Pembahasan kali ini adalah tentang arsitektur telematika, pada dasarnya arsitektur telematika terbagi 2 yaitu client side (Pengguna) dan server side (Penyedia).
-Istilah arsitektur mengacu pada desain sebuah aplikasi, atau dimana komponen yang membentuk suatu sistem ditempatkan dan bagaimana mereka berkomunikasi.
-Jadi arsitektur telematika dapat diartikan sebuah struktur desain yang secara logic dapat meningkatkan hubungan jaringan komunikasi dengan teknologi informasi.</p>
-
-<!-- more -->
-
-
-<h4>PENGERTIAN ARSITEKTUR TELEMATIKA</h4>
-
-<hr />
-
-
-<p>Istilah arsitektur mencakup merancang atau mendesain sebuah aplikasi, atau dimana komponen yang membentuk suatu sistem diolah dan ditempatkan agar komponen tersebut dapat berinteraksi. Arsitektur sistem harus berdasarkan konfigurasi sistem secara keseluruhan yang akan menjadi tempat dari DBMS, basis data dan aplikasi yang memanfaatkannya yang juga akan menentukan bagaimana pemakai dapat berinteraksi dengannya</p>
-
-<p>Sehingga dapat diartikan, <b>Arsitektur</b> Telematika adalah sebuah aplikasi yang secara logic berada diantara lapisan aplikasi (application layer dan lapisan data dari sebuah arsitektur layer – layer TCP/IP) yang dapat meningkatkan hubungan jaringan komunikasi dengan teknologi informasi.</p>
-
-<h4>ARSITEKTUR CLIENT-SERVER TELEMATIKA</h4>
-
-<hr />
-
-
-
-
-<center><img src="/images/blog/arsitektur_telematika/client_server.png" style="border:1px solid grey;margin-top:0.8em"></center>
-
-
-<br />
-
-
-<p>Karena keterbatasan sistem file sharing, dikembangkanlah Arsitektur Client-Server. Arsitektur Client-Server merupakan sebuah aplikasi yang bertugas untuk membagi pekerjaan antara server(penyedia layanan) dan client. Client dan server terkadang menggunakan jaringan komputer pada hardware yang terpisah. Sedangkan server dapat menjalankan satu atau lebih program untuk memberikan data-data pada client. Arsitektur client – server telematika terdiri dari 3 buah arsitektur yakni, arsitektur sisi client, sisi servernya dan gabungan dari arsitektur client-server.</p>
-
-<p><b>1. Arsitektur  dari sisi client </b></p>
-
-<p>Arsitektur dari sisi klien mengarah pada  pelaksanaan data  pada browser sisi koneksi HTTP. Contohnya adalah JavaScript dari sisi eksekusi client dan cookie dari sisi penyimpanan pada client. Beberapa ciri khas dari sisi client, sebagai berikut :</p>
-
-<ul>
-    <li>Selalu memulai permintaan ke server.</li>
-    <li>Menunggu dan menerima balasan dari server.</li>
-    <li>Biasanya terhubung ke sejumlah kecil dari server pada satu waktu.</li>
-    <li>Biasanya berinteraksi langsung dengan pengguna akhir dengan menggunakan antarmuka pengguna seperti antarmuka pengguna grafis. Khusus jenis klien mencakup: web browser, e-mail klien, dan online chat klien.</li>
-</ul>
-
-
-<p><b>2. Arsitektur dari sisi server </b></p>
-
-<p>Pada sisi server, terdapat server Web khusus yang mengeksekusi perintah dengan menggunakan metode HTTP. Contoh dari sisi server adalah penggunaan CGI script yang tertanam di halaman HTML, hal tersebut dapat memicu terjadinya perintah untuk mengeksekusi. Beberapa ciri khas dari sisi server, sebagai berikut :</p>
-
-<ul>
-    <li>Menunggu permintaan dari salah satu client.</li>
-    <li>Melayani permintaan klien dan menjawab sesuai data yang diminta oleh client.</li>
-    <li>Suatu server dapat berkomunikasi dengan server lain untuk melayani permintaan client.</li>
-    <li>Jenis-jenisnya : web server, FTP server, database server, E-mail server, file server, print server.</li>
-</ul>
-
-
-<p>Client dan server dikembangkan oleh berbagai perusahaan software besar seperti Lotus, Microsoft, Novell, Baan, Informix, Oracle, PeopleSoft, SAP, Sun, dan Sybase. Perusahaan-perusahaan tersebut telah menjadi perusahaan komputer yang stabil dan besar pada era ini.</p>
-
-<p><b>3. Arsitektur dari sisi Client – Server </b></p>
-
-<p>Arsitektur dari segi Client – Server ini terdiri dari 3 jenis yaitu, Single Tier, Two Tier, dan Three Tier (Multi Tier).
-Berikut merupakan penjelasan dari 3 jenis arsitektur client-server :</p>
-
-<ol type="a">
-    <li><b>Arsitektur Single-Tier</b><br />
-<center><img src="/images/blog/arsitektur_telematika/1_tier.jpg" style="border:1px solid grey;margin-top:0.8em"></center><br />
-        Pada Arsitektur Single-Tier, semua komponen produksi dari sistem dijalankan pada komputer yang sama. 
-        Beberapa sifat dari Single-Tier antara lain :
-        <ul>
-            <li>Sederhana dan alternatifnya sangat mahal.</li>
-            <li>Membutuhkan sedikit perlengkapan untuk dibeli dan dipelihara.</li>
-            <li>Kelemahan pada keamanan dari arsitektur ini yaitu rendahnya dan kurangnya skalabilitas.</li>
-        </ul><br />
-    </li>
-    <li><b>Arsitektur Two-tier</b><br />
-<center><img src="/images/blog/arsitektur_telematika/2_tier.jpg" style="border:1px solid grey;margin-top:0.8em"></center><br />
-        Pada Arsitektur Two-tier, antarmuka pengguna ditempatkan di lingkungan desktop dan sistem manajemen database. Biasanya dalam sebuah server, yang lebih kuat merupakan mesin yang menyediakan layanan bagi banyak klien. Pengolahan informasi dibagi antara sistem interface lingkungan dan lingkungan server manajemen database. Arsitektur two-tier lebih aman dan terukur daripada pendekatan single-tier. Mempunyai database pada komputer yang terpisah meningkatkan kinerja keseluruhan situs. Kelemahannya adalah biaya yang mahal dan arsitektur yang kompleks.
-    <br /><br /></li>
-    <li><b>Arsitektur Three-tier</b><br />
-<center><img src="/images/blog/arsitektur_telematika/3_tier.jpg" style="border:1px solid grey;margin-top:0.8em"></center><br />
-        Model three-tier atau multi-tier dikembangkan untuk menjawab keterbatasan pada arsitektur two-tier. Konsep model three-tier adalah model yang membagi fungsionalitas ke dalam lapisan-lapisan, aplikasi-aplikasi mendapatkan skalabilitas, keterbaharuan, dan keamanan. Three-tier client dan server arsitektur digunakan untuk meningkatkan performa untuk jumlah pengguna besar dan juga meningkatkan fleksibilitas ketika dibandingkan dengan pendekatan dua tingkat. Kekurangannya adalah pengembangan lebih sulit daripada pengembangan pada arsitektur dua lapis.Pada tiga tingkatan arsitektur, sebuah middleware digunakan diantara sistem user interface lingkungan klien dan server manajemen database lingkungan. Middleware ini diimplementasikan dalam berbagai cara seperti pengolahan transaksi monitor, pesan server atau aplikasi server.<br />
-    Beberapa Keuntungan Arsitektur Three-Tier :
-<ul>
-    <li>Keluwesan teknologi,</li>
-    <li>Mudah untuk mengubah DBMS engine,</li>
-    <li>Memungkinkan pula middle tier ke platform yang berbeda,</li>
-    <li>Biaya jangka panjang yang rendah,</li>
-    <li>Perubahan-perubahan cukup dilakukan pada middle tier daripada pada aplikasi keseluruhan,</li>
-    <li>Keunggulan kompetitif,</li>
-    <li>Kemampuan untuk bereaksi terhadap perubahan bisnis dengan cepat, dengan cara mengubah modul kode daripada mengubah keseluruhan aplikasi.</li>
-</ul>
-    </li>
-</ol>
-
-
-<blockquote><p>Sumber : <a href="https://grandispram.wordpress.com/2016/10/12/arsitektur-telematika/">grandispram.wordpress.com</a></p></blockquote>
 ]]></content>
   </entry>
   
