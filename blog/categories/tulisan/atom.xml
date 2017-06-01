@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tulisan | Ivans Ardiansyah]]></title>
   <link href="http://ivansa.github.io/blog/categories/tulisan/atom.xml" rel="self"/>
   <link href="http://ivansa.github.io/"/>
-  <updated>2017-04-30T10:40:02+07:00</updated>
+  <updated>2017-06-01T17:13:27+07:00</updated>
   <id>http://ivansa.github.io/</id>
   <author>
     <name><![CDATA[Ivans Ardiansyah]]></name>
@@ -12,6 +12,59 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Perbandingan etika profesi guru]]></title>
+    <link href="http://ivansa.github.io/tulisan/perbandingan-etika-profesi-guru/"/>
+    <updated>2017-06-01T15:32:00+07:00</updated>
+    <id>http://ivansa.github.io/tulisan/perbandingan-etika-profesi-guru</id>
+    <content type="html"><![CDATA[<p>Etika dalam dunia pendidikan sangat berpengaruh dalam perkembangan dan kemajuan bangsa, khususnya dalam kegiatan belajar mengajar.
+Pada kesempatan kali ini saya akan membandingkan kompetensi profesi guru di dalam dan luar negeri dengan mengambil contoh dari jurnal &ndash; jurnal yang ada.</p>
+
+<!-- more -->
+
+
+<p><b>Di Amerika Serikat sebagaimana diuraikan dalam jurnal Educational Leadership 1993, dijelaskan bahwa untuk menjadi profesional seorang guru dituntut untuk memiliki lima hal:</b></p>
+
+<ol>
+    <li>Guru mempunyai komitmen pada siswa dan proses belajarnya,</li>
+    <li>Guru menguasai secara mendalam bahan/mata pelajaran yang diajarkannya serta cara mengajarnya kepada siswa,</li>
+    <li>Guru bertanggung jawab memantau hasil belajar siswa melalui berbagai cara evaluasi,</li>
+    <li>Guru mampu berfikir sistematis tentang apa yang dilakukannya dan belajar dari pengalamannya,</li>
+    <li>Guru seyogyanya merupakan bagian dari masyarakat belajar dalam lingkungan profesinya.</li>
+</ol>
+
+
+<p><b>Sedangkan di indonesia dijelaskan bahwa untuk menjadi profesional seorang guru dituntut untuk memiliki empat hal:</b></p>
+
+<ol>
+    <li>Pemahaman guru terhadap peserta didik, perancangan dan pelaksanaan pembelajaran, evaluasi hasil belajar, dan pengembangan peserta didik untuk mengaktualisasikan berbagai potensi yang dimilikinya.</li>
+    <li>Kemampuan personal yang mencerminkan kepribadian yang mantap, stabil, dewasa, arif, dan berwibawa, menjadi teladan bagi peserta didik, dan berakhlak mulia. </li>
+    <li>Kemampuan guru untuk berkomunikasi dan bergaul secara efektif dengan peserta didik, sesama pendidik, tenaga kependidikan, orang tua/wali peserta didik, dan masyarakat sekitar.</li>
+    <li>Penguasaan materi pembelajaran secara luas dan mendalam, yang mencakup penguasaan materi kurikulum mata pelajaran di sekolah dan substansi keilmuan yang menaungi materinya, serta penguasaan terhadap stuktur dan metodologi keilmuannya.</li>
+</ol>
+
+
+<p><b>Pendapat dan kesimpulan penulis terhadap perbedaan kompetensi dan etika profesi guru diatas :</p>
+
+<blockquote><p>Untuk jadi seorang guru harus memahami masing masing kode etik yang harus dipatuhi dan kompetensi yang harus dimiliki.
+Di amerika seorang guru harus memiliki komitmen yang tinggi atas siswa selama proses belajar mengajar, sama hal nya dengan indonesia seorang guru harus mempunyai pemahaman yang dalam atas pelaksanaan proses pembelajaran.
+Jadi saya berkesimpulan bahwa kode etik guru disetiap negara tidak lah jauh berbeda, yaitu seorang guru harus mempunyai komitmen yang tinggi terhadap siswanya dan yang membedakan hanya proses belajar mengajarnya saja.</p></blockquote>
+
+<hr />
+
+
+<p><b>Sumber : </b></p>
+
+<ul>
+<li><a href="https://ibnufajar75.wordpress.com/2012/12/27/empat-kompetensi-yang-harus-dimiliki-seorang-guru-profesional/">ibnufajar75.wordpress.com</a></li>
+<li><a>Jurnal FTC Oleh Joko sulianto</a></li>
+</ul>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Keterbatasan  UU Telekomunikasi No 36]]></title>
@@ -417,238 +470,6 @@ harus memiliki elemen-elemen berikut:</p>
     <li>Meja Bantu (helpdesk)</li>
 </ol>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Enterprise Resource Planning]]></title>
-    <link href="http://ivansa.github.io/tulisan/enterprise-resource-planning/"/>
-    <updated>2016-11-03T11:21:00+07:00</updated>
-    <id>http://ivansa.github.io/tulisan/enterprise-resource-planning</id>
-    <content type="html"><![CDATA[<p>ERP adalah sebuah sistem informasi
-perusahaan yang dirancang untuk
-mengkoordinasikan semua sumber daya,
-informasi dan aktifitas yang diperlukan
-untuk proses bisnis lengkap.</p>
-
-<!-- more -->
-
-
-<p>Sistem ERP didasarkan pada database pada
-umumnya dan rancangan perangkat lunak
-modular</p>
-
-<h4>PENGERTIAN ERP</h4>
-
-<hr />
-
-
-<p>ERP merupakan software yang
-mengintegrasikan semua departemen dan
-fungsi
-suatu perusahaan ke dalam satu sistem
-komputer yang dapat melayani semua
-kebutuhan perusahaan, baik dari
-departemen penjualan, HRD, produksi atau
-keuangan.</p>
-
-<blockquote><p>Syarat terpenting dari sistem ERP adalah Integrasi</p></blockquote>
-
-<p>Integrasi yang dimaksud adalah
-menggabungkan
-berbagai kebutuhan pada satu software
-dalam satu logical database, sehingga
-memudahkan semua departemen berbagi
-informasi dan berkomunikasi.</p>
-
-<p>Database yang ada dapat mengijinkan setiap
-departemen dalam perusahaan untuk
-menyimpan dan mengambil informasi
-secara real-time.</p>
-
-<p>Informasi tersebut harus dapat dipercaya,
-dapat diakses dan mudah disebarluaskan.</p>
-
-<p>Rancangan perangkat lunak modular harus
-berarti bahwa sebuah bisnis dapat memilih
-modul-modul yang diperlukan,
-dikombinasikan dan disesuaikan dari
-vendor yang berbeda, dan dapat
-menambahkan modul baru untuk
-meningkatkan unjuk kerja bisnis</p>
-
-<h4>TUJUAN DAN PERANANNYA DALAM ORGANISASI</h4>
-
-<hr />
-
-
-<p>Tujuan sistem ERP adalah untuk mengkoordinasikan bisnis
-organisasi secara keseluruhan</p>
-
-<p>ERP merupakan software yang ada dalam
-organisasi/perusahaan untuk:</p>
-
-<ol> 
-    <li>Otomatisasi dan integrasi banyak proses bisnis</li>
-    <li>Membagi database yang umum dan praktek bisnis melalui enterprise</li>
-    <li>Menghasilkan informasi yang real-time</li>
-    <li>Memungkinkan perpaduan proses transaksi dan kegiatan perencanaan</li>
-</ol>
-
-
-<h4>KONSEP DASAR ERP</h4>
-
-<hr />
-
-
-<p><img src="/images/blog/erp/konsep_erp.png" style="border:1px solid grey;margin-top:0.8em"></p>
-
-<h4>EVOLUSI SISTEM ERP</h4>
-
-<hr />
-
-
-<p><img src="/images/blog/erp/evolusi_erp.png" style="border:1px solid grey;margin-top:0.8em"></p>
-
-<h4>TAHAPAN EVOLUSI ERP</h4>
-
-<hr />
-
-
-
-
-<ul>
-    <li><b>Tahap I : Material Requirement Planning (MRP)</b><br />
-        Merupakan cikal bakal dari ERP, dengan konsep perencanaan kebutuhan material
-    </li>
-    <li><b>Tahap II: Close-Loop MRP</b><br />
-        Merupakan sederetan fungsi dan tidak hanya terbatas pada MRP, terdiri
-atas alat bantu penyelesaian masalah prioritas dan adanya rencana yang
-dapat diubah atau diganti jika diperlukan
-    </li>
-    <li><b>Tahap III: Manufakturing Resource Planning (MRP II)</b><br />
-    Merupakan pengembangan dari close-loop MRP yang ditambahkan 3
-elemen yaitu: perencanaan penjualan dan operasi, antarmuka keuangan dan
-simulasi analisis dari kebutuhan yang diperlukan
-    </li>
-    <li><b>Tahap IV: Enterprise Resource Planning</b><br />
-    Merupakan perluasan dari MRP II yaitu perluasan pada beberapa proses
-bisnis diantaranya integrasi keuangan, rantai pasok dan meliputi lintas
-batas fungsi organisasi dan juga perusahaan dengan dilakukan secara
-mudah
-    </li>
-    <li><b>Tahap V: Extended ERP (ERP II)</b><br />
-    Merupakan perkembangan dari ERP yang diluncurkan tahun 2000, serta
-lebih konflek dari ERP sebelumnya.
-    </li>
-</ul>
-
-
-<h4>MODUL ERP</h4>
-
-<hr />
-
-
-
-
-<ul>
-    <li>Manufacturing</li>
-    <li>Supply Chain Management</li>
-    <li>Financials</li>
-    <li>Projects</li>
-    <li>Human Resources</li>
-    <li>Customer Relationship Management</li>
-    <li>Data warehouse</li>
-    <li>Access Control</li>
-    <li>Customization</li>
-</ul>
-
-
-<h4>IMPLEMENTASI ERP</h4>
-
-<hr />
-
-
-<p>Implementasi sistem ERP tergantung pada ukuran
-bisnis, ruang lingkup dari perubahan dan peran
-serta pelanggan.</p>
-
-<p>Perusahaan membutuhkan jasa konsultasi,
-customisasi dan jasa pendukung.
-Migrasi data adalah salah satu aktifitas terpenting
-dalam menentukan kesuksesan dari implementasi
-ERP. Sayangnya, Migrasi data merupakan aktifitas
-terakhir sebelum fase produksi</p>
-
-<p>Langkah strategi migrasi data yang dapat
-menentukan kesuksesan implementasi ERP:</p>
-
-<ol>
-    <li>Mengidentifikasi data yang akan di migrasi</li>
-    <li>Menentukan waktu dari migrasi data</li>
-    <li>Membuat template data</li>
-    <li>Menentukan alat untuk migrasi data</li>
-    <li>Memutuskan persiapan yang berkaitan dengan
-migrasi</li>
-    <li>Menentukan pengarsipan data</li>
-</ol>
-
-
-<h4>KELEBIHAN ERP</h4>
-
-<hr />
-
-
-
-
-<ul>
-    <li>Integrasi antara area fungsional yang
-berbeda untuk meyakinkan komunikasi,
-produktifitas dan efisiensi yang tepat.</li>
-    <li>Rancangan Perekayasaan </li>
-    <li>Pelacakan pemesanan dari penerimaan
-sampai fulfillment</li>
-    <li>Mengatur saling ketergantungan dari proses
-penagihan material yang kompleks</li>
-    <li>Pelacakan 3 cara yang bersesuaian antara
-pemesanan pembelian, penerimaan
-inventori, dan pembiayaan</li>
-    <li>Akuntasi untuk keseluruhan tugas: melacak
-pemasukan, biaya dan keuntungan pada
-level inti</li>
-</ul>
-
-
-<h4>KELEBIHAN ERP</h4>
-
-<hr />
-
-
-
-
-<ul>
-    <li>Terbatasnya kustomisasi dari perangkat lunak
-ERP</li>
-    <li>Sistem ERP sangat mahal</li>
-    <li> Perekayasaan kembali proses bisnis untuk
-menyesuaikan dengan standar industri yang telah
-dideskripsikan oleh sistem ERP dapat
-menyebabkan hilangnya keuntungan kompetitif</li>
-    <li>ERP sering terlihat terlalu sulit untuk beradaptasi
-dengan alur kerja dan proses bisnis tertentu dalam
-beberapa organisasi</li>
-    <li>Sistem dapat terlalu kompleks jika
-dibandingkan dengan kebutuhan dari
-pelanggan</li>
-    <li>Data dalam sistem ERP berada dalam satu
-tempat, contohnya : pelanggan, data
-keuangan. Hal ini dapat meningkatkan
-resiko kehilangan informasi sensitif, jika
-terdapat pembobolan sistem keamanan</li>
-</ul>
-
-
-<blockquote><p>sumber : <a href="http://referensi.dosen.narotama.ac.id/files/2011/12/ENTERPRISE-RESOURCE-PLANNING-ERP.pdf">http://referensi.dosen.narotama.ac.id/files/2011/12/ENTERPRISE-RESOURCE-PLANNING-ERP.pdf</a></p></blockquote>
 ]]></content>
   </entry>
   
