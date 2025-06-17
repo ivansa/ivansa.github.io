@@ -1,0 +1,7 @@
+{
+  "responseCode":"00",
+  "responseMessage":"Request has been processed successfully",
+  "accessToken":"asdfghjk987654321",
+  "tokenType":"Bearer",
+  "expiresIn":"900",
+}
