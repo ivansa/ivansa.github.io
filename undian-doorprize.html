@@ -317,6 +317,9 @@
   .mdl-actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:18px}
   .mdl-actions .btn{font-size:14px;padding:10px 16px}
   .mdl-actions .btn.ghost{background:#eef4f6;color:#173843;border-color:#d2e4e8}
+  .mdl-actions.stack{flex-direction:column;align-items:stretch}
+  .mdl-actions.stack .btn{width:100%;text-align:left}
+  .mdl-actions.stack .btn.ghost{order:9;text-align:center}
   .mdl-actions .btn.warn{background:var(--red);color:#fff;border-color:var(--red)}
   /* ===== status Supabase ===== */
   .cloud{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:6px 10px;border-radius:99px;border:1px solid var(--line);background:var(--panel2);color:var(--muted);white-space:nowrap}
@@ -419,7 +422,10 @@
       <div class="item" style="border:1px solid var(--line);border-radius:10px;display:block;margin-bottom:10px">
         <div class="sub">Proyek</div><div style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;word-break:break-all" id="sbUrlView"></div>
         <div class="sub" style="margin-top:6px">Kode acara</div><div style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px" id="sbEventView"></div>
+        <div class="sub" style="margin-top:6px">ID browser ini</div><div style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px" id="sbBrowserView"></div>
       </div>
+      <label class="hint">Nama perangkat (agar mudah dikenali saat mengambil data, mis. "Laptop Panggung")</label>
+      <div class="row"><input type="text" id="sbDevice" placeholder="Laptop Panggung" maxlength="40"></div>
       <div class="row">
         <button class="btn primary" id="btnSbSave">↻ Tes koneksi</button>
         <button class="btn" id="btnSbPull">⬇ Ambil data dari Supabase</button>
@@ -428,6 +434,7 @@
         <button class="btn" id="btnSbPush">⬆ Kirim ulang semua data</button>
       </div>
       <p class="hint" id="sbStatus">Belum terhubung.</p>
+      <p class="hint">Setiap browser menyimpan datanya sendiri di Supabase (baris terpisah), jadi data browser lain tidak akan tertimpa. Gunakan <b>Ambil data dari Supabase</b> untuk menyalin data dari browser lain.</p>
       <p class="hint">Tabel: <b>undian_state</b> (salinan lengkap) dan <b>undian_pemenang</b> (satu baris per pemenang, untuk rekap).</p>
     </div>
   </section>
@@ -571,7 +578,18 @@ const Cloud = {
   cfg(){ const ok = SUPABASE_KEY && !SUPABASE_KEY.startsWith('ISI_'); return ok ? {url: SUPABASE_URL, key: SUPABASE_KEY, event: SUPABASE_EVENT} : {}; },
   setCfg(c){ try{ localStorage.setItem(this.CFG_KEY, JSON.stringify(c)); }catch(_){} },
   on(){ const c = this.cfg(); return !!(c.url && c.key); },
-  event(){ return (this.cfg().event || 'mekar-bersama').trim(); },
+  // setiap browser punya ID sendiri → datanya disimpan di baris terpisah di Supabase
+  browserId(){
+    let id = null;
+    try{ id = localStorage.getItem('undian_browser_id'); }catch(_){}
+    if(!id){
+      id = 'b-' + Math.random().toString(36).slice(2, 8);
+      try{ localStorage.setItem('undian_browser_id', id); }catch(_){}
+    }
+    return id;
+  },
+  deviceName(){ try{ return localStorage.getItem('undian_device_name') || ''; }catch(_){ return ''; } },
+  event(){ return `${(this.cfg().event || 'mekar-bersama').trim()}:${this.browserId()}`; },
   ops(){ try{ return JSON.parse(localStorage.getItem(this.Q_KEY) || '[]'); }catch(_){ return []; } },
   setOps(o){ try{ localStorage.setItem(this.Q_KEY, JSON.stringify(o)); }catch(_){} },
   async req(path, {method = 'GET', body, prefer} = {}){
@@ -617,13 +635,21 @@ const Cloud = {
       }
       // 2) salinan lengkap terbaru
       await this.req('undian_state?on_conflict=id', {method:'POST', prefer:'resolution=merge-duplicates,return=minimal',
-        body:[{id: this.event(), data: state, updated_at: new Date().toISOString()}]});
+        body:[{id: this.event(), data: Object.assign({}, state, {browserId: this.browserId(), deviceName: this.deviceName()}), updated_at: new Date().toISOString()}]});
       this.lastOk = Date.now(); this.lastErr = '';
     }catch(e){
       this.lastErr = e.name === 'AbortError' ? 'waktu habis' : (e.message || 'tidak bisa terhubung');
       clearTimeout(this.retryTimer); this.retryTimer = setTimeout(() => this.flush(), 10000);
     }finally{ this.busy = false; this.badge(); renderCloudStatus(); }
     if(this.ops().length && !this.lastErr) this.flush();
+  },
+  async listBrowsers(){
+    const base = encodeURIComponent((this.cfg().event || 'mekar-bersama').trim());
+    return await this.req(`undian_state?select=id,updated_at,device:data->>deviceName,guests:data->guests,winners:data->winners&id=like.${base}:*&order=updated_at.desc`);
+  },
+  async pullId(id){
+    const rows = await this.req('undian_state?select=data,updated_at&id=eq.' + encodeURIComponent(id));
+    return rows && rows[0] ? rows[0] : null;
   },
   async pull(){
     const rows = await this.req('undian_state?select=data,updated_at&id=eq.' + encodeURIComponent(this.event()));
@@ -652,7 +678,7 @@ function ask(title, text, buttons){
   return new Promise(resolve => {
     const m = $('mdl'), box = $('mdlActions');
     $('mdlTitle').textContent = title; $('mdlText').innerHTML = text;
-    box.innerHTML = '';
+    box.innerHTML = ''; box.classList.toggle('stack', buttons.length > 3);
     const done = v => { m.classList.remove('show'); document.removeEventListener('keydown', onKey, true); resolve(v); };
     buttons.forEach(b => { const el = document.createElement('button'); el.className = 'btn ' + (b.cls || ''); el.textContent = b.label; el.onclick = () => done(b.value); box.appendChild(el); });
     const onKey = e => {
@@ -1537,7 +1563,9 @@ function renderSbuInput(){ if(document.activeElement !== $('sbuInput')) $('sbuIn
 load(); renderSoundBtn(); renderLottieStatus(); renderEvent(); renderSbuInput(); renderAll(); resetStage();
 
 (function initCloudUi(){
-  $('sbUrlView').textContent = SUPABASE_URL; $('sbEventView').textContent = SUPABASE_EVENT;
+  $('sbUrlView').textContent = SUPABASE_URL; $('sbEventView').textContent = SUPABASE_EVENT; $('sbBrowserView').textContent = Cloud.browserId();
+  $('sbDevice').value = Cloud.deviceName();
+  $('sbDevice').onchange = () => { try{ localStorage.setItem('undian_device_name', $('sbDevice').value.trim()); }catch(_){} Cloud.queueSnapshot(); toast('Nama perangkat disimpan'); };
   Cloud.badge(); renderCloudStatus();
   const connect = async (manual) => {
     if(!Cloud.on()){ $('sbStatus').innerHTML = '⚠ Anon key Supabase belum diisi di kode (SUPABASE_KEY). Data hanya tersimpan di laptop ini.'; if(manual) toast('Anon key Supabase belum diisi'); return; }
@@ -1569,13 +1597,23 @@ load(); renderSoundBtn(); renderLottieStatus(); renderEvent(); renderSbuInput();
   };
   $('btnSbSave').onclick = () => connect(true);
   $('btnSbPull').onclick = async () => {
-    if(!Cloud.on()){ toast('Hubungkan Supabase dulu'); return; }
+    if(!Cloud.on()){ toast('Supabase belum terhubung'); return; }
     try{
-      const remote = await Cloud.pull();
-      if(!remote){ toast('Belum ada data acara ini di Supabase'); return; }
-      const ok = await askYes('Ambil data dari Supabase?', `Data di laptop ini akan diganti dengan data acara <b>${esc(Cloud.event())}</b> dari Supabase (tersimpan ${new Date(remote.updated_at).toLocaleString('id-ID')}).`, 'Ambil data', true);
-      if(!ok) return;
-      applyState(remote.data); Cloud.setOps([]); toast('✓ Data diambil dari Supabase');
+      const rows = await Cloud.listBrowsers();
+      if(!rows || !rows.length){ toast('Belum ada data acara ini di Supabase'); return; }
+      const me = Cloud.event();
+      const label = r => `${r.device || 'Tanpa nama'}${r.id === me ? ' (browser ini)' : ''} · ${(r.guests || []).length} tamu · ${(r.winners || []).length} pemenang · ${new Date(r.updated_at).toLocaleString('id-ID', {day:'2-digit', month:'short', hour:'2-digit', minute:'2-digit'})}`;
+      const pick = await ask('Ambil data dari browser mana?',
+        'Data di browser ini akan <b>diganti</b> dengan salinan data dari browser yang dipilih. Data browser asal di Supabase tidak berubah.',
+        [{label:'Batal', value:null, cls:'ghost'}].concat(rows.slice(0, 8).map(r => ({label: label(r), value: r.id, cls: r.id === me ? '' : 'primary'}))));
+      if(!pick) return;
+      const remote = await Cloud.pullId(pick);
+      if(!remote){ toast('Data tidak ditemukan'); return; }
+      applyState(remote.data); Cloud.setOps([]);
+      // simpan salinannya sebagai data browser ini
+      Cloud.setOps([{t:'clear', event: Cloud.event()}].concat(state.winners.length ? [{t:'up', rows: state.winners.map(w => Cloud.winnerRow(w, 'menang'))}] : []));
+      Cloud.flush();
+      toast('✓ Data disalin dari Supabase');
     }catch(e){ toast('Gagal mengambil data: ' + e.message); }
   };
   $('btnSbPush').onclick = async () => {
