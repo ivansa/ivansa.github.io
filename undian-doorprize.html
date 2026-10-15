@@ -318,6 +318,12 @@
   .mdl-actions .btn{font-size:14px;padding:10px 16px}
   .mdl-actions .btn.ghost{background:#eef4f6;color:#173843;border-color:#d2e4e8}
   .mdl-actions .btn.warn{background:var(--red);color:#fff;border-color:var(--red)}
+  /* ===== status Supabase ===== */
+  .cloud{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:6px 10px;border-radius:99px;border:1px solid var(--line);background:var(--panel2);color:var(--muted);white-space:nowrap}
+  .cloud.ok{color:var(--ok);border-color:rgba(23,153,106,.35);background:#eaf7f1}
+  .cloud.busy{color:#8a6d00;border-color:rgba(255,208,0,.6);background:#fff8d9}
+  .cloud.err{color:var(--red);border-color:rgba(227,30,38,.35);background:#fdeceb}
+  #tData input[type=text]{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px}
   /* ===== copyright ===== */
   .copyright{text-align:center;font-size:12px;color:var(--muted);padding:4px 16px 18px;letter-spacing:.04em}
   body.fullscreen .copyright{position:fixed;left:0;right:0;bottom:0;padding:10px;z-index:5}
@@ -329,6 +335,7 @@
 <header>
   <div class="brand"><img data-logo="pln" src="" alt="PLN Icon Plus"><span class="sep"></span><div><h1>Undian <span>Doorprize</span></h1><div class="event-name" data-event></div></div></div>
   <div style="display:flex;gap:8px">
+    <span class="cloud" id="cloudBadge" title="Status penyimpanan Supabase">☁ Lokal saja</span>
     <button class="btn" id="btnSound">🔊 Suara</button>
     <button class="btn" id="btnFs">⛶ Layar Penuh</button>
   </div>
@@ -341,6 +348,7 @@
       <button class="active" data-tab="tTamu">Tamu</button>
       <button data-tab="tHadiah">Hadiah</button>
       <button data-tab="tPemenang">Pemenang</button>
+      <button data-tab="tData">Data</button>
     </div>
 
     <div class="tab active" id="tTamu">
@@ -403,6 +411,24 @@
         <button class="btn danger" id="btnResetWinners">Reset undian</button>
       </div>
       <div class="list" id="winnerList"></div>
+    </div>
+
+    <div class="tab" id="tData">
+      <b style="font-size:14px">Penyimpanan Supabase</b>
+      <p class="hint" style="margin:4px 0 10px">Data selalu disimpan dulu di laptop ini, lalu otomatis disalin ke Supabase. Kalau internet putus, undian tetap jalan dan data dikirim begitu koneksi kembali.</p>
+      <div class="item" style="border:1px solid var(--line);border-radius:10px;display:block;margin-bottom:10px">
+        <div class="sub">Proyek</div><div style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;word-break:break-all" id="sbUrlView"></div>
+        <div class="sub" style="margin-top:6px">Kode acara</div><div style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px" id="sbEventView"></div>
+      </div>
+      <div class="row">
+        <button class="btn primary" id="btnSbSave">↻ Tes koneksi</button>
+        <button class="btn" id="btnSbPull">⬇ Ambil data dari Supabase</button>
+      </div>
+      <div class="row">
+        <button class="btn" id="btnSbPush">⬆ Kirim ulang semua data</button>
+      </div>
+      <p class="hint" id="sbStatus">Belum terhubung.</p>
+      <p class="hint">Tabel: <b>undian_state</b> (salinan lengkap) dan <b>undian_pemenang</b> (satu baris per pemenang, untuk rekap).</p>
     </div>
   </section>
 
@@ -527,8 +553,96 @@ function load(){
   }
 }
 function save(){
+  state.savedAt = Date.now();
+  Cloud.queueSnapshot();
   try{ localStorage.setItem(KEY, JSON.stringify(state)); }
   catch(e){ toast('Gagal menyimpan ke localStorage'); }
+}
+
+/* ================= Supabase (REST, tanpa library tambahan) ================= */
+// ▼▼▼ KONFIGURASI SUPABASE (tertanam) ▼▼▼
+const SUPABASE_URL   = 'https://yhlsjiujzskilbjqetth.supabase.co';
+const SUPABASE_KEY   = 'sb_publishable_D8_G86PeSLCoH2Cy3_KKYQ_nFAAQ5Lu';   // Supabase → Project Settings → API Keys → anon / publishable key
+const SUPABASE_EVENT = 'mekar-bersama';          // kode acara (id baris di tabel undian_state)
+// ▲▲▲ ────────────────────────────── ▲▲▲
+const Cloud = {
+  CFG_KEY: 'undian_supabase', Q_KEY: 'undian_sync_ops',
+  snapTimer: 0, retryTimer: 0, busy: false, lastOk: 0, lastErr: '',
+  cfg(){ const ok = SUPABASE_KEY && !SUPABASE_KEY.startsWith('ISI_'); return ok ? {url: SUPABASE_URL, key: SUPABASE_KEY, event: SUPABASE_EVENT} : {}; },
+  setCfg(c){ try{ localStorage.setItem(this.CFG_KEY, JSON.stringify(c)); }catch(_){} },
+  on(){ const c = this.cfg(); return !!(c.url && c.key); },
+  event(){ return (this.cfg().event || 'mekar-bersama').trim(); },
+  ops(){ try{ return JSON.parse(localStorage.getItem(this.Q_KEY) || '[]'); }catch(_){ return []; } },
+  setOps(o){ try{ localStorage.setItem(this.Q_KEY, JSON.stringify(o)); }catch(_){} },
+  async req(path, {method = 'GET', body, prefer} = {}){
+    const c = this.cfg();
+    const h = {apikey: c.key, 'Content-Type': 'application/json'};
+    if(!String(c.key).startsWith('sb_')) h.Authorization = 'Bearer ' + c.key;   // kunci JWT lama memakai header Authorization
+    if(prefer) h.Prefer = prefer;
+    const ctl = new AbortController(), t = setTimeout(() => ctl.abort(), 12000);
+    try{
+      const r = await fetch(c.url.replace(/\/+$/, '') + '/rest/v1/' + path, {method, headers: h, body: body === undefined ? undefined : JSON.stringify(body), signal: ctl.signal});
+      if(!r.ok){ let m = r.status + ''; try{ const j = await r.json(); m += ' ' + (j.message || j.hint || ''); }catch(_){} throw new Error(m); }
+      const txt = await r.text(); return txt ? JSON.parse(txt) : null;
+    } finally { clearTimeout(t); }
+  },
+  badge(){
+    const b = $('cloudBadge'); if(!b) return;
+    const n = this.ops().length + (this.snapTimer ? 1 : 0);
+    b.className = 'cloud';
+    if(!this.on()){ b.textContent = '☁ Lokal saja'; return; }
+    if(this.lastErr){ b.classList.add('err'); b.textContent = `☁ Offline · ${n} menunggu`; b.title = 'Gagal kirim ke Supabase: ' + this.lastErr + ' — data aman di laptop, akan dicoba lagi otomatis'; return; }
+    if(this.busy || n){ b.classList.add('busy'); b.textContent = '☁ Menyimpan…'; return; }
+    b.classList.add('ok'); b.textContent = '☁ Tersimpan'; b.title = 'Tersinkron ke Supabase';
+  },
+  // salinan lengkap dikirim maksimal sekali tiap 1 detik
+  queueSnapshot(){ if(!this.on()) return; clearTimeout(this.snapTimer); this.snapTimer = setTimeout(() => { this.snapTimer = 0; this.flush(); }, 1000); this.badge(); },
+  op(o){ if(!this.on()) return; const q = this.ops(); q.push(o); this.setOps(q); this.badge(); },
+  winnerRow(w, status){
+    const p = state.prizes.find(x => x.id === w.prizeId);
+    return {id: `${this.event()}:${w.prizeId}:${w.guestId}`, event: this.event(), prize_no: p ? p.no || null : null, prize_name: p ? p.name : (w.prizeName || ''),
+            pool: p && p.pool === 'sbu' ? 'sbu' : 'tamu', guest_id: w.guestId, nama: w.name, keterangan: w.info || '', status, waktu: new Date(w.time || Date.now()).toISOString()};
+  },
+  async flush(){
+    if(!this.on() || this.busy) return;
+    this.busy = true; this.badge();
+    try{
+      // 1) perubahan pemenang (urut sesuai kejadian)
+      let q = this.ops();
+      while(q.length){
+        const o = q[0];
+        if(o.t === 'up') await this.req('undian_pemenang?on_conflict=id', {method:'POST', body:o.rows, prefer:'resolution=merge-duplicates,return=minimal'});
+        else if(o.t === 'clear') await this.req('undian_pemenang?event=eq.' + encodeURIComponent(o.event), {method:'DELETE', prefer:'return=minimal'});
+        q = this.ops(); q.shift(); this.setOps(q);
+      }
+      // 2) salinan lengkap terbaru
+      await this.req('undian_state?on_conflict=id', {method:'POST', prefer:'resolution=merge-duplicates,return=minimal',
+        body:[{id: this.event(), data: state, updated_at: new Date().toISOString()}]});
+      this.lastOk = Date.now(); this.lastErr = '';
+    }catch(e){
+      this.lastErr = e.name === 'AbortError' ? 'waktu habis' : (e.message || 'tidak bisa terhubung');
+      clearTimeout(this.retryTimer); this.retryTimer = setTimeout(() => this.flush(), 10000);
+    }finally{ this.busy = false; this.badge(); renderCloudStatus(); }
+    if(this.ops().length && !this.lastErr) this.flush();
+  },
+  async pull(){
+    const rows = await this.req('undian_state?select=data,updated_at&id=eq.' + encodeURIComponent(this.event()));
+    return rows && rows[0] ? rows[0] : null;
+  }
+};
+function renderCloudStatus(){
+  const el = $('sbStatus'); if(!el) return;
+  if(!Cloud.on()){ el.textContent = '⚠ Anon key Supabase belum diisi di kode (SUPABASE_KEY). Data hanya tersimpan di laptop ini.'; return; }
+  const n = Cloud.ops().length;
+  el.innerHTML = Cloud.lastErr
+    ? `⚠ Tidak bisa terhubung (${esc(Cloud.lastErr)}). Data aman di laptop; ${n} perubahan akan dikirim otomatis.`
+    : Cloud.lastOk ? `✓ Tersambung ke <b>${esc(Cloud.cfg().url)}</b> · acara <b>${esc(Cloud.event())}</b> · terakhir tersimpan ${new Date(Cloud.lastOk).toLocaleTimeString('id-ID')}`
+    : 'Menghubungkan…';
+}
+function applyState(data){
+  state = Object.assign({ guests: [], prizes: [], winners: [], skipped: [], sound: true, sbus: defaultSbus() }, data);
+  try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(_){}
+  lastSingle = null; renderSoundBtn(); renderEvent(); renderSbuInput(); renderAll(); resetStage();
 }
 
 /* ================= helpers ================= */
@@ -801,7 +915,7 @@ async function handleFile(file){
     if(choice === 'cancel') return;
   }
   if(choice === 'append') state.guests = state.guests.concat(guests);
-  else { state.guests = guests; state.winners = []; state.skipped = []; }
+  else { state.guests = guests; state.winners = []; state.skipped = []; Cloud.op({t:'clear', event: Cloud.event()}); }
   save(); renderAll(); resetStage(); toast(`${guests.length} tamu dimuat dari ${file.name}`);
 }
 
@@ -910,11 +1024,13 @@ function resetStage(){
   $('infoDisplay').textContent = '';
 }
 function recordWinner(g, prize, offset=0){
-  state.winners.push({guestId:g.id, name:g.name, info:g.info, prizeId:prize?.id||'', prizeName:prize?prizeLabel(prize):'', time:Date.now()+offset});
+  const w = {guestId:g.id, name:g.name, info:g.info, prizeId:prize?.id||'', prizeName:prize?prizeLabel(prize):'', time:Date.now()+offset};
+  state.winners.push(w);
+  Cloud.op({t:'up', rows:[Cloud.winnerRow(w, 'menang')]});
 }
 function gugur(guestId, prizeId){
   const i = state.winners.findIndex(w => w.guestId===guestId && w.prizeId===prizeId);
-  if(i >= 0) state.winners.splice(i,1);
+  if(i >= 0){ Cloud.op({t:'up', rows:[Cloud.winnerRow(state.winners[i], 'gugur')]}); state.winners.splice(i,1); }
   if(!state.skipped.includes(guestId)) state.skipped.push(guestId);
   save(); renderAll();
 }
@@ -1295,11 +1411,11 @@ function exportCSV(){
 }
 async function resetWinners(){
   if(!(await askYes('Reset undian?', 'Semua pemenang dan tamu gugur dihapus. Daftar tamu dan hadiah tetap ada.', 'Reset', true))) return;
-  state.winners=[]; state.skipped=[]; lastSingle=null; save(); renderAll(); resetStage();
+  state.winners=[]; state.skipped=[]; lastSingle=null; Cloud.op({t:'clear', event: Cloud.event()}); save(); renderAll(); resetStage();
 }
 async function clearGuests(){
   if(!(await askYes('Hapus semua tamu?', 'Seluruh daftar tamu beserta riwayat pemenang akan dihapus.', 'Hapus semua', true))) return;
-  state.guests=[]; state.winners=[]; state.skipped=[]; lastSingle=null; save(); renderAll(); resetStage();
+  state.guests=[]; state.winners=[]; state.skipped=[]; lastSingle=null; Cloud.op({t:'clear', event: Cloud.event()}); save(); renderAll(); resetStage();
 }
 
 /* ================= events ================= */
@@ -1419,6 +1535,59 @@ function fitBigScreen(){
 fitBigScreen(); addEventListener('resize', fitBigScreen);
 function renderSbuInput(){ if(document.activeElement !== $('sbuInput')) $('sbuInput').value = state.sbus.map(x => x.name).join('\n'); }
 load(); renderSoundBtn(); renderLottieStatus(); renderEvent(); renderSbuInput(); renderAll(); resetStage();
+
+(function initCloudUi(){
+  $('sbUrlView').textContent = SUPABASE_URL; $('sbEventView').textContent = SUPABASE_EVENT;
+  Cloud.badge(); renderCloudStatus();
+  const connect = async (manual) => {
+    if(!Cloud.on()){ $('sbStatus').innerHTML = '⚠ Anon key Supabase belum diisi di kode (SUPABASE_KEY). Data hanya tersimpan di laptop ini.'; if(manual) toast('Anon key Supabase belum diisi'); return; }
+    const event = Cloud.event(); Cloud.lastErr = '';
+    $('sbStatus').textContent = 'Menghubungkan…';
+    try{
+      const remote = await Cloud.pull();
+      await Cloud.req('undian_pemenang?select=id&limit=1');
+      if(manual) toast('✓ Terhubung ke Supabase');
+      const localEmpty = !state.guests.length && !state.winners.length;
+      const remoteHasData = remote && remote.data && ((remote.data.guests || []).length || (remote.data.winners || []).length);
+      if(localEmpty && remoteHasData){
+        // laptop baru / kosong: langsung pakai data dari Supabase (tidak boleh menimpa data di Supabase dengan data kosong)
+        applyState(remote.data); toast(`✓ Data acara diambil dari Supabase (${remote.data.guests.length} tamu, ${remote.data.winners.length} pemenang)`);
+      } else if(remoteHasData && (remote.data.savedAt || 0) > (state.savedAt || 0)){
+        const use = await ask('Data di Supabase lebih baru', `Supabase punya data acara <b>${esc(event)}</b> yang disimpan ${new Date(remote.updated_at).toLocaleString('id-ID')}. Pakai data itu di laptop ini?`,
+          [{label:'Tetap pakai data laptop', value:false, cls:'ghost'}, {label:'Pakai data Supabase', value:true, cls:'primary'}]);
+        if(use){ applyState(remote.data); toast('Data diambil dari Supabase'); }
+      }
+      // samakan tabel rekap pemenang di Supabase dengan data yang dipakai sekarang
+      Cloud.setOps([{t:'clear', event: Cloud.event()}].concat(state.winners.length ? [{t:'up', rows: state.winners.map(w => Cloud.winnerRow(w, 'menang'))}] : []));
+      await Cloud.flush();
+    }catch(e){
+      Cloud.lastErr = e.name === 'AbortError' ? 'waktu habis' : e.message;
+      $('sbStatus').innerHTML = `⚠ Gagal terhubung: ${esc(Cloud.lastErr)}. Data aman di laptop dan akan dikirim otomatis saat koneksi kembali. Pastikan anon key benar dan <b>supabase-setup.sql</b> sudah dijalankan.`;
+      Cloud.badge();
+      clearTimeout(Cloud.retryTimer); Cloud.retryTimer = setTimeout(() => connect(false), 15000);
+    }
+  };
+  $('btnSbSave').onclick = () => connect(true);
+  $('btnSbPull').onclick = async () => {
+    if(!Cloud.on()){ toast('Hubungkan Supabase dulu'); return; }
+    try{
+      const remote = await Cloud.pull();
+      if(!remote){ toast('Belum ada data acara ini di Supabase'); return; }
+      const ok = await askYes('Ambil data dari Supabase?', `Data di laptop ini akan diganti dengan data acara <b>${esc(Cloud.event())}</b> dari Supabase (tersimpan ${new Date(remote.updated_at).toLocaleString('id-ID')}).`, 'Ambil data', true);
+      if(!ok) return;
+      applyState(remote.data); Cloud.setOps([]); toast('✓ Data diambil dari Supabase');
+    }catch(e){ toast('Gagal mengambil data: ' + e.message); }
+  };
+  $('btnSbPush').onclick = async () => {
+    if(!Cloud.on()){ toast('Hubungkan Supabase dulu'); return; }
+    Cloud.setOps([{t:'clear', event: Cloud.event()}].concat(state.winners.length ? [{t:'up', rows: state.winners.map(w => Cloud.winnerRow(w, 'menang'))}] : []));
+    Cloud.lastErr = ''; await Cloud.flush();
+    toast(Cloud.lastErr ? 'Gagal mengirim — akan dicoba lagi otomatis' : '✓ Semua data terkirim ke Supabase');
+  };
+  addEventListener('online', () => { Cloud.lastErr = ''; Cloud.flush(); });
+  // saat halaman dibuka: langsung sambungkan ke Supabase
+  connect(false);
+})();
 </script>
 </body>
 </html>
