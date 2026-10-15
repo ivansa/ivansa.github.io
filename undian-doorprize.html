@@ -307,6 +307,17 @@
   /* susunan sedikit pemenang: seluruh isi dirapatkan ke tengah layar */
   .ov.bulk-mode.fitmode .ov-inner{justify-content:center}
   .ov.bulk-mode.fitmode .ov-bulk{flex:0 0 auto}
+  /* ===== dialog konfirmasi di dalam halaman ===== */
+  .mdl{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(4,18,22,.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);padding:16px}
+  .mdl.show{display:flex;animation:fade .15s ease}
+  .mdl-box{width:min(460px,100%);background:#fff;color:#173843;border-radius:16px;padding:22px 22px 18px;box-shadow:0 24px 60px rgba(0,0,0,.4);border-top:5px solid var(--yellow)}
+  .mdl-title{font-weight:800;font-size:18px;margin-bottom:6px}
+  .mdl-text{font-size:14.5px;line-height:1.5;color:#466069;white-space:pre-line}
+  .mdl-text b{color:#173843}
+  .mdl-actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:18px}
+  .mdl-actions .btn{font-size:14px;padding:10px 16px}
+  .mdl-actions .btn.ghost{background:#eef4f6;color:#173843;border-color:#d2e4e8}
+  .mdl-actions .btn.warn{background:var(--red);color:#fff;border-color:var(--red)}
   /* ===== copyright ===== */
   .copyright{text-align:center;font-size:12px;color:var(--muted);padding:4px 16px 18px;letter-spacing:.04em}
   body.fullscreen .copyright{position:fixed;left:0;right:0;bottom:0;padding:10px;z-index:5}
@@ -447,19 +458,27 @@
 
 <canvas id="confetti"></canvas>
 <div class="toast" id="toast"></div>
+<div class="mdl" id="mdl" role="dialog" aria-modal="true" aria-labelledby="mdlTitle">
+  <div class="mdl-box">
+    <div class="mdl-title" id="mdlTitle"></div>
+    <div class="mdl-text" id="mdlText"></div>
+    <div class="mdl-actions" id="mdlActions"></div>
+  </div>
+</div>
 <footer class="copyright">© <span data-year></span> ICONDIGI</footer>
 
 <script>
 const KEY = 'undian_doorprize_v2';
 const LOTTIE_KEY = 'undian_doorprize_lottie';
-// urutan undian dari bawah ke atas: no. 12 (Voucher MAP @100.000) duluan, no. 1 (Motor Listrik) terakhir
-const DEFAULTS_VERSION = 3;
+// urutan undian dari bawah ke atas: no. 14 (Voucher MAP @100.000) duluan, lalu grand prize, dan undian SBU paling akhir
+const DEFAULTS_VERSION = 4;
+// undian khusus SBU paling akhir, setelah Motor Listrik
 const DEFAULT_PRIZES = [
-  {no:1,  name:'Motor Listrik',                  qty:1,  mode:'single', grand:true},
-  {no:2,  name:'Sepeda Listrik',                 qty:4,  mode:'bulk',   grand:true},
-  {no:3,  name:'Tablet',                         qty:7,  mode:'bulk',   grand:true},
-  {no:4,  name:'Sepeda Listrik (SBU)',           qty:1,  mode:'single', pool:'sbu'},
-  {no:5,  name:'Tablet (SBU)',                   qty:1,  mode:'single', pool:'sbu'},
+  {no:1,  name:'Sepeda Listrik (SBU)',           qty:1,  mode:'single', pool:'sbu'},
+  {no:2,  name:'Tablet (SBU)',                   qty:1,  mode:'single', pool:'sbu'},
+  {no:3,  name:'Motor Listrik',                  qty:1,  mode:'single', grand:true},
+  {no:4,  name:'Sepeda Listrik',                 qty:4,  mode:'bulk',   grand:true},
+  {no:5,  name:'Tablet',                         qty:7,  mode:'bulk',   grand:true},
   {no:6,  name:'Voucher Indomaret @50.000',      qty:30, mode:'bulk'},
   {no:7,  name:'Voucher MAP @50.000',            qty:25, mode:'bulk'},
   {no:8,  name:'Smartband',                      qty:10, mode:'bulk'},
@@ -513,6 +532,29 @@ function save(){
 }
 
 /* ================= helpers ================= */
+// pengganti dialog konfirmasi bawaan browser: tetap di dalam halaman sehingga mode layar penuh tidak terganggu
+// buttons: [{label, value, cls}] ; Enter = tombol terakhir, Esc = tombol pertama
+function ask(title, text, buttons){
+  return new Promise(resolve => {
+    const m = $('mdl'), box = $('mdlActions');
+    $('mdlTitle').textContent = title; $('mdlText').innerHTML = text;
+    box.innerHTML = '';
+    const done = v => { m.classList.remove('show'); document.removeEventListener('keydown', onKey, true); resolve(v); };
+    buttons.forEach(b => { const el = document.createElement('button'); el.className = 'btn ' + (b.cls || ''); el.textContent = b.label; el.onclick = () => done(b.value); box.appendChild(el); });
+    const onKey = e => {
+      e.stopPropagation();
+      if(e.key === 'Escape'){ e.preventDefault(); done(buttons[0].value); }
+      else if(e.key === 'Enter'){ e.preventDefault(); done(buttons[buttons.length-1].value); }
+      else if(e.code === 'Space'){ e.preventDefault(); }
+    };
+    document.addEventListener('keydown', onKey, true);
+    m.classList.add('show');
+    setTimeout(() => box.lastElementChild && box.lastElementChild.focus(), 30);
+  });
+}
+const askYes = (title, text, yes = 'Ya', warn = false) =>
+  ask(title, text, [{label:'Batal', value:false, cls:'ghost'}, {label:yes, value:true, cls: warn ? 'warn' : 'primary'}]);
+
 function toast(msg){
   const t = $('toast'); t.textContent = msg; t.classList.add('show');
   clearTimeout(t._h); t._h = setTimeout(()=>t.classList.remove('show'), 2800);
@@ -752,9 +794,14 @@ async function handleFile(file){
   }catch(e){ toast('File tidak bisa dibaca'); return; }
   const guests = rowsToGuests(rows);
   if(!guests.length){ toast('Tidak ada nama yang ditemukan di file'); return; }
-  if(state.guests.length && !confirm(`Sudah ada ${state.guests.length} tamu.\nOK = ganti dengan daftar baru (riwayat pemenang direset)\nBatal = tambahkan ke daftar yang ada`)){
-    state.guests = state.guests.concat(guests);
-  } else { state.guests = guests; state.winners = []; state.skipped = []; }
+  let choice = 'replace';
+  if(state.guests.length){
+    choice = await ask('Daftar tamu sudah ada', `Saat ini ada <b>${state.guests.length}</b> tamu. File baru berisi <b>${guests.length}</b> tamu.`,
+      [{label:'Batal', value:'cancel', cls:'ghost'}, {label:'Tambahkan ke daftar', value:'append', cls:''}, {label:'Ganti (reset pemenang)', value:'replace', cls:'warn'}]);
+    if(choice === 'cancel') return;
+  }
+  if(choice === 'append') state.guests = state.guests.concat(guests);
+  else { state.guests = guests; state.winners = []; state.skipped = []; }
   save(); renderAll(); resetStage(); toast(`${guests.length} tamu dimuat dari ${file.name}`);
 }
 
@@ -839,16 +886,16 @@ function addPrize(){
   save(); renderPrizes(); $('prizeName').focus();
 }
 function toggleMode(id){ const p = state.prizes.find(p=>p.id===id); p.mode = p.mode==='single'?'bulk':'single'; save(); renderPrizes(); resetStage(); }
-function delPrize(id){
-  if(state.winners.some(w=>w.prizeId===id) && !confirm('Hadiah ini sudah punya pemenang. Tetap hapus? (riwayat pemenang tetap ada)')) return;
+async function delPrize(id){
+  if(state.winners.some(w=>w.prizeId===id) && !(await askYes('Hapus hadiah?', 'Hadiah ini sudah punya pemenang. Riwayat pemenangnya tetap tersimpan.', 'Hapus', true))) return;
   state.prizes = state.prizes.filter(p=>p.id!==id); save(); renderAll();
 }
 function movePrize(i,d){
   const j=i+d; if(j<0||j>=state.prizes.length) return;
   [state.prizes[i],state.prizes[j]]=[state.prizes[j],state.prizes[i]]; save(); renderPrizes();
 }
-function loadDefaults(){
-  if(!confirm('Ganti daftar hadiah dengan daftar default? Riwayat pemenang yang hadiahnya tidak ada lagi tetap tersimpan.')) return;
+async function loadDefaults(){
+  if(!(await askYes('Muat hadiah default?', 'Daftar hadiah diganti dengan daftar default. Riwayat pemenang tetap tersimpan.', 'Muat default'))) return;
   state.prizes = defaultPrizes(); save(); renderAll(); resetStage();
 }
 
@@ -1055,8 +1102,9 @@ async function drawBulk(prize, append){
   picks.forEach((g,i) => {
     const c = cards[i];
     const x = document.createElement('button'); x.className = 'x'; x.title = 'Tidak hadir — gugurkan'; x.textContent = '✕';
-    x.onclick = () => {
-      if(!confirm(`Gugurkan ${g.name}? Hadiah akan bisa diundi ulang.`)) return;
+    x.onclick = async () => {
+      if(rolling) return;
+      if(!(await askYes('Peserta tidak hadir?', `Gugurkan <b>${esc(g.name)}</b>? Hadiahnya akan bisa diundi ulang.`, 'Gugurkan', true))) return;
       gugur(g.id, prize.id); x.remove(); removeBulkCard(c); updateOvSub(prize); renderBulkActions(prize);
     };
     c.appendChild(x);
@@ -1207,9 +1255,9 @@ function renderGrandActions(prize){
   else if(prize && nx) mk(`▶ Lanjut: ${prizeLabel(nx)}`, 'primary', goNext);
   else mk('✓ Semua hadiah selesai', 'primary', closeGrand);
   mk('✓ Selesai', '', closeGrand);
-  mk('✕ Tidak hadir — undi ulang', 'danger', () => {
-    if(!lastSingle) return;
-    if(!confirm(`Gugurkan ${lastSingle.name}?`)) return;
+  mk('✕ Tidak hadir — undi ulang', 'danger', async () => {
+    if(!lastSingle || rolling) return;
+    if(!(await askYes('Peserta tidak hadir?', `Gugurkan <b>${esc(lastSingle.name)}</b> dan undi ulang?`, 'Gugurkan & undi ulang', true))) return;
     gugur(lastSingle.guestId, lastSingle.prizeId); lastSingle = null;
     runGrand(prize, false);
   });
@@ -1245,12 +1293,12 @@ function exportCSV(){
   a.download = `pemenang-doorprize-${new Date().toISOString().slice(0,10)}.csv`; a.click();
   URL.revokeObjectURL(a.href);
 }
-function resetWinners(){
-  if(!confirm('Hapus semua pemenang & tamu gugur? Daftar tamu dan hadiah tetap ada.')) return;
+async function resetWinners(){
+  if(!(await askYes('Reset undian?', 'Semua pemenang dan tamu gugur dihapus. Daftar tamu dan hadiah tetap ada.', 'Reset', true))) return;
   state.winners=[]; state.skipped=[]; lastSingle=null; save(); renderAll(); resetStage();
 }
-function clearGuests(){
-  if(!confirm('Hapus seluruh daftar tamu beserta riwayat pemenang?')) return;
+async function clearGuests(){
+  if(!(await askYes('Hapus semua tamu?', 'Seluruh daftar tamu beserta riwayat pemenang akan dihapus.', 'Hapus semua', true))) return;
   state.guests=[]; state.winners=[]; state.skipped=[]; lastSingle=null; save(); renderAll(); resetStage();
 }
 
@@ -1285,7 +1333,12 @@ $('btnResetWinners').onclick = resetWinners;
 $('ovClose').onclick = closeGrand;
 $('ovBulk').addEventListener('mouseenter', () => Marquee.hover = true);
 $('ovBulk').addEventListener('mouseleave', () => { Marquee.hover = false; Marquee.pos = $('ovBulk').scrollLeft; });
-addEventListener('resize', () => { if($('ov').classList.contains('bulk-mode')) layoutBulk(); });
+addEventListener('resize', () => {
+  if($('ov').classList.contains('bulk-mode')) layoutBulk();
+  // kanvas kembang api & confetti mengikuti ukuran layar baru (tidak melar)
+  if(FX.c){ FX.c.width = innerWidth * devicePixelRatio; FX.c.height = innerHeight * devicePixelRatio; FX.ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0); }
+  const cf = $('confetti'); cf.width = innerWidth; cf.height = innerHeight;
+});
 
 $('lottieFile').onchange = async e => {
   const f = e.target.files[0]; e.target.value = '';
@@ -1322,6 +1375,7 @@ $('btnFsExit').onclick = () => toggleFs(false);
 document.addEventListener('fullscreenchange', () => { if(!document.fullscreenElement) document.body.classList.remove('fullscreen'); });
 
 document.addEventListener('keydown', e => {
+  if($('mdl').classList.contains('show')) return;
   const ovOpen = $('ov').classList.contains('show');
   if(e.key === 'Escape' && ovOpen){ closeGrand(); return; }
   if(e.code === 'Space' && !['INPUT','SELECT','TEXTAREA','BUTTON'].includes(document.activeElement.tagName)){
